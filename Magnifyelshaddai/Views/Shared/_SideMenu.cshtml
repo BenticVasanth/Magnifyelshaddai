@@ -1,0 +1,254 @@
+﻿<link href="~/Content/styles.css" rel="stylesheet" />
+<div id="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <section class="mainmenu">
+                    <ul class="sidebar-menu">
+                        <li>
+                            <a href="@Url.Action("Dashboard", "SabbathDay")">
+                                <i class="fa fa-bible text-red"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "QuickSearch")">
+                                <i class="fa fa-search text-red"></i>
+                                <span>Quick Search</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "SabbathDay")">
+                                <i class="fa fa-folder-open text-red"></i>
+                                <span>Sabbath Day Documents</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-bible"></i> <span>Bible</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="sidebar-submenu">
+                                <li>
+                                    <a href="@Url.Action("Index", "Bible")">
+                                        <i class="fa fa-bible text-red"></i>
+                                        <span>Holy Bible</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("StudyBible", "Bible")">
+                                        <i class="fa fa-bible text-red"></i>
+                                        <span>Study Bibles</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("BibleCommentary", "Bible")">
+                                        <i class="fa fa-bible text-red"></i>
+                                        <span>Bible Commentaries</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("BiblicalTheology", "Bible")">
+                                        <i class="fa fa-bible text-red"></i>
+                                        <span>Biblical Theology</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("BibleDictionary", "Bible")">
+                                        <i class="fa fa-bible text-red"></i>
+                                        <span>Bible Dictionary & Encyclopedia</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("EBook", "EBook")">
+                                <i class="fa fa-book-reader text-red"></i>
+                                <span>E-Books</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "SpiritualArticle")">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Spiritual Articles</span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="#"><i class="fa fa-bible"></i> <span>Mariology</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="sidebar-submenu">
+                                <li>
+                                    <a href="@Url.Action("MarianBook", "Mariology")">
+                                        <i class="fa fa-bible text-red"></i>
+                                        <span>Marian Books</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="@Url.Action("MarianStudy", "Mariology")">
+                                        <i class="fa fa-bible text-red"></i>
+                                        <span>Marian Studies</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("PrayerRain", "PrayerRain")">
+                                <i class="fa fa-pray text-red"></i>
+                                <span>Prayer Rain</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "PrayerNote")">
+                                <i class="fa fa-folder-open text-red"></i>
+                                <span>Prayer Notes</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "SinaiLetter")">
+                                <i class="fa fa-bible text-red"></i>
+                                <span>Sinai Letter</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "BibleWorkshop")">
+                                <i class="fa fa-folder-open text-red"></i>
+                                <span>Bible Workshop Documents</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("FastingPrayerDocuments", "BibleWorkshop")">
+                                <i class="fa fa-folder-open text-red"></i>
+                                <span>Fasting Prayer Documents</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("BibleAndChristianDoctrine", "BibleWorkshop")">
+                                <i class="fa fa-folder-open text-red"></i>
+                                <span>Diploma in Bible Books</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("Index", "VirginBiblio")">
+                                <i class="fa fa-folder-open text-red"></i>
+                                @*<img src="~/Images/Virgin_Biblio_Icon.png" />*@
+                                <span>Virgin Biblio</span>
+                            </a>
+                        </li>  
+
+                        <li>
+                            <a href="@Url.Action("Index", "EvangelicalEvents")">
+                                <img src="~/Images/Evangelical_Events1.png" width="19">
+                                <span style="vertical-align: middle;">Evangelical Events</span>
+                            </a>
+                        </li>                     
+
+                        <li>
+                            <a href="@Url.Action("BookRequest", "QuickSearch")">
+                                <i class="fas fa-book"></i>
+                                <span>Book Request</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="@Url.Action("CommentAndSuggestion", "QuickSearch")">
+                                <i class="fas fa-comment"></i>
+                                <span>Feedback / Suggestions</span>
+                            </a>
+                        </li>
+
+                        @if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Subadmin")
+                        {
+
+                            <li>
+                                <a href="@Url.Action("UserInfo", "Authentication")">
+                                    <i class="fa fa-user text-red"></i>
+                                    <span>User Details</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="@Url.Action("LoggedInDetails", "SabbathDay")">
+                                    <i class="fa fa-user text-red"></i>
+                                    <span>Logged In Details</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="@Url.Action("RegistrationInfo", "Authentication")">
+                                    <i class="fa fa-user text-red"></i>
+                                    <span>BW Registration Details</span>
+                                </a>
+                            </li>
+
+                            @*<li>
+                                    <a href="#"><i class="fa fa-users"></i> <span>User Info</span> <i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="@Url.Action("UserInfo", "Authentication")">
+                                                <i class="fa fa-user text-red"></i>
+                                                <span>User Details</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="@Url.Action("RegistrationInfo", "Authentication")">
+                                                <i class="fa fa-user text-red"></i>
+                                                <span>Registration Details</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>*@
+                        }
+                        else if (Session["UserType"].ToString() == "Member")
+                        {
+                            @*<li>
+                                    <a href="#"><i class="fa fa-circle-o"></i> <span>User Info</span> <i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="@Url.Action("RegistrationInfo", "Authentication")">
+                                                <i class="fa fa-circle-o text-red"></i>
+                                                <span>Registration Details</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>*@
+                        }
+
+                        <li>
+                            <a href="https://www.catholictamil.com/" target="_blank">
+                                <img src="~/Images/catholicLogo.png" alt="catholicLogo" style="padding-bottom: 5px;" />
+                                <span>Catholic tamil Website</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/scripts.js"></script>
+    <script src="../Elshaddai/js/sidebar-menu.js"></script>
+    <script>
+        $.sidebarMenu($('.sidebar-menu'))
+    </script>
+</div>
+
+

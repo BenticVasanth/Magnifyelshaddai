@@ -1,0 +1,286 @@
+﻿@model Magnifyelshaddai.Models.RegistrationViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="~/Content/jquery-3.1.1.min.js"></script>
+
+@*@using (Html.BeginForm("Index", "RegistrationMaster", FormMethod.Post, new { @id = "registrationMasterFormId" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)*@
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="row">
+                    <div class="col-md-12" style="padding:0">
+                        <div>
+                            <div class="h3 text-center mbt30px">
+                                <p style="font-size: 32px; color: #1b6dff; text-transform: uppercase; font-weight: bold;">6<sup style="text-transform: none;font-size: 20px;">th</sup> Bible Workshop<br /></p>
+                                <p style="font-size: 26px; color: #1b6dff; text-transform: uppercase; font-weight: bold;">Online Registration form</p>
+                            </div>
+                            <hr />
+
+                            <div class="form-group">
+                                <p id="success" style="color: #ffffff; background-color: #11a408cc; text-align: center; font-size: 18px; font-weight: bold; padding: 5px 25px; border-radius: 5px;" hidden>Thank you for your Registration!. <br/> Conformation mail sent to your registered Email ID. <br/> Note: Please check spam / junk mail. </p>
+                                <p id="fail" style="color: #ffffff; background-color: #7f0219cc; text-align: center; font-size: 18px; font-weight: bold; padding: 5px 25px; border-radius: 5px;" hidden>This email address is already registered.</p>
+                            </div>
+                            <div class="form-group col-md-12">
+                                @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control", @placeholder = "Email Id" })
+                                @*<p style="color:blue;">Existing User? Please click &nbsp;&nbsp;<button type="button" class="btn btn-primary" value="Get Details" onclick="getDetails()">Get Details</button></p>*@
+                                @Html.ValidationMessageFor(model => model.EmailId)
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Name" })
+                                @Html.ValidationMessageFor(model => model.Name)
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input class="form-control" type="text" id="gender" name="gender" placeholder="Male" disabled>
+                                @*@Html.TextBoxFor(model => model.Gender, new { @class = "form-control", @placeholder = "Gender" })
+                                @Html.ValidationMessageFor(model => model.Gender)*@
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control mg_form_control", @placeholder = "Mobile" })
+                                @Html.ValidationMessageFor(model => model.MobileNo)
+                            </div>
+                            @*<div class="form-group col-md-6">
+                                @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control mg_form_control", @placeholder = "DOB", @id = "datepicker" })
+                                @Html.ValidationMessageFor(model => model.MobileNo)
+                            </div>*@
+                            <div class="form-group col-md-6">
+                                @Html.TextBoxFor(model => model.Age, new { @class = "form-control mg_form_control", @placeholder = "Age" })
+                                @Html.ValidationMessageFor(model => model.Age)
+                            </div>
+                            <div class="form-group col-md-6">
+                                <select id="Qualification" class="form-control mg_form_control">
+                                    <option value="" disabled selected hidden>-Qualification-</option>
+                                    <option value="1">Below UG</option>
+                                    <option value="2">Studing UG</option>
+                                    <option value="3">UG</option>
+                                    <option value="4">Studing PG</option>
+                                    <option value="5">PG</option>
+                                    <option value="6">Above PG</option>
+                                </select>
+                                @Html.ValidationMessageFor(model => model.Qualification)
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                @Html.TextBoxFor(model => model.Address, new { @class = "form-control mg_form_control", @placeholder = "Address" })
+                                @Html.ValidationMessageFor(model => model.Address)
+                            </div>
+                            @*<div class="form-group">
+                            @Html.CheckBoxFor(model => model.AccomStatus, new { @class = "AccommodationStatus" }) Click for Accommodation Type
+                        </div>
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.AccommodationType, new SelectList(Enum.GetValues(typeof(Magnifyelshaddai.Models.AccommodType))), "Select Accomodation Type", new { @class = "form-control" })
+                        </div>*@
+                            @*<div class="btn-group btn-group-toggle  col-md-12" data-toggle="buttons"  style="margin-bottom:20px;">
+                            <label class="btn btn-success active">
+                                <input type="radio" name="options" id="student" onclick="Student()" autocomplete="off" checked> Student
+                            </label>
+                            <label class="btn btn-info">
+                                <input type="radio" name="options" id="other" onclick="Others()" autocomplete="off"> Non-Student
+                            </label>
+                        </div>*@
+
+                            <div class="radio-button form-group col-md-12">
+                                <label class="control-label" style="font-size:13px;">Participant type</label>&nbsp;
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-info" id="studentId" style="border:2px solid #fff;padding: 10px 10px;" onclick="Student()">
+                                        <input type="radio" value="Student" name="participantType" id="student"> Student
+                                    </label>
+                                    <label class="btn btn-info" id="otherId" style="border:2px solid #fff;padding: 10px 10px;" onclick="Others()">
+                                        <input type="radio" value="Others" name="participantType" id="other"> Non-Student
+                                    </label>
+
+                                </div>
+                            </div>
+                           @*<table class="users" id="students" hidden>
+                                <thead>
+                                    <tr>
+                                        <th>Registration Fee</th>
+                                        <th>Food & Accommodation</th>
+                                        <th>Total Fee</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Rs.150</td>
+                                        <td>Free</td>
+                                        <td>Rs.150</td>
+                                    </tr>
+                            </table>
+                            <table class="users" id="others" hidden>
+                                <thead>
+                                    <tr>
+                                        <th>Registration Fee</th>
+                                        <th>Food & Accommodation</th>
+                                        <th>Total Fee</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Rs.150</td>
+                                        <td>Rs.350</td>
+                                        <td>Rs.500</td>
+                                    </tr>
+                            </table>*@
+                            @*<div class="form-group">
+                            @Html.DropDownListFor(model => model.ParticipationType, new SelectList(Enum.GetValues(typeof(Magnifyelshaddai.Models.ParticipaType))), "Select Participa Type", new { @class = "form-control" })
+                        </div>*@
+                            <d@*iv class="radio-button">
+                                <label class="control-label">Need of Accommodation</label>&nbsp;
+                                        <input type="radio" value="true" name="needOfAccommodation"> Yes
+                                        <input type="radio" value="false" name="needOfAccommodation"> No
+                                </div>*@
+                            </div>
+                            <div class="form-group" style=" margin-top: 15px;">
+                                <input type="submit" id="btnRegistration" value="Save" onclick="saveUser()" class="btn btn-primary col-md-12 mtp10px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="loader" style="display:none">
+            <span style="display: inline-block; width: 100%; height: 100%; background-color: #00000070; position: fixed; top: 0; z-index: 99; left: 0;"></span>
+            <img src="~/Images/loader.gif" class="img-responsive d-blc" style="position: fixed; top: 28%; left: 50%; z-index: 1050; width:10%;">
+        </div>
+    </div>
+
+
+@*}*@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+    function getDetails() {
+        var emailId = $('#EmailId').val();
+        if (emailId != "")
+        {
+            $.ajax({
+                type: "POST",
+                url: "/RegistrationMaster/GetDetails",
+                data: { emailId: emailId },
+                success: function (data) {
+                    if (data != 0)
+                    {                      
+                        $('#Name').val(data[0].Name);
+                        $('#MobileNo').val(data[0].Mobile);
+                    }
+                    else
+                    {
+                        $('#Name').val('');
+                        $('#MobileNo').val('');
+                    }
+                },
+                error: function () {
+                    alert("Error occured!!")
+                }
+            });
+        }
+        else {
+            alert("Please enter your email.");
+        }
+    }
+  
+    function Student()
+    {
+        var element = document.getElementById("studentId");
+        element.classList.add("selectedBtn");
+        var element = document.getElementById("otherId");
+        element.classList.remove("selectedBtn");
+    }
+    function Others() {
+        var element = document.getElementById("otherId");
+        element.classList.add("selectedBtn");
+        var element = document.getElementById("studentId");
+        element.classList.remove("selectedBtn");
+    }
+    function saveUser()
+    {
+        var emailId = $('#EmailId').val();
+        var Name = $('#Name').val();
+        var Gender = "Male"; //$('#Gender').val();
+        var MobileNo = $('#MobileNo').val();
+        var Age = parseInt($('#Age').val());
+        var Qualification = parseInt($('#Qualification option:selected').val());
+        var Address = $('#Address').val();
+        var ParticipantType = $("input[type='radio'][name='participantType']:checked").val();
+        var Accommodation = "false"; //$("input[type='radio'][name='needOfAccommodation']:checked").val();
+        if (emailId != "" && Name != "" && Gender != "" && Age != "" && Address != "" && MobileNo != "" && Qualification != "" && ParticipantType != "" && Accommodation != "")
+        {
+            $('#loader').show();
+            $.ajax({
+                type: "POST",
+                url: "/RegistrationMaster/Index",
+                data: { emailID: emailId, name: Name, gender: Gender, age: Age, address: Address, mobileNo: MobileNo, qualification: Qualification, participantType: ParticipantType, needOfAccommodation: Accommodation },
+                success: function (data) {
+                    $('#loader').hide();
+                    if (data == "Success")
+                    {
+                        $('#success').show();
+                        $('#fail').hide();
+                        $('#EmailId').val("");
+                        $('#Name').val("");
+                        $('#MobileNo').val("");
+                        $('#Age').val("");
+                        $('#Qualification').val("");
+                        $('#Address').val("");
+                        $('.radio-button input[type="radio"]').prop('checked', false);
+                        $('.radio-button .btn-group-toggle > label').removeClass('active');
+                        var element = document.getElementById("otherId");
+                        element.classList.remove("selectedBtn");
+                        var element = document.getElementById("studentId");
+                        element.classList.remove("selectedBtn");
+                    }
+                    else if (data == "Fail")
+                    {
+                        $('#success').hide();
+                        $('#fail').show();
+                    }
+                },
+                error: function (e) {
+                    console.log(e)
+                    $('#loader').hide();
+                }
+            });
+        }
+        else {
+            alert("Please enter all the fields.");
+        }
+    }
+    </script>
+}
+
+<style>
+    .users {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .users td, .users th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .users tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .users tr:hover {
+            background-color: #ddd;
+        }
+
+        .users th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    .selectedBtn {
+        color: #fff;
+        background-color: #31b0d5;
+        border-color: #269abc;
+    }
+</style>

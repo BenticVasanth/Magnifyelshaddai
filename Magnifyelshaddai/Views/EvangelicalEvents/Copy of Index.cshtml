@@ -1,0 +1,431 @@
+﻿@{
+    ViewBag.Title = "Magnify Elshaddai - Evangelical Events";
+}
+
+@*Evangelical Events - Starts*@
+@Html.Partial("_SideMenu")
+
+
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>*@
+
+<div class="container_display sinai_letter">
+    <div class="navbar-collapse">
+        <h2 class="main-title">Evangelical Events</h2>
+        <div class="sinai_images_popup"></div>
+        <div id="accordion">
+            <div class="card cardBg">
+                <div class="card-header" id="heading-1">
+                    <h5 class="my-0">
+                        <a role="button" data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+                            <i class="fa fa-caret-right mr-1"></i>2021
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-1" class="collapse show sinai_letters" data-parent="#accordion" aria-labelledby="heading-1">
+                    <div class="card-body">
+                        <div id="accordion-1">
+                            <div class="subCard">
+                                <div class="card-header" id="heading-1-1">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
+                                            <i class="fa fa-caret-right mr-1"></i>Poonamallee Melma Nagar - Library Inauguration
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-1-1" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-1">
+                                    <div class="sub-card-body sinai_images">
+                                        <div class="sinai_images_img">
+                                            @foreach (var file in ViewBag.images1)
+                                            { 
+                                                <img src="~/Evangelical Events/2021/Poonamallee Melma Nagar Library/@Path.GetFileName(file)" class="galaryImg"/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subCard">
+                                <div class="card-header" id="heading-1-2">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
+                                            <i class="fa fa-caret-right mr-1"></i>Poonamallee Melma Nagar - Prayer
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-1-2" class="collapse" data-parent="#accordion-1" aria-labelledby="heading-1-2">
+                                    <div class="sub-card-body sinai_images">
+                                        <div class="sinai_images_img">
+                                            @foreach (var file in ViewBag.images2)
+                                            { 
+                                                <img src="~/Evangelical Events/2021/Poonamallee Melma Nagar Prayer/@Path.GetFileName(file)" class="galaryImg"/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card cardBg sinai_letters">
+                <div class="card-header" id="heading-2">
+                    <h5 class="my-0">
+                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                            <i class="fa fa-caret-right mr-1"></i>2022
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-2" class="collapse" data-parent="#accordion" aria-labelledby="heading-2">
+                    <div class="card-body">
+                        <div id="accordion-2">
+                            <div class="subCard">
+                                <div class="card-header" id="heading-2-1">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2-1" aria-expanded="false" aria-controls="collapse-2-1">
+                                            <i class="fa fa-caret-right mr-1"></i>Athukudi - Prayer
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-2-1" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-2-1">
+                                    <div class="sub-card-body sinai_images">
+                                        <div class="sinai_images_img">
+                                            @foreach (var file in ViewBag.images3)
+                                            { 
+                                                <img src="~/Evangelical Events/2022/Athukudi Prayer/@Path.GetFileName(file)" class="galaryImg"/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subCard">
+                                <div class="card-header" id="heading-2-2">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2-2" aria-expanded="false" aria-controls="collapse-2-2">
+                                            <i class="fa fa-caret-right mr-1"></i>Medavakkam - Bible Expo
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-2-2" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-2-2">
+                                    <div class="sub-card-body sinai_images">
+                                        <div class="sinai_images_img">
+                                            @foreach (var file in ViewBag.images4)
+                                            { 
+                                                <img src="~/Evangelical Events/2022/Medavakkam Bible Expo/@Path.GetFileName(file)" class="galaryImg"/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subCard">
+                                <div class="card-header" id="heading-2-3">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2-3" aria-expanded="false" aria-controls="collapse-2-3">
+                                            <i class="fa fa-caret-right mr-1"></i>Perungudi - Church Prayer
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-2-3" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-2-3">
+                                    <div class="sub-card-body sinai_images">
+                                        @foreach (var file in ViewBag.images5)
+                                        { 
+                                            <img src="~/Evangelical Events/2022/Perungudi Church Prayer/@Path.GetFileName(file)" class="galaryImg"/>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subCard">
+                                <div class="card-header" id="heading-2-4">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-2-4" aria-expanded="false" aria-controls="collapse-2-4">
+                                            <i class="fa fa-caret-right mr-1"></i>Tirunelveli - Retreat
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-2-4" class="collapse" data-parent="#accordion-2" aria-labelledby="heading-2-4">
+                                    <div class="sub-card-body sinai_images">
+                                        <div class="sinai_images_img">
+                                            @foreach (var file in ViewBag.images6)
+                                            { 
+                                                <img src="~/Evangelical Events/2022/Tirunelveli Retreat/@Path.GetFileName(file)" class="galaryImg"/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card cardBg sinai_letters">
+                <div class="card-header" id="heading-3">
+                    <h5 class="my-0">
+                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+                            <i class="fa fa-caret-right mr-1"></i>2023
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-3" class="collapse" data-parent="#accordion" aria-labelledby="heading-3">
+                    <div class="card-body">
+                        <div id="accordion-3">
+                            <div class="subCard">
+                                <div class="card-header" id="heading-3-1">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3-1" aria-expanded="false" aria-controls="collapse-3-1">
+                                            <i class="fa fa-caret-right mr-1"></i>Mercy - Retreat
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-3-1" class="collapse" data-parent="#accordion-3" aria-labelledby="heading-3-1">
+                                    <div class="sub-card-body sinai_images">
+                                        <div class="sinai_images_img">
+                                            @foreach (var file in ViewBag.images7)
+                                            { 
+                                                <img src="~/Evangelical Events/2023/Mercy 2023/@Path.GetFileName(file)" class="galaryImg"/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="subCard">
+                                <div class="card-header" id="heading-3-2">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-3-2" aria-expanded="false" aria-controls="collapse-3-2">
+                                            <i class="fa fa-caret-right mr-1"></i>Dindigul Mullipadi - Prayer
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-3-2" class="collapse" data-parent="#accordion-3" aria-labelledby="heading-3-2">
+                                    <div class="sub-card-body sinai_images">
+                                        <div class="sinai_images_img">
+                                            @foreach (var file in ViewBag.images8)
+                                            { 
+                                                <img src="~/Evangelical Events/2023/Dindigul Mullipadi Prayer/@Path.GetFileName(file)" class="galaryImg"/>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="card cardBg">
+                <div class="card-header" id="heading-4">
+                    <h5 class="my-0">
+                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-3">
+                            <i class="fa fa-caret-right mr-1"></i>2022
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-4" class="collapse" data-parent="#accordion" aria-labelledby="heading-4">
+                    <div class="card-body">
+                        <div id="accordion-4">
+                            <div class="subCard">
+                                <div class="card-header" id="heading-4-1">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-4-1" aria-expanded="false" aria-controls="collapse-4-1">
+                                            <i class="fa fa-caret-right mr-1"></i>Item 1 > 1
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-4-1" class="collapse" data-parent="#accordion-4" aria-labelledby="heading-4-1">
+                                    <div class="sub-card-body">
+                                        Item 1 > 1
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+            @*<div class="card cardBg">
+                <div class="card-header" id="heading-5">
+                    <h5 class="my-0">
+                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-3">
+                            <i class="fa fa-caret-right mr-1"></i>2023
+                        </a>
+                    </h5>
+                </div>
+                <div id="collapse-5" class="collapse" data-parent="#accordion" aria-labelledby="heading-5">
+                    <div class="card-body">
+                        <div id="accordion-5">
+                            <div class="subCard">
+                                <div class="card-header" id="heading-5-1">
+                                    <h5 class="my-0">
+                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse-5-1" aria-expanded="false" aria-controls="collapse-5-1">
+                                            <i class="fa fa-caret-right mr-1"></i>Item 1 > 1
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse-5-1" class="collapse" data-parent="#accordion-5" aria-labelledby="heading-5-1">
+                                    <div class="sub-card-body">
+                                        Item 1 > 1
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+@*<div class="sinai_images_popup"></div>
+        <div class="sinai_images">
+            @foreach (var sinaiLetter in ViewBag.images1)
+            {
+                <div class="sinai_images_img">
+                    <a class="elem" href="@sinaiLetter.FilePath" data-lcl-thumb="@sinaiLetter.FilePath">
+                        <span style="background-image: url(@sinaiLetter.FilePath);"></span>
+                    </a>
+                    <span style="display: none;"> <a href="@sinaiLetter.FilePath" target="_blank" download>  </a> </span>*
+                    <span style="display: none;"> <a href="@sinaiLetter.FilePath" target="_blank" download>  </a> </span>
+                </div>
+            }
+        </div>*@
+
+<style>
+    .my-0 > a {
+        display: block;
+        position: relative;
+        color: #fff;
+        font-size: 15px !important;
+        font-weight: 700;
+        padding-left: 5px;
+        text-decoration: none;
+    }
+
+        .my-0 > a .fa-caret-right {
+            transform: rotate(0deg);
+            transition: .5s;
+        }
+
+        .my-0 > a[aria-expanded="true"] .fa-caret-right {
+            transform: rotate(90deg);
+            transition: .5s;
+        }
+
+    #accordion .card.cardBg {
+        border: 1px solid #992e93;
+        border-radius: 7px;
+        margin-bottom: 5px;
+    }
+
+    #accordion .card .card-header {
+        display: inline-block;
+        width: 100%;
+        background-color: #992e93;
+        padding: 8px 3px;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+    #accordion .card .subCard .card-header {
+        display: inline-block;
+        width: 100%;
+        background-color: #2e4099;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+    #accordion .card .card-body {
+        width: 98%;
+        margin: 10px auto;
+    }
+
+        #accordion .card .card-body .subCard {
+            border: 1px solid #2e4099;
+            border-radius: 7px;
+            margin-bottom: 10px;
+        }
+
+            #accordion .card .card-body .subCard .sub-card-body {
+                margin: 10px;
+            }
+
+    .fa-caret-right {
+        margin-right: 10px;
+    }
+
+    .galaryImg {
+        width: 560px !important;
+        padding: 5px !important;
+    }
+
+    .elem, .elem * {
+        box-sizing: border-box;
+        margin: 0 !important;
+    }
+
+    .elem {
+        display: inline-block;
+        font-size: 0;
+        width: 100%;
+        border-bottom: none;
+        background: #fff;
+        height: 100%;
+    }
+
+        .elem > span {
+            cursor: pointer;
+            background-size: cover;
+            background-position: center center;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+    .lcl_fade_oc.lcl_pre_show #lcl_overlay,
+    .lcl_fade_oc.lcl_pre_show #lcl_window,
+    .lcl_fade_oc.lcl_is_closing #lcl_overlay,
+    .lcl_fade_oc.lcl_is_closing #lcl_window {
+        opacity: 0 !important;
+    }
+
+    .lcl_fade_oc.lcl_is_closing #lcl_overlay {
+        -webkit-transition-delay: .15s !important;
+        transition-delay: .15s !important;
+    }
+</style>
+
+
+@*<script src="~/Elshaddai/js/light-box/jquery.js" type="text/javascript"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="~/Elshaddai/js/light-box/lc_lightbox.lite.js" type="text/javascript"></script>
+<script src="~/Elshaddai/js/light-box/alloy_finger.min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="~/Elshaddai/css/light-box/lc_lightbox.css" />
+<link rel="stylesheet" href="~/Elshaddai/css/light-box/minimal.css" />
+
+<script>
+    $(function () {
+        $('.sinai_images_img').hover(function () {
+            $(this).children('span').show();
+        }, function () {
+            $(this).children('span').hide();
+        });
+
+
+        $('.sinai_images_img img').click(function () {
+            var img_url = $(this).attr('src');
+            var display_popup = '<img src="' + img_url + '" />';
+            $('.sinai_images_popup').html(display_popup);
+        });
+
+        //live handler
+        lc_lightbox('.elem', {
+            wrap_class: 'lcl_fade_oc',
+            gallery: true,
+            txt_toggle_cmd: false,
+            thumbs_nav: false,
+            download: true,
+            skin: 'minimal',
+            radius: 0,
+            padding: 0,
+            border_w: 0,
+        });
+
+    });
+</script>

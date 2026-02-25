@@ -1,0 +1,41 @@
+﻿@model Magnifyelshaddai.Controllers.AuthenticationController.UserMasterView
+
+@{
+    ViewBag.Title = "Users - Magnify El Shaddai";
+}
+
+@Html.Partial("_SideMenu")
+<div class="container_display">
+        <h2 class="main-title">User Deatils</h2>
+        <div class="row">
+            <div class="navbar-collapse">
+                @using (Html.BeginForm("UserInfo", "Authentication", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                {
+                    <div class="form-group">
+                        <input type="text" name="search" value="@ViewBag.search" class="form-control" placeholder="search" />
+                    </div>
+                    <button type="submit" value="Search" class="btn">Search</button>
+                }
+            </div>
+        </div>
+    <div class="navbar-collapse">
+        <div class="row">
+            <h5 class="countStyle"> User Count : @ViewBag.UserCount</h5>
+
+            <div class="display_body">
+                <div>
+                    <div id="test">
+                        @Html.Partial("_UserRegistration", Model.userMaster)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+    </script>
+}

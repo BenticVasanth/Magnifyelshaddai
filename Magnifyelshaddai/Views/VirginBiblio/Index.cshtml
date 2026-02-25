@@ -1,0 +1,153 @@
+﻿@model Magnifyelshaddai.Models.DocumentView
+
+@{
+    Layout = "~/Views/Shared/_VirginBiblioLayout.cshtml";
+    ViewBag.Title = "Magnify Elshaddai - Virgin Biblio";
+
+
+}
+@*<h2>VirginBiblio</h2>*@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            @*<h3>Sabbath Day</h3>*@
+            <br />
+            <div class="searchStyle">
+                @using (@Html.BeginForm())
+                {
+                    <div class="input-group custom-search-form banner-search" id="search">
+                        <div class="text-center h3 search-hd" style="color:#fff;">The Biblical Lending E - Library</div>
+                        <input type="text" id="txtfilter" name="txtfilter" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn"></span>
+                    </div>
+                }
+            </div>
+            @if (Session["UserType"].ToString() == "Librarian")
+            {
+                <button class="btn btn-primary" onclick="location.href='@Url.Action("UploadVirginBiblioBook", "VirginBiblio")';return false;">Upload Books</button>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="navbr">
+                <ul class="nav nav-tabs">
+                    <li id="liMoto" onclick="test(this.id)" class="active"><a data-toggle="tab" href="#moto">Purpose</a></li>
+                    <li id="liServices" onclick="test(this.id)"><a data-toggle="tab" href="#services">Services</a></li>
+                    <li id="liContact" onclick="test(this.id)"><a data-toggle="tab" href="#contact">Contact US</a></li>
+                    <li id="liPoonamalleeVirginBiblio" onclick="test(this.id)"><a data-toggle="tab" href="#poonamalleeVirginBiblio">External Libraries</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="moto" class="tab-pane fade in active">
+                        <h3 class="navbr-hd">Purpose</h3>
+                        <p>
+                            We are the People of GOD of Israel and we belong to the Bible.
+                            For thousands of years, our traditions have been transmitted through
+                            the Bible. We are the younger generation practised our texts from
+                            print to digital in a way that can expand their reach and impact in new
+                            and unprecedented ways. Virgin Biblio dedicated to building the
+                            future for biblical learning in an open and participatory way. We are
+                            assembling a free-living E-library for biblical texts and their
+                            interconnections, with Jewish mythology in Tamil and English
+                            language. With these digital texts, we can create new, interactive
+                            interfaces for Web, tablet and mobile, allowing more people to
+                            engage with the Biblical treasures to glorify the word of GOD. Our
+                            aim is to provide the biblical library to every people in this world to
+                            access personally and meditate the word of GOD to achieve the
+                            kingdom of GOD.
+                        </p>
+                    </div>
+                    <div id="services" class="tab-pane fade">
+                        <h3 class="navbr-hd">Services</h3>
+                        <p>
+                            With each title of the book, the Contents and preface scanned
+                            PDF document was given. The user can read and access the content,
+                            with respect to his interest he can write us through the mail
+                            (virginbiblio@gmail.com ) We will scan and send the chapter of
+                            interest through mail within five working days. The whole approach is
+                            free of cost.
+                        </p>
+                    </div>
+                    <div id="contact" class="tab-pane fade">
+                        <h3 class="navbr-hd">Contact Us</h3>
+                        <p> virginbiblio@gmail.com</p>
+                    </div>
+                    <div id="poonamalleeVirginBiblio" class="tab-pane fade">
+                        <h3 class="navbr-hd">Annai Velankanni Church, Melma Nagar, Poonamallee</h3>
+                        <p>
+                            In the name of LORD JESUS CHRIST and Mother MARY, we are glad to share the Virgin Biblio (Spiritual Library) catalogue. The library is located in Poonamallee which is exclusively installed to provide the deeper knowledge about GOD to every children of GOD. Those who are hunger to read and know about our GOD and Mother MARY can utilize this library with free of cost. Kindly go through the catalogue attached below and utilize the library for the Greater Glory of GOD.
+                        </p>
+                        <div style="display: inline-block; width: 100%; overflow-x: scroll;">
+                            <iframe src="~/Documents/Poonamallee_Virgin_Biblio.pdf?embedded=true" id="VBPoonamallee" style="width: 1140px; height:800px;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="virginBiblioDocList">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <div id="test">
+                            @Html.Partial("_VirginBiblio", Model.lstLibraryBooks)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+
+            $("#txtfilter").keyup(function (e) {
+
+                //alert('demo');
+                $("#tblData").hide('fast');
+                $('#test').show('fast');
+                var data = $(this).val();
+
+                var url = "/VirginBiblio/VirginBiblioDocumentSearch/";
+                var txtfilter = $("#txtfilter").val();
+
+
+                if ($("#txtfilter").val().length >= 0 || $("#txtfilter").val() != "") {
+                    $.ajax({
+                        type: 'POST',
+                        dataType: "html",
+                        url: url,
+                        data: { txtfilter: txtfilter },
+
+                        success: function (evt) {
+                            //alert('inside success');
+                            $('#Supplier-grid').hide();
+                            $('#test').html(evt);
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus + ' and ' + errorThrown);
+                        }
+                    });
+                }
+                else {
+
+                    $("#tblData").show('fast');
+                    $('#Supplier-grid').show();
+                }
+            });
+        });
+
+        function test(id) {
+            if (id == 'liPoonamalleeVirginBiblio')
+                $("#virginBiblioDocList").hide('fast');
+            else
+                $("#virginBiblioDocList").show('fast');
+        }
+
+    </script>
+
+}
+

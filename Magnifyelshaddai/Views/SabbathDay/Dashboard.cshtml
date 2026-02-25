@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.Title = "Dashboard - Magnify El Shaddai";
+}
+
+@Html.Partial("_SideMenu")
+
+<div>
+    <div class="dashbord">
+        <div class="container-fluid">
+
+            <div class="row main-logos">
+                <div class="col-xl-4 col-lg-6  break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("Index", "SabbathDay")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Sabbath_Day_Logo.png" alt="Sabbath Day Logo">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.SabbathDayDocumentsCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Sabbath Day</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("Index", "VirginBiblio")">
+                            <div class="card-img card-img-2-4 line-height-12">
+                                <img class="img-fix_md" src="~/Images/Virgin_Biblio_Logo.png" alt="Card image cap">
+                            </div>
+                            <span class="h5 txt-btn mb-0 count">@ViewBag.VirginBiblioDocumentsCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Virgin Biblio</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("PrayerRain", "PrayerRain")">
+                            <div class="card-img">
+                                <img class="img-fix_md" src="~/Images/Prayer_Rain_Logo_1.png" alt="Card image cap">
+                            </div>
+                            <span class="h5 txt-btn mb-0 count">@ViewBag.PrayerRainCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Prayer Rain</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("Index", "SinaiLetter")">
+                            <div class="card-img card-img-2-4">
+                                <img class="img-fix_md" src="~/Images/Sinai_Letters_Logo_1.png" alt="Card image cap">
+                            </div>
+                            <span class="h5 txt-btn mb-0 count">@ViewBag.SinaiLettersCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Sinai Letters</h4>
+                                <!-- <h2 class="card-title title">SINAI LETTERS</h2> -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("Index", "Bible")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Holy_Bible.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">68</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Holy Bible</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("StudyBible", "Bible")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Study_Bibles.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.StudyBiblesCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Study Bibles</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("BibleCommentary", "Bible")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md " src="~/Images/Bible_Commentaries.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.BibleCommentariesCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title  ">Bible Commentaries</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("BiblicalTheology", "Bible")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md " src="~/Images/Biblical_Theology.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.BiblicalTheologiesCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Biblical Theology</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("BibleDictionary", "Bible")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Bible_Dictionary_And_Encyclopedia.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.BibleDictionariesCount</span>
+                            <div class="card-body card-9 card-1-4">
+                                <h4 class="title card-title ">Bible Dictionary & Encyclopedia</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("EBook", "EBook")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md " src="~/Images/E-Books.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.EBooksCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">E-Books</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("Index", "SpiritualArticle")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md " src="~/Images/Spiritual_Articles.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.SpiritualArticlesCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Spiritual Articles</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("MarianBook", "Mariology")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Marian_Books.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.MarianBooksCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Marian Books</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("MarianStudy", "Mariology")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Marian_Studies.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.MarianStudiesCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Marian Studies</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("Index", "PrayerNote")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Prayer_Notes.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">@ViewBag.PrayerNotesCount</span>
+                            <div class="card-body card-1-4">
+                                <h4 class="title card-title ">Prayer Notes</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("Index", "BibleWorkshop")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md padding-tb-19" src="~/Images/Bible_Workshop_Documents.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">4</span>
+                            <div class="card-body card-15-16 card-1-4">
+                                <h4 class="title card-title ">Bible Workshop Documents</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 break">
+                    <div class="card mb-4 mb-xl-0 card-shadow">
+                        <a href="@Url.Action("FastingPrayerDocuments", "BibleWorkshop")">
+                            <div class="card-height card-img">
+                                <img class="img-fix_md" src="~/Images/Fasting_Prayer_Documents.jpg" alt="Card image cap">
+                            </div>
+                            <span class="count1 h5 txt-btn mb-0">3</span>
+                            <div class="card-body card-15-16 card-1-4">
+                                <h4 class="title card-title ">Fasting Prayer Documents</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card-9 .title strong {
+        font-size: 16px !important;
+    }
+
+    .card-15-16 .title strong {
+        font-size: 18px !important;
+    }
+
+    .card-9 .title {
+        text-align: left !important;
+    }
+
+    .dashbord .card-1-4 {
+        background-color: rgb(121, 20, 145, 0.9);
+        border-bottom-right-radius: 0.1rem;
+        border-bottom-left-radius: 0.1rem;
+    }
+
+    .dashbord .card-body-5-16 {
+        background-color: rgb(121, 20, 145, 0.7);
+        border-bottom-right-radius: 0.1rem;
+        border-bottom-left-radius: 0.1rem;
+    }
+
+    /*.dashbord img {
+        margin: 0;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 18px;
+    }*/
+</style>

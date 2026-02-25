@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Magnifyelshaddai.Models.EDMXModel.RegistrationMaster>
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+
+@{
+
+    WebGrid grid = new WebGrid(Model, null, null, 25, true, true, ajaxUpdateContainerId: "container-grid2", ajaxUpdateCallback: "AjaxAfterUpdate");
+}
+
+
+
+@grid.GetHtml(htmlAttributes: new { id = "container-grid2" },
+                    tableStyle: "gridtable table table-striped table-bordered table-hover",
+                    headerStyle: "gridtable-header",
+                    footerStyle: "grid-footer custom-pagination1",
+                    alternatingRowStyle: "gridtable-alt cd-popup-trigger",
+                    rowStyle: "gridtable-alt cd-popup-trigger",
+                    fillEmptyRows: false,
+                    mode: WebGridPagerModes.All,
+                    firstText: "<< First",
+                    previousText: "< Prev",
+                    nextText: "Next >",
+                    lastText: "Last  >>",
+
+                    columns: new[]{
+
+                    //grid.Column(format: @<input type="hidden" name="pid" id="@item.IntId" value="@item.IntId" class="hide" />,style:"hidecol"),
+                    //grid.Column(header: "S.No",style:"sno", format: item => item.WebGrid.Rows.IndexOf(item) + 1),
+                    //grid.Column("DocumentID","Document ID",canSort:true),
+                    grid.Column("Name","Name",canSort:true),
+                    grid.Column("EmailId","Email ",canSort:true),
+                      grid.Column("MobileNo","Mobile No ",canSort:true),
+                    //grid.Column("CreatedDateTime","Date",canSort:true,  format: (item) => string.Format("{0:dd-MMM-yyyy}", item.CreatedDateTime)),
+                    grid.Column("Address","Address",canSort:true),
+                    grid.Column("ParticipantType","Participant Type",canSort:true),
+                    grid.Column("CreatedDateTime","Registered Date",canSort:true),
+                    @*grid.Column("DocumentReference","Reference",canSort:true),
+                                    grid.Column("CreatedBy","Created By",canSort:true),
+                                    grid.Column("CreatedDateTime","Created Date",canSort:true),
+                                    grid.Column("Status","Status",canSort:true,format:@<text>
+                        @if (item.Status == true)
+                                        {
+                            <span>Active</span>
+                                        }
+                                        else
+                                        {
+                            <span>Inactive</span>
+                                        }
+                                    </text>),*@
+                        
+
+                    })
+
+<script type="text/javascript">
+
+
+    //Custom Pagination
+    $(document).ready(function () {
+        //alert('test');
+        custom_pagination1();
+    });
+
+    function custom_pagination1() {
+        if (!$(".custom-pagination1 ul").hasClass("pagination")) {
+            $(".custom-pagination1 td").wrapInner("<ul class='pagination page-margin'></div>");
+            $(".custom-pagination1 td a").wrap("<li></li>");
+            $('.custom-pagination1 td ul').contents().filter(function () { return this.nodeType === 3 && this.data.trim().length > 0 }).wrap('<li class="active"><a href="#"></li>');
+        }
+        //custom_pagination1();
+    }
+
+    function AjaxAfterUpdate() {
+        custom_pagination1();
+    }
+</script>
+<style>
+    .sno {
+        width: 20px;
+    }
+    .gridtable-header{
+        background-color:#074866;
+    }
+</style>

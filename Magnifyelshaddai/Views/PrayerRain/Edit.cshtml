@@ -1,0 +1,152 @@
+﻿@model Magnifyelshaddai.Models.PrayerRainViewModel
+@{
+    ViewBag.Title = "Edit Prayer";
+}
+
+<style>
+    .diplayNone {
+        display: none !important;
+    }
+</style>
+<div class="prayer-rain">
+    <h2 class="page-title"> Edit Prayer </h2>
+
+@using (Html.BeginForm())
+{
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            @Html.HiddenFor(model => model.PrayerRainId)
+
+    <div class="prayer-rain-div label">
+        @Html.Label("Title", "Prayer Title")
+    </div>
+    <div class="prayer-rain-div">
+        @*@Html.EditorFor(model => model.Title)*@
+        @Html.TextAreaFor(model => model.Title, new { name = "titleHTML", id = "titleEditor", @rows = 5, @cols = 5 })
+        <span style="color:red;display:none;" id="errorMessageTitle">Title is required</span>
+        @Html.ValidationMessageFor(model => model.Title)
+    </div>
+
+    <div class="prayer-rain-div label">
+        @Html.Label("Verses", "Prayer Verses")
+    </div>
+    <div class="prayer-rain-div">
+        @*@Html.EditorFor(model => model.Verses)*@
+        @Html.TextAreaFor(model => model.Verses, new { name = "versesHTML", id = "versesEditor", @rows = 5, @cols = 5 })
+        <span style="color:red;display:none;" id="errorMessageVerses">Verses is required</span>
+        @Html.ValidationMessageFor(model => model.Verses)
+    </div>
+
+    <div class="prayer-rain-div label">
+        @Html.Label("Prayer", "Prayer")
+    </div>
+    <div class="prayer-rain-div">
+        @*@Html.EditorFor(model => model.Prayer)*@
+        @Html.TextAreaFor(model => model.Prayer, new { name = "prayerHTML", id = "prayerEditor", @rows = 5, @cols = 5 })
+        <span style="color:red;display:none;" id="errorMessagePrayer">Prayer is required</span>
+        @Html.ValidationMessageFor(model => model.Prayer)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.CreatedBy, new { @class = "diplayNone" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.CreatedBy, new { @class = "diplayNone" })
+        @Html.ValidationMessageFor(model => model.CreatedBy)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.CreatedDateAndTime, new { @class = "diplayNone" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.CreatedDateAndTime, new { @class = "diplayNone" })
+        @Html.ValidationMessageFor(model => model.CreatedDateAndTime)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.EditEndDateAndTime, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.EditEndDateAndTime, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.EditEndDateAndTime)
+    </div>
+
+    <div class="prayer-rain-div label">
+        @Html.LabelFor(model => model.IsEditable, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-div label">
+        @Html.HiddenFor(model => model.IsEditable, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.IsEditable)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.IsEmailSent, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.IsEmailSent, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.IsEmailSent)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.IsActive, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.IsActive, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.IsActive)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.IsApproved, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.IsApproved, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.IsApproved)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.ApprovedBy, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.ApprovedBy, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.ApprovedBy)
+    </div>    
+    
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.FileName, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.FileName, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.FileName)
+    </div>
+    
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.RefPrayerRainId, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.RefPrayerRainId, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.RefPrayerRainId)
+    </div>
+
+    <div class="prayer-rain-hide">
+        @Html.LabelFor(model => model.ApprovedDateTime, new { style = "display:none;" })
+    </div>
+    <div class="prayer-rain-hide">
+        @Html.HiddenFor(model => model.ApprovedDateTime, new { style = "display:none;" })
+        @Html.ValidationMessageFor(model => model.ApprovedDateTime)
+    </div>
+
+    <div class="prayer-rain-div button button-center">
+        <input type="submit" class="prayer-rain-button btn-primary" value="Update Prayer" onclick="return validatePrayerRain()" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "prayer-rain-button btn-primary" })
+    </div>
+}
+
+</div>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @section Scripts
+{
+        @Scripts.Render("~/bundles/jqueryval")
+    }

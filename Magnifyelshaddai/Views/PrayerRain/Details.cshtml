@@ -1,0 +1,78 @@
+﻿@model Magnifyelshaddai.Models.EDMXModel.PrayerRain
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PrayerRain</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Verses)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Verses)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Prayer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Prayer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDateAndTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDateAndTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsEmailSent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsEmailSent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApprovedBy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApprovedBy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ApprovedDateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ApprovedDateTime)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PrayerRainId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

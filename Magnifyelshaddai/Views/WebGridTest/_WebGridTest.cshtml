@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Magnifyelshaddai.Models.EDMXModel.Document>
+
+@{
+    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
+    grid.Bind(source: Model, rowCount: ViewBag.TotalRows, autoSortAndPage: false);
+}
+<div>
+    @grid.Table(
+                tableStyle: "table table-responsive table-bordered",
+                columns: grid.Columns(
+                                      grid.Column(columnName: "Title", header: "Document Name"),
+                                      grid.Column(columnName: "DocumentReference", header: "Author"),
+                                      grid.Column(columnName: "CreatedDateTime", header: "Date")
+                )
+            )
+
+    <div class="row">
+        <div class="col-sm-6">
+            @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+        </div>
+    </div>
+</div>

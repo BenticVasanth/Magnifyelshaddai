@@ -1,0 +1,461 @@
+﻿@model Magnifyelshaddai.Models.DocumentView
+@{
+    ViewBag.Title = "Quick Search - Magnify El Shaddai";
+}
+
+@Html.Partial("_SideMenu")
+
+<div class="searchAll quickSearch">
+    @using (Html.BeginForm("Index", "QuickSearch", FormMethod.Get, new { @class = "navbar-form navbar-right" }))
+    {
+        <div class="mt50">
+            <div class="form-group">
+                <input type="text" name="search" value="@ViewBag.search" class="form-control" placeholder="search" />
+            </div>
+            <button type="submit" value="Search" class="btn">Search</button>
+        </div>
+    }
+</div>
+
+<div class="display_body quickSearch">
+    <div class="Grid">
+        <div class="title">
+            <p>Sabbath Day Documents</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.Document sabbathDayDocuments in ViewBag.lstSabbathDayDocuments)
+                {
+                    <tr>
+                        <td>@sabbathDayDocuments.Title</td>
+                        <td>@sabbathDayDocuments.DocumentReference</td>
+                        <td>@sabbathDayDocuments.CreatedDateTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadSabbathDayDocument", "SabbathDay", new { id = sabbathDayDocuments.IntId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%; font-size: 12px;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Study Bibles</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.StudyBible studyBible in ViewBag.lstStudyBibles)
+                {
+                    <tr>
+                        <td>@studyBible.Title</td>
+                        <td>@studyBible.Author</td>
+                        <td>@studyBible.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadStudyBible", "Bible", new { id = studyBible.StudyBibleId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Bible Commentaries</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.BibleCommentary bibleCommentaries in ViewBag.lstBibleCommentaries)
+                {
+                    <tr>
+                        <td>@bibleCommentaries.Title</td>
+                        <td>@bibleCommentaries.Author</td>
+                        <td>@bibleCommentaries.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadBibleCommentary", "Bible", new { id = bibleCommentaries.BibleCommentaryId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Biblical Theology</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.BiblicalTheology BiblicalTheologies in ViewBag.lstBiblicalTheologies)
+                {
+                    <tr>
+                        <td>@BiblicalTheologies.Title</td>
+                        <td>@BiblicalTheologies.Author</td>
+                        <td>@BiblicalTheologies.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadBiblicalTheology", "Bible", new { id = BiblicalTheologies.BiblicalTheologyId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Bible Dictionary & Encyclopedia</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.BibleDictionary bibleDictionaries in ViewBag.lstBibleDictionaries)
+                {
+                    <tr>
+                        <td>@bibleDictionaries.Title</td>
+                        <td>@bibleDictionaries.Author</td>
+                        <td>@bibleDictionaries.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadBibleDictionary", "Bible", new { id = bibleDictionaries.BibleDictionaryId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>E-Books</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Book Name
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.EBooksIndex eBooks in ViewBag.lstEBooks)
+                {
+                    <tr>
+                        <td>@eBooks.Title</td>
+                        <td>@eBooks.Author</td>
+                        <td>@eBooks.CreatedDateTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadEBook", "EBook", new { id = eBooks.BooKId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Spiritual Articles</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Article Name
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.SpiritualArticle spiritualArticle in ViewBag.lstSpiritualArticles)
+                {
+                    <tr>
+                        <td>@spiritualArticle.Title</td>
+                        <td>@spiritualArticle.Author</td>
+                        <td>@spiritualArticle.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadSpiritualArticle", "SpiritualArticle", new { id = spiritualArticle.SpiritualArticleId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Marian Books</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.MarianBook marianBook in ViewBag.lstMarianBooks)
+                {
+                    <tr>
+                        <td>@marianBook.Title</td>
+                        <td>@marianBook.Author</td>
+                        <td>@marianBook.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadMarianBook", "Mariology", new { id = marianBook.MarianBookId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Marian Studies</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.MarianStudy marianStudy in ViewBag.lstMarianStudies)
+                {
+                    <tr>
+                        <td>@marianStudy.Title</td>
+                        <td>@marianStudy.Author</td>
+                        <td>@marianStudy.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadMarianStudy", "Mariology", new { id = marianStudy.MarianStudyId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Prayer Rain</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.PrayerRain prayerRain in ViewBag.lstPrayerRains)
+                {
+                    <tr>
+                        <td>@prayerRain.Title</td>
+                        <td>@prayerRain.CreatedDateAndTime.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadPrayerRain", "PrayerRain", new { id = prayerRain.PrayerRainId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Grid">
+        <div class="title">
+            <p>Prayer Notes</p>
+        </div>
+        <table class="table table-bordered mt10">
+            <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Prayer Date
+            </th>
+            <th>
+                Downloads
+            </th>
+            </thead>
+            <tbody>
+                @foreach (Magnifyelshaddai.Models.EDMXModel.PrayerNote prayerNote in ViewBag.lstPrayerNotes)
+                {
+                    <tr>
+                        <td>@prayerNote.Title</td>
+                        <td>@prayerNote.PrayerDate.Value.ToString("dd-MMM-yyyy")</td>
+                        <td>@Html.ActionLink(" ", "DownloadPrayerNote", "PrayerNote", new { id = prayerNote.PrayerNoteId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .display_body {
+        max-width: 79%;
+        float: right;
+        margin-right: 5px !important;
+        padding-top: 10px;
+    }
+    /*hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #a74da2;
+        width: auto;
+    }*/
+
+    .title p {
+        background-color: #a74da2;
+        color: #fff;
+        font-weight: bold;
+        font-size: 25px;
+        padding: 5px;
+        margin: 0px;
+        width: fit-content;
+        border: 1px solid #a74da2;
+        border-radius: 5px;
+    }
+
+    .display_body table tbody tr:nth-child(even) {
+        background-color: rgb(48 118 206 / 25%) !important;
+    }
+
+    .display_body .btn {
+        margin-bottom: 15px;
+    }
+
+    .searchAll {
+        width: 90%;
+        margin: 25px auto 0px auto;
+    }
+
+    .table {
+        margin-bottom: 0px;
+    }
+
+    .Grid {
+        border-collapse: collapse;
+        background-color: #fff;
+        width: 98%;
+        margin: auto;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #a74da2;
+    }
+
+        .Grid:last-child {
+            padding-bottom: 0px;
+            border-bottom: 0px solid #a74da2;
+        }
+    
+    .Grid th {
+            text-align: center;
+            background-color: #4a86d1;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .Grid img {
+            cursor: pointer;
+        }
+</style>

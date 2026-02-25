@@ -1,0 +1,1977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ElshaddaiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ElshaddaiModelStoreContainer">
+          <EntitySet Name="BibleCommentary" EntityType="ElshaddaiModel.Store.BibleCommentary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BibleCommentaryDownloadDetails" EntityType="ElshaddaiModel.Store.BibleCommentaryDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BibleDictionary" EntityType="ElshaddaiModel.Store.BibleDictionary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BibleDictionaryDownloadDetails" EntityType="ElshaddaiModel.Store.BibleDictionaryDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BibleWorkShop" EntityType="ElshaddaiModel.Store.BibleWorkShop" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BiblicalTheology" EntityType="ElshaddaiModel.Store.BiblicalTheology" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BiblicalTheologyDownloadDetails" EntityType="ElshaddaiModel.Store.BiblicalTheologyDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BookRequest" EntityType="ElshaddaiModel.Store.BookRequest" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BooksRequest" EntityType="ElshaddaiModel.Store.BooksRequest" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Category" EntityType="ElshaddaiModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ChaptersInfo" EntityType="ElshaddaiModel.Store.ChaptersInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comments" EntityType="ElshaddaiModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CommentsAndSuggestions" EntityType="ElshaddaiModel.Store.CommentsAndSuggestions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dailyverses" EntityType="ElshaddaiModel.Store.Dailyverses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Documents" EntityType="ElshaddaiModel.Store.Documents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DownloadDetails" EntityType="ElshaddaiModel.Store.DownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EBooksDownloadDetails" EntityType="ElshaddaiModel.Store.EBooksDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EBooksIndex" EntityType="ElshaddaiModel.Store.EBooksIndex" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmailMessage" EntityType="ElshaddaiModel.Store.EmailMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LibraryIndex" EntityType="ElshaddaiModel.Store.LibraryIndex" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LibrayBook" EntityType="ElshaddaiModel.Store.LibrayBook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LibrayDownloadDetails" EntityType="ElshaddaiModel.Store.LibrayDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LogError" EntityType="ElshaddaiModel.Store.LogError" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LoggedInDetails" EntityType="ElshaddaiModel.Store.LoggedInDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MarianBook" EntityType="ElshaddaiModel.Store.MarianBook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MarianBookDownloadDetails" EntityType="ElshaddaiModel.Store.MarianBookDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MarianStudy" EntityType="ElshaddaiModel.Store.MarianStudy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MarianStudyDownloadDetails" EntityType="ElshaddaiModel.Store.MarianStudyDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PrayerNote" EntityType="ElshaddaiModel.Store.PrayerNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PrayerNoteDownloadDetails" EntityType="ElshaddaiModel.Store.PrayerNoteDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PrayerRain" EntityType="ElshaddaiModel.Store.PrayerRain" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PrayerRainDownloadDetails" EntityType="ElshaddaiModel.Store.PrayerRainDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RegistrationMaster" EntityType="ElshaddaiModel.Store.RegistrationMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SinaiLetter" EntityType="ElshaddaiModel.Store.SinaiLetter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SinaiLetterDownloadDetails" EntityType="ElshaddaiModel.Store.SinaiLetterDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SpiritualArticle" EntityType="ElshaddaiModel.Store.SpiritualArticle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SpiritualArticleDownloadDetails" EntityType="ElshaddaiModel.Store.SpiritualArticleDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StudyBible" EntityType="ElshaddaiModel.Store.StudyBible" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StudyBibleDownloadDetails" EntityType="ElshaddaiModel.Store.StudyBibleDownloadDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="ElshaddaiModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BooksRequest_LibraryIndex" Association="ElshaddaiModel.Store.FK_BooksRequest_LibraryIndex">
+            <End Role="LibraryIndex" EntitySet="LibraryIndex" />
+            <End Role="BooksRequest" EntitySet="BooksRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BooksRequest_Users" Association="ElshaddaiModel.Store.FK_BooksRequest_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BooksRequest" EntitySet="BooksRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dailyverses_ChaptersInfo" Association="ElshaddaiModel.Store.FK_Dailyverses_ChaptersInfo">
+            <End Role="ChaptersInfo" EntitySet="ChaptersInfo" />
+            <End Role="Dailyverses" EntitySet="Dailyverses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documents_Category" Association="ElshaddaiModel.Store.FK_Documents_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DownloadDetails_Documents" Association="ElshaddaiModel.Store.FK_DownloadDetails_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DownloadDetails" EntitySet="DownloadDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EBooksDownloadDetails_EBooksIndex" Association="ElshaddaiModel.Store.FK_EBooksDownloadDetails_EBooksIndex">
+            <End Role="EBooksIndex" EntitySet="EBooksIndex" />
+            <End Role="EBooksDownloadDetails" EntitySet="EBooksDownloadDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LibrayBook_LibraryIndex" Association="ElshaddaiModel.Store.FK_LibrayBook_LibraryIndex">
+            <End Role="LibraryIndex" EntitySet="LibraryIndex" />
+            <End Role="LibrayBook" EntitySet="LibrayBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LibrayDownloadDetails_LibraryIndex" Association="ElshaddaiModel.Store.FK_LibrayDownloadDetails_LibraryIndex">
+            <End Role="LibraryIndex" EntitySet="LibraryIndex" />
+            <End Role="LibrayDownloadDetails" EntitySet="LibrayDownloadDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistrationMaster_BibleWorkShop" Association="ElshaddaiModel.Store.FK_RegistrationMaster_BibleWorkShop">
+            <End Role="BibleWorkShop" EntitySet="BibleWorkShop" />
+            <End Role="RegistrationMaster" EntitySet="RegistrationMaster" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BibleCommentary">
+          <Key>
+            <PropertyRef Name="BibleCommentaryId" />
+          </Key>
+          <Property Name="BibleCommentaryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BibleCommentaryDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BibleCommentary" Type="int" />
+          <Property Name="DownloadedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadedIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="BibleDictionary">
+          <Key>
+            <PropertyRef Name="BibleDictionaryId" />
+          </Key>
+          <Property Name="BibleDictionaryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BibleDictionaryDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BibleDictionaryId" Type="int" />
+          <Property Name="DownloadedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadedIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="BibleWorkShop">
+          <Key>
+            <PropertyRef Name="BWSID" />
+          </Key>
+          <Property Name="BWSID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BWSCode" Type="varchar" MaxLength="50" />
+          <Property Name="Place" Type="nvarchar(max)" />
+          <Property Name="Title" Type="varchar" MaxLength="500" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="WorkShopNo" Type="int" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="BiblicalTheology">
+          <Key>
+            <PropertyRef Name="BiblicalTheologyId" />
+          </Key>
+          <Property Name="BiblicalTheologyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BiblicalTheologyDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BiblicalTheologyId" Type="int" />
+          <Property Name="DownloadedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadedIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="BookRequest">
+          <Key>
+            <PropertyRef Name="BookRequestId" />
+          </Key>
+          <Property Name="BookRequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="BookTitle" Type="nvarchar(max)" />
+          <Property Name="BookAuthor" Type="nvarchar(max)" />
+          <Property Name="BookCallNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutBook" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BooksRequest">
+          <Key>
+            <PropertyRef Name="BRId" />
+          </Key>
+          <Property Name="BRId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="BookId" Type="int" />
+          <Property Name="IsStatus" Type="bit" />
+          <Property Name="Requestdate" Type="datetime" />
+          <Property Name="ResponseDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="ChaptersInfo">
+          <Key>
+            <PropertyRef Name="ChapterId" />
+          </Key>
+          <Property Name="ChapterId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ChapterNameTamil" Type="varchar" MaxLength="50" />
+          <Property Name="ChapterNameEnglish" Type="varchar" MaxLength="50" />
+          <Property Name="LastChapter" Type="int" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentId" Type="varchar" MaxLength="50" />
+          <Property Name="DocumentName" Type="varchar(max)" />
+          <Property Name="CommentName" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="Ratings" Type="int" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="CommentsAndSuggestions">
+          <Key>
+            <PropertyRef Name="CommentsAndSuggestionsId" />
+          </Key>
+          <Property Name="CommentsAndSuggestionsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="CommentsAndSuggestions" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Dailyverses">
+          <Key>
+            <PropertyRef Name="VersesId" />
+          </Key>
+          <Property Name="VersesId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="VersesContent" Type="varchar(max)" />
+          <Property Name="VersesExplanation" Type="varchar(max)" />
+          <Property Name="ChapterId" Type="int" Nullable="false" />
+          <Property Name="ChapterNo" Type="int" />
+          <Property Name="VersesFrom" Type="int" />
+          <Property Name="VersesTo" Type="int" />
+          <Property Name="ShowingDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="IntId" />
+          </Key>
+          <Property Name="IntId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentID" Type="varchar" MaxLength="15" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="DownloadCount" Type="int" />
+          <Property Name="DocumentReference" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="ImagesPath" Type="varchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="updatedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentId" Type="int" />
+          <Property Name="DownloadedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="EBooksDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BooKId" Type="int" />
+          <Property Name="DownloadedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="EBooksIndex">
+          <Key>
+            <PropertyRef Name="BooKId" />
+          </Key>
+          <Property Name="BooKId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="NoOfPage" Type="int" />
+          <Property Name="Language" Type="varchar" MaxLength="25" />
+          <Property Name="ContentStatus" Type="bit" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EmailMessage">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailID" Type="varchar" MaxLength="150" />
+          <Property Name="EmailPassword" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="LibraryIndex">
+          <Key>
+            <PropertyRef Name="BooKId" />
+          </Key>
+          <Property Name="BooKId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar(max)" />
+          <Property Name="Author" Type="varchar" MaxLength="500" />
+          <Property Name="FilePath" Type="varchar" MaxLength="500" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="NoOfPage" Type="int" />
+          <Property Name="Language" Type="varchar" MaxLength="25" />
+          <Property Name="ContentStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="LibrayBook">
+          <Key>
+            <PropertyRef Name="ContentId" />
+          </Key>
+          <Property Name="ContentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BooKId" Type="int" />
+          <Property Name="PageNo" Type="int" />
+          <Property Name="BookContent" Type="varchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="LibrayDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BooKId" Type="int" />
+          <Property Name="DownloadedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="LogError">
+          <Key>
+            <PropertyRef Name="LogErrorId" />
+          </Key>
+          <Property Name="LogErrorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorMessage" Type="nvarchar(max)" />
+          <Property Name="StackTrace" Type="nvarchar(max)" />
+          <Property Name="LogDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LoggedInDetails">
+          <Key>
+            <PropertyRef Name="LoggedInId" />
+          </Key>
+          <Property Name="LoggedInId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LoggedInBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastLoggedInDateAndTime" Type="datetime" />
+          <Property Name="LoggedInCountPerDay" Type="int" />
+        </EntityType>
+        <EntityType Name="MarianBook">
+          <Key>
+            <PropertyRef Name="MarianBookId" />
+          </Key>
+          <Property Name="MarianBookId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MarianBookDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MarianBookId" Type="int" />
+          <Property Name="DownloadedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="MarianStudy">
+          <Key>
+            <PropertyRef Name="MarianStudyId" />
+          </Key>
+          <Property Name="MarianStudyId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MarianStudyDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MarianStudyId" Type="int" />
+          <Property Name="DownloadedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="PrayerNote">
+          <Key>
+            <PropertyRef Name="PrayerNoteId" />
+          </Key>
+          <Property Name="PrayerNoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="PrayerDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="PrayerNoteDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PrayerNoteId" Type="int" />
+          <Property Name="DownloadedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="PrayerRain">
+          <Key>
+            <PropertyRef Name="PrayerRainId" />
+          </Key>
+          <Property Name="PrayerRainId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RefPrayerRainId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Verses" Type="nvarchar(max)" />
+          <Property Name="Prayer" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+          <Property Name="EditEndDateAndTime" Type="datetime" />
+          <Property Name="PrayerRainFilePath" Type="varchar" MaxLength="1000" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsEditable" Type="bit" />
+          <Property Name="IsEmailSent" Type="bit" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="ApprovedBy" Type="int" />
+          <Property Name="UploadedBy" Type="int" />
+          <Property Name="ApprovedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PrayerRainDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PrayerRainId" Type="int" />
+          <Property Name="DownloadedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="RegistrationMaster">
+          <Key>
+            <PropertyRef Name="RMID" />
+          </Key>
+          <Property Name="RMID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BWSID" Type="int" />
+          <Property Name="EmailId" Type="varchar" MaxLength="200" />
+          <Property Name="Name" Type="varchar" MaxLength="200" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="15" />
+          <Property Name="Qualification" Type="int" />
+          <Property Name="ParticipantType" Type="varchar" MaxLength="100" />
+          <Property Name="NeedOfAccommodation" Type="bit" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SinaiLetter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SinaiLetterDownloadDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SinaiLetterId" Type="int" />
+          <Property Name="DownloadedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadedIP" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="SpiritualArticle">
+          <Key>
+            <PropertyRef Name="SpiritualArticleId" />
+          </Key>
+          <Property Name="SpiritualArticleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SpiritualArticleDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SpiritualArticleId" Type="int" />
+          <Property Name="DownloadedBy" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadeIP" Type="varchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="StudyBible">
+          <Key>
+            <PropertyRef Name="StudyBibleId" />
+          </Key>
+          <Property Name="StudyBibleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedDateAndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="StudyBibleDownloadDetails">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StudyBibleId" Type="int" />
+          <Property Name="DownloadedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedDateTime" Type="datetime" />
+          <Property Name="DownloadedIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DownloadedLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DownloadCount" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="15" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar(max)" />
+          <Property Name="UserIP" Type="varchar" MaxLength="50" />
+          <Property Name="Location" Type="varchar" MaxLength="50" />
+          <Property Name="UserType" Type="varchar" MaxLength="20" />
+          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="IsNotification" Type="bit" />
+        </EntityType>
+        <Association Name="FK_BooksRequest_LibraryIndex">
+          <End Role="LibraryIndex" Type="ElshaddaiModel.Store.LibraryIndex" Multiplicity="0..1" />
+          <End Role="BooksRequest" Type="ElshaddaiModel.Store.BooksRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="BooksRequest">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BooksRequest_Users">
+          <End Role="Users" Type="ElshaddaiModel.Store.Users" Multiplicity="0..1" />
+          <End Role="BooksRequest" Type="ElshaddaiModel.Store.BooksRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="BooksRequest">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dailyverses_ChaptersInfo">
+          <End Role="ChaptersInfo" Type="ElshaddaiModel.Store.ChaptersInfo" Multiplicity="1" />
+          <End Role="Dailyverses" Type="ElshaddaiModel.Store.Dailyverses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChaptersInfo">
+              <PropertyRef Name="ChapterId" />
+            </Principal>
+            <Dependent Role="Dailyverses">
+              <PropertyRef Name="ChapterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documents_Category">
+          <End Role="Category" Type="ElshaddaiModel.Store.Category" Multiplicity="0..1" />
+          <End Role="Documents" Type="ElshaddaiModel.Store.Documents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DownloadDetails_Documents">
+          <End Role="Documents" Type="ElshaddaiModel.Store.Documents" Multiplicity="0..1" />
+          <End Role="DownloadDetails" Type="ElshaddaiModel.Store.DownloadDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="IntId" />
+            </Principal>
+            <Dependent Role="DownloadDetails">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EBooksDownloadDetails_EBooksIndex">
+          <End Role="EBooksIndex" Type="ElshaddaiModel.Store.EBooksIndex" Multiplicity="0..1" />
+          <End Role="EBooksDownloadDetails" Type="ElshaddaiModel.Store.EBooksDownloadDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EBooksIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="EBooksDownloadDetails">
+              <PropertyRef Name="BooKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LibrayBook_LibraryIndex">
+          <End Role="LibraryIndex" Type="ElshaddaiModel.Store.LibraryIndex" Multiplicity="0..1" />
+          <End Role="LibrayBook" Type="ElshaddaiModel.Store.LibrayBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="LibrayBook">
+              <PropertyRef Name="BooKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LibrayDownloadDetails_LibraryIndex">
+          <End Role="LibraryIndex" Type="ElshaddaiModel.Store.LibraryIndex" Multiplicity="0..1" />
+          <End Role="LibrayDownloadDetails" Type="ElshaddaiModel.Store.LibrayDownloadDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="LibrayDownloadDetails">
+              <PropertyRef Name="BooKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegistrationMaster_BibleWorkShop">
+          <End Role="BibleWorkShop" Type="ElshaddaiModel.Store.BibleWorkShop" Multiplicity="0..1" />
+          <End Role="RegistrationMaster" Type="ElshaddaiModel.Store.RegistrationMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BibleWorkShop">
+              <PropertyRef Name="BWSID" />
+            </Principal>
+            <Dependent Role="RegistrationMaster">
+              <PropertyRef Name="BWSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ElshaddaiModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ElshaddaiDBContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BibleCommentaries" EntityType="ElshaddaiModel.BibleCommentary" />
+          <EntitySet Name="BibleCommentaryDownloadDetails" EntityType="ElshaddaiModel.BibleCommentaryDownloadDetail" />
+          <EntitySet Name="BibleDictionaries" EntityType="ElshaddaiModel.BibleDictionary" />
+          <EntitySet Name="BibleDictionaryDownloadDetails" EntityType="ElshaddaiModel.BibleDictionaryDownloadDetail" />
+          <EntitySet Name="BibleWorkShops" EntityType="ElshaddaiModel.BibleWorkShop" />
+          <EntitySet Name="BiblicalTheologies" EntityType="ElshaddaiModel.BiblicalTheology" />
+          <EntitySet Name="BiblicalTheologyDownloadDetails" EntityType="ElshaddaiModel.BiblicalTheologyDownloadDetail" />
+          <EntitySet Name="BookRequests" EntityType="ElshaddaiModel.BookRequest" />
+          <EntitySet Name="BooksRequests" EntityType="ElshaddaiModel.BooksRequest" />
+          <EntitySet Name="Categories" EntityType="ElshaddaiModel.Category" />
+          <EntitySet Name="ChaptersInfoes" EntityType="ElshaddaiModel.ChaptersInfo" />
+          <EntitySet Name="Comments" EntityType="ElshaddaiModel.Comment" />
+          <EntitySet Name="CommentsAndSuggestions" EntityType="ElshaddaiModel.CommentsAndSuggestion" />
+          <EntitySet Name="Dailyverses" EntityType="ElshaddaiModel.Dailyvers" />
+          <EntitySet Name="Documents" EntityType="ElshaddaiModel.Document" />
+          <EntitySet Name="DownloadDetails" EntityType="ElshaddaiModel.DownloadDetail" />
+          <EntitySet Name="EBooksDownloadDetails" EntityType="ElshaddaiModel.EBooksDownloadDetail" />
+          <EntitySet Name="EBooksIndexes" EntityType="ElshaddaiModel.EBooksIndex" />
+          <EntitySet Name="EmailMessages" EntityType="ElshaddaiModel.EmailMessage" />
+          <EntitySet Name="LibraryIndexes" EntityType="ElshaddaiModel.LibraryIndex" />
+          <EntitySet Name="LibrayBooks" EntityType="ElshaddaiModel.LibrayBook" />
+          <EntitySet Name="LibrayDownloadDetails" EntityType="ElshaddaiModel.LibrayDownloadDetail" />
+          <EntitySet Name="LogErrors" EntityType="ElshaddaiModel.LogError" />
+          <EntitySet Name="LoggedInDetails" EntityType="ElshaddaiModel.LoggedInDetail" />
+          <EntitySet Name="MarianBooks" EntityType="ElshaddaiModel.MarianBook" />
+          <EntitySet Name="MarianBookDownloadDetails" EntityType="ElshaddaiModel.MarianBookDownloadDetail" />
+          <EntitySet Name="MarianStudies" EntityType="ElshaddaiModel.MarianStudy" />
+          <EntitySet Name="MarianStudyDownloadDetails" EntityType="ElshaddaiModel.MarianStudyDownloadDetail" />
+          <EntitySet Name="PrayerNotes" EntityType="ElshaddaiModel.PrayerNote" />
+          <EntitySet Name="PrayerNoteDownloadDetails" EntityType="ElshaddaiModel.PrayerNoteDownloadDetail" />
+          <EntitySet Name="PrayerRains" EntityType="ElshaddaiModel.PrayerRain" />
+          <EntitySet Name="PrayerRainDownloadDetails" EntityType="ElshaddaiModel.PrayerRainDownloadDetail" />
+          <EntitySet Name="RegistrationMasters" EntityType="ElshaddaiModel.RegistrationMaster" />
+          <EntitySet Name="SinaiLetters" EntityType="ElshaddaiModel.SinaiLetter" />
+          <EntitySet Name="SinaiLetterDownloadDetails" EntityType="ElshaddaiModel.SinaiLetterDownloadDetail" />
+          <EntitySet Name="SpiritualArticles" EntityType="ElshaddaiModel.SpiritualArticle" />
+          <EntitySet Name="SpiritualArticleDownloadDetails" EntityType="ElshaddaiModel.SpiritualArticleDownloadDetail" />
+          <EntitySet Name="StudyBibles" EntityType="ElshaddaiModel.StudyBible" />
+          <EntitySet Name="StudyBibleDownloadDetails" EntityType="ElshaddaiModel.StudyBibleDownloadDetail" />
+          <EntitySet Name="Users" EntityType="ElshaddaiModel.User" />
+          <AssociationSet Name="FK_RegistrationMaster_BibleWorkShop" Association="ElshaddaiModel.FK_RegistrationMaster_BibleWorkShop">
+            <End Role="BibleWorkShop" EntitySet="BibleWorkShops" />
+            <End Role="RegistrationMaster" EntitySet="RegistrationMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BooksRequest_LibraryIndex" Association="ElshaddaiModel.FK_BooksRequest_LibraryIndex">
+            <End Role="LibraryIndex" EntitySet="LibraryIndexes" />
+            <End Role="BooksRequest" EntitySet="BooksRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BooksRequest_Users" Association="ElshaddaiModel.FK_BooksRequest_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="BooksRequest" EntitySet="BooksRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Documents_Category" Association="ElshaddaiModel.FK_Documents_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Documents" EntitySet="Documents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dailyverses_ChaptersInfo" Association="ElshaddaiModel.FK_Dailyverses_ChaptersInfo">
+            <End Role="ChaptersInfo" EntitySet="ChaptersInfoes" />
+            <End Role="Dailyverses" EntitySet="Dailyverses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DownloadDetails_Documents" Association="ElshaddaiModel.FK_DownloadDetails_Documents">
+            <End Role="Documents" EntitySet="Documents" />
+            <End Role="DownloadDetails" EntitySet="DownloadDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EBooksDownloadDetails_EBooksIndex" Association="ElshaddaiModel.FK_EBooksDownloadDetails_EBooksIndex">
+            <End Role="EBooksIndex" EntitySet="EBooksIndexes" />
+            <End Role="EBooksDownloadDetails" EntitySet="EBooksDownloadDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LibrayBook_LibraryIndex" Association="ElshaddaiModel.FK_LibrayBook_LibraryIndex">
+            <End Role="LibraryIndex" EntitySet="LibraryIndexes" />
+            <End Role="LibrayBook" EntitySet="LibrayBooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LibrayDownloadDetails_LibraryIndex" Association="ElshaddaiModel.FK_LibrayDownloadDetails_LibraryIndex">
+            <End Role="LibraryIndex" EntitySet="LibraryIndexes" />
+            <End Role="LibrayDownloadDetails" EntitySet="LibrayDownloadDetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BibleCommentary">
+          <Key>
+            <PropertyRef Name="BibleCommentaryId" />
+          </Key>
+          <Property Name="BibleCommentaryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BibleCommentaryDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BibleCommentary" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadedIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BibleDictionary">
+          <Key>
+            <PropertyRef Name="BibleDictionaryId" />
+          </Key>
+          <Property Name="BibleDictionaryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BibleDictionaryDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BibleDictionaryId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadedIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BibleWorkShop">
+          <Key>
+            <PropertyRef Name="BWSID" />
+          </Key>
+          <Property Name="BWSID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BWSCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Place" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="WorkShopNo" Type="Int32" />
+          <Property Name="FilePath" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="RegistrationMasters" Relationship="ElshaddaiModel.FK_RegistrationMaster_BibleWorkShop" FromRole="BibleWorkShop" ToRole="RegistrationMaster" />
+        </EntityType>
+        <EntityType Name="BiblicalTheology">
+          <Key>
+            <PropertyRef Name="BiblicalTheologyId" />
+          </Key>
+          <Property Name="BiblicalTheologyId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BiblicalTheologyDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BiblicalTheologyId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadedIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BookRequest">
+          <Key>
+            <PropertyRef Name="BookRequestId" />
+          </Key>
+          <Property Name="BookRequestId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BookTitle" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BookAuthor" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BookCallNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AboutBook" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BooksRequest">
+          <Key>
+            <PropertyRef Name="BRId" />
+          </Key>
+          <Property Name="BRId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="BookId" Type="Int32" />
+          <Property Name="IsStatus" Type="Boolean" />
+          <Property Name="Requestdate" Type="DateTime" Precision="3" />
+          <Property Name="ResponseDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="LibraryIndex" Relationship="ElshaddaiModel.FK_BooksRequest_LibraryIndex" FromRole="BooksRequest" ToRole="LibraryIndex" />
+          <NavigationProperty Name="User" Relationship="ElshaddaiModel.FK_BooksRequest_Users" FromRole="BooksRequest" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Documents" Relationship="ElshaddaiModel.FK_Documents_Category" FromRole="Category" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="ChaptersInfo">
+          <Key>
+            <PropertyRef Name="ChapterId" />
+          </Key>
+          <Property Name="ChapterId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ChapterNameTamil" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ChapterNameEnglish" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastChapter" Type="Int32" />
+          <NavigationProperty Name="Dailyverses" Relationship="ElshaddaiModel.FK_Dailyverses_ChaptersInfo" FromRole="ChaptersInfo" ToRole="Dailyverses" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DocumentName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CommentName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Ratings" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CommentsAndSuggestion">
+          <Key>
+            <PropertyRef Name="CommentsAndSuggestionsId" />
+          </Key>
+          <Property Name="CommentsAndSuggestionsId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CommentsAndSuggestions" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Dailyvers">
+          <Key>
+            <PropertyRef Name="VersesId" />
+          </Key>
+          <Property Name="VersesId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VersesContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="VersesExplanation" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ChapterId" Type="Int32" Nullable="false" />
+          <Property Name="ChapterNo" Type="Int32" />
+          <Property Name="VersesFrom" Type="Int32" />
+          <Property Name="VersesTo" Type="Int32" />
+          <Property Name="ShowingDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ChaptersInfo" Relationship="ElshaddaiModel.FK_Dailyverses_ChaptersInfo" FromRole="Dailyverses" ToRole="ChaptersInfo" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="IntId" />
+          </Key>
+          <Property Name="IntId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentID" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadCount" Type="Int32" />
+          <Property Name="DocumentReference" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="ImagesPath" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="updatedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Category" Relationship="ElshaddaiModel.FK_Documents_Category" FromRole="Documents" ToRole="Category" />
+          <NavigationProperty Name="DownloadDetails" Relationship="ElshaddaiModel.FK_DownloadDetails_Documents" FromRole="Documents" ToRole="DownloadDetails" />
+        </EntityType>
+        <EntityType Name="DownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+          <NavigationProperty Name="Document" Relationship="ElshaddaiModel.FK_DownloadDetails_Documents" FromRole="DownloadDetails" ToRole="Documents" />
+        </EntityType>
+        <EntityType Name="EBooksDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BooKId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+          <NavigationProperty Name="EBooksIndex" Relationship="ElshaddaiModel.FK_EBooksDownloadDetails_EBooksIndex" FromRole="EBooksDownloadDetails" ToRole="EBooksIndex" />
+        </EntityType>
+        <EntityType Name="EBooksIndex">
+          <Key>
+            <PropertyRef Name="BooKId" />
+          </Key>
+          <Property Name="BooKId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="NoOfPage" Type="Int32" />
+          <Property Name="Language" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="ContentStatus" Type="Boolean" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="EBooksDownloadDetails" Relationship="ElshaddaiModel.FK_EBooksDownloadDetails_EBooksIndex" FromRole="EBooksIndex" ToRole="EBooksDownloadDetails" />
+        </EntityType>
+        <EntityType Name="EmailMessage">
+          <Key>
+            <PropertyRef Name="EID" />
+          </Key>
+          <Property Name="EID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailID" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="EmailPassword" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LibraryIndex">
+          <Key>
+            <PropertyRef Name="BooKId" />
+          </Key>
+          <Property Name="BooKId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="NoOfPage" Type="Int32" />
+          <Property Name="Language" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="ContentStatus" Type="Boolean" />
+          <NavigationProperty Name="BooksRequests" Relationship="ElshaddaiModel.FK_BooksRequest_LibraryIndex" FromRole="LibraryIndex" ToRole="BooksRequest" />
+          <NavigationProperty Name="LibrayBooks" Relationship="ElshaddaiModel.FK_LibrayBook_LibraryIndex" FromRole="LibraryIndex" ToRole="LibrayBook" />
+          <NavigationProperty Name="LibrayDownloadDetails" Relationship="ElshaddaiModel.FK_LibrayDownloadDetails_LibraryIndex" FromRole="LibraryIndex" ToRole="LibrayDownloadDetails" />
+        </EntityType>
+        <EntityType Name="LibrayBook">
+          <Key>
+            <PropertyRef Name="ContentId" />
+          </Key>
+          <Property Name="ContentId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BooKId" Type="Int32" />
+          <Property Name="PageNo" Type="Int32" />
+          <Property Name="BookContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="LibraryIndex" Relationship="ElshaddaiModel.FK_LibrayBook_LibraryIndex" FromRole="LibrayBook" ToRole="LibraryIndex" />
+        </EntityType>
+        <EntityType Name="LibrayDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BooKId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+          <NavigationProperty Name="LibraryIndex" Relationship="ElshaddaiModel.FK_LibrayDownloadDetails_LibraryIndex" FromRole="LibrayDownloadDetails" ToRole="LibraryIndex" />
+        </EntityType>
+        <EntityType Name="LogError">
+          <Key>
+            <PropertyRef Name="LogErrorId" />
+          </Key>
+          <Property Name="LogErrorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LogDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="LoggedInDetail">
+          <Key>
+            <PropertyRef Name="LoggedInId" />
+          </Key>
+          <Property Name="LoggedInId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LoggedInBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastLoggedInDateAndTime" Type="DateTime" Precision="3" />
+          <Property Name="LoggedInCountPerDay" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MarianBook">
+          <Key>
+            <PropertyRef Name="MarianBookId" />
+          </Key>
+          <Property Name="MarianBookId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MarianBookDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MarianBookId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MarianStudy">
+          <Key>
+            <PropertyRef Name="MarianStudyId" />
+          </Key>
+          <Property Name="MarianStudyId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MarianStudyDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MarianStudyId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PrayerNote">
+          <Key>
+            <PropertyRef Name="PrayerNoteId" />
+          </Key>
+          <Property Name="PrayerNoteId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PrayerDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PrayerNoteDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PrayerNoteId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PrayerRain">
+          <Key>
+            <PropertyRef Name="PrayerRainId" />
+          </Key>
+          <Property Name="PrayerRainId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RefPrayerRainId" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Verses" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Prayer" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+          <Property Name="EditEndDateAndTime" Type="DateTime" Precision="3" />
+          <Property Name="PrayerRainFilePath" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="FileName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsEditable" Type="Boolean" />
+          <Property Name="IsEmailSent" Type="Boolean" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="ApprovedBy" Type="Int32" />
+          <Property Name="UploadedBy" Type="Int32" />
+          <Property Name="ApprovedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PrayerRainDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PrayerRainId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RegistrationMaster">
+          <Key>
+            <PropertyRef Name="RMID" />
+          </Key>
+          <Property Name="RMID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BWSID" Type="Int32" />
+          <Property Name="EmailId" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Qualification" Type="Int32" />
+          <Property Name="ParticipantType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="NeedOfAccommodation" Type="Boolean" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="BibleWorkShop" Relationship="ElshaddaiModel.FK_RegistrationMaster_BibleWorkShop" FromRole="RegistrationMaster" ToRole="BibleWorkShop" />
+        </EntityType>
+        <EntityType Name="SinaiLetter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FilePath" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SinaiLetterDownloadDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SinaiLetterId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadedIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SpiritualArticle">
+          <Key>
+            <PropertyRef Name="SpiritualArticleId" />
+          </Key>
+          <Property Name="SpiritualArticleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SpiritualArticleDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SpiritualArticleId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadeIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StudyBible">
+          <Key>
+            <PropertyRef Name="StudyBibleId" />
+          </Key>
+          <Property Name="StudyBibleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedDateAndTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="StudyBibleDownloadDetail">
+          <Key>
+            <PropertyRef Name="DownloadId" />
+          </Key>
+          <Property Name="DownloadId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StudyBibleId" Type="Int32" />
+          <Property Name="DownloadedBy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="DownloadedIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DownloadedLocation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DownloadCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Mobile" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="UserIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Location" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="IsNotification" Type="Boolean" />
+          <NavigationProperty Name="BooksRequests" Relationship="ElshaddaiModel.FK_BooksRequest_Users" FromRole="Users" ToRole="BooksRequest" />
+        </EntityType>
+        <Association Name="FK_RegistrationMaster_BibleWorkShop">
+          <End Role="BibleWorkShop" Type="ElshaddaiModel.BibleWorkShop" Multiplicity="0..1" />
+          <End Role="RegistrationMaster" Type="ElshaddaiModel.RegistrationMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BibleWorkShop">
+              <PropertyRef Name="BWSID" />
+            </Principal>
+            <Dependent Role="RegistrationMaster">
+              <PropertyRef Name="BWSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BooksRequest_LibraryIndex">
+          <End Role="LibraryIndex" Type="ElshaddaiModel.LibraryIndex" Multiplicity="0..1" />
+          <End Role="BooksRequest" Type="ElshaddaiModel.BooksRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="BooksRequest">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BooksRequest_Users">
+          <End Role="Users" Type="ElshaddaiModel.User" Multiplicity="0..1" />
+          <End Role="BooksRequest" Type="ElshaddaiModel.BooksRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="BooksRequest">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Documents_Category">
+          <End Role="Category" Type="ElshaddaiModel.Category" Multiplicity="0..1" />
+          <End Role="Documents" Type="ElshaddaiModel.Document" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Documents">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dailyverses_ChaptersInfo">
+          <End Role="ChaptersInfo" Type="ElshaddaiModel.ChaptersInfo" Multiplicity="1" />
+          <End Role="Dailyverses" Type="ElshaddaiModel.Dailyvers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChaptersInfo">
+              <PropertyRef Name="ChapterId" />
+            </Principal>
+            <Dependent Role="Dailyverses">
+              <PropertyRef Name="ChapterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DownloadDetails_Documents">
+          <End Role="Documents" Type="ElshaddaiModel.Document" Multiplicity="0..1" />
+          <End Role="DownloadDetails" Type="ElshaddaiModel.DownloadDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Documents">
+              <PropertyRef Name="IntId" />
+            </Principal>
+            <Dependent Role="DownloadDetails">
+              <PropertyRef Name="DocumentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EBooksDownloadDetails_EBooksIndex">
+          <End Role="EBooksIndex" Type="ElshaddaiModel.EBooksIndex" Multiplicity="0..1" />
+          <End Role="EBooksDownloadDetails" Type="ElshaddaiModel.EBooksDownloadDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EBooksIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="EBooksDownloadDetails">
+              <PropertyRef Name="BooKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LibrayBook_LibraryIndex">
+          <End Role="LibraryIndex" Type="ElshaddaiModel.LibraryIndex" Multiplicity="0..1" />
+          <End Role="LibrayBook" Type="ElshaddaiModel.LibrayBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="LibrayBook">
+              <PropertyRef Name="BooKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LibrayDownloadDetails_LibraryIndex">
+          <End Role="LibraryIndex" Type="ElshaddaiModel.LibraryIndex" Multiplicity="0..1" />
+          <End Role="LibrayDownloadDetails" Type="ElshaddaiModel.LibrayDownloadDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LibraryIndex">
+              <PropertyRef Name="BooKId" />
+            </Principal>
+            <Dependent Role="LibrayDownloadDetails">
+              <PropertyRef Name="BooKId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ElshaddaiModelStoreContainer" CdmEntityContainer="ElshaddaiDBContext">
+          <EntitySetMapping Name="BibleCommentaries">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BibleCommentary">
+              <MappingFragment StoreEntitySet="BibleCommentary">
+                <ScalarProperty Name="BibleCommentaryId" ColumnName="BibleCommentaryId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BibleCommentaryDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BibleCommentaryDownloadDetail">
+              <MappingFragment StoreEntitySet="BibleCommentaryDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="BibleCommentary" ColumnName="BibleCommentary" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadedIP" ColumnName="DownloadedIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BibleDictionaries">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BibleDictionary">
+              <MappingFragment StoreEntitySet="BibleDictionary">
+                <ScalarProperty Name="BibleDictionaryId" ColumnName="BibleDictionaryId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BibleDictionaryDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BibleDictionaryDownloadDetail">
+              <MappingFragment StoreEntitySet="BibleDictionaryDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="BibleDictionaryId" ColumnName="BibleDictionaryId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadedIP" ColumnName="DownloadedIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BibleWorkShops">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BibleWorkShop">
+              <MappingFragment StoreEntitySet="BibleWorkShop">
+                <ScalarProperty Name="BWSID" ColumnName="BWSID" />
+                <ScalarProperty Name="BWSCode" ColumnName="BWSCode" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="WorkShopNo" ColumnName="WorkShopNo" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BiblicalTheologies">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BiblicalTheology">
+              <MappingFragment StoreEntitySet="BiblicalTheology">
+                <ScalarProperty Name="BiblicalTheologyId" ColumnName="BiblicalTheologyId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BiblicalTheologyDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BiblicalTheologyDownloadDetail">
+              <MappingFragment StoreEntitySet="BiblicalTheologyDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="BiblicalTheologyId" ColumnName="BiblicalTheologyId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadedIP" ColumnName="DownloadedIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookRequests">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BookRequest">
+              <MappingFragment StoreEntitySet="BookRequest">
+                <ScalarProperty Name="BookRequestId" ColumnName="BookRequestId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+                <ScalarProperty Name="BookAuthor" ColumnName="BookAuthor" />
+                <ScalarProperty Name="BookCallNo" ColumnName="BookCallNo" />
+                <ScalarProperty Name="AboutBook" ColumnName="AboutBook" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BooksRequests">
+            <EntityTypeMapping TypeName="ElshaddaiModel.BooksRequest">
+              <MappingFragment StoreEntitySet="BooksRequest">
+                <ScalarProperty Name="BRId" ColumnName="BRId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="IsStatus" ColumnName="IsStatus" />
+                <ScalarProperty Name="Requestdate" ColumnName="Requestdate" />
+                <ScalarProperty Name="ResponseDate" ColumnName="ResponseDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ElshaddaiModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChaptersInfoes">
+            <EntityTypeMapping TypeName="ElshaddaiModel.ChaptersInfo">
+              <MappingFragment StoreEntitySet="ChaptersInfo">
+                <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+                <ScalarProperty Name="ChapterNameTamil" ColumnName="ChapterNameTamil" />
+                <ScalarProperty Name="ChapterNameEnglish" ColumnName="ChapterNameEnglish" />
+                <ScalarProperty Name="LastChapter" ColumnName="LastChapter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="ElshaddaiModel.Comment">
+              <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="CommentName" ColumnName="CommentName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentsAndSuggestions">
+            <EntityTypeMapping TypeName="ElshaddaiModel.CommentsAndSuggestion">
+              <MappingFragment StoreEntitySet="CommentsAndSuggestions">
+                <ScalarProperty Name="CommentsAndSuggestionsId" ColumnName="CommentsAndSuggestionsId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="CommentsAndSuggestions" ColumnName="CommentsAndSuggestions" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dailyverses">
+            <EntityTypeMapping TypeName="ElshaddaiModel.Dailyvers">
+              <MappingFragment StoreEntitySet="Dailyverses">
+                <ScalarProperty Name="VersesId" ColumnName="VersesId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="VersesContent" ColumnName="VersesContent" />
+                <ScalarProperty Name="VersesExplanation" ColumnName="VersesExplanation" />
+                <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+                <ScalarProperty Name="ChapterNo" ColumnName="ChapterNo" />
+                <ScalarProperty Name="VersesFrom" ColumnName="VersesFrom" />
+                <ScalarProperty Name="VersesTo" ColumnName="VersesTo" />
+                <ScalarProperty Name="ShowingDate" ColumnName="ShowingDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="ElshaddaiModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="IntId" ColumnName="IntId" />
+                <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+                <ScalarProperty Name="DocumentReference" ColumnName="DocumentReference" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ImagesPath" ColumnName="ImagesPath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.DownloadDetail">
+              <MappingFragment StoreEntitySet="DownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EBooksDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.EBooksDownloadDetail">
+              <MappingFragment StoreEntitySet="EBooksDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="BooKId" ColumnName="BooKId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EBooksIndexes">
+            <EntityTypeMapping TypeName="ElshaddaiModel.EBooksIndex">
+              <MappingFragment StoreEntitySet="EBooksIndex">
+                <ScalarProperty Name="BooKId" ColumnName="BooKId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="NoOfPage" ColumnName="NoOfPage" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="ContentStatus" ColumnName="ContentStatus" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailMessages">
+            <EntityTypeMapping TypeName="ElshaddaiModel.EmailMessage">
+              <MappingFragment StoreEntitySet="EmailMessage">
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="EmailPassword" ColumnName="EmailPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LibraryIndexes">
+            <EntityTypeMapping TypeName="ElshaddaiModel.LibraryIndex">
+              <MappingFragment StoreEntitySet="LibraryIndex">
+                <ScalarProperty Name="BooKId" ColumnName="BooKId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="NoOfPage" ColumnName="NoOfPage" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="ContentStatus" ColumnName="ContentStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LibrayBooks">
+            <EntityTypeMapping TypeName="ElshaddaiModel.LibrayBook">
+              <MappingFragment StoreEntitySet="LibrayBook">
+                <ScalarProperty Name="ContentId" ColumnName="ContentId" />
+                <ScalarProperty Name="BooKId" ColumnName="BooKId" />
+                <ScalarProperty Name="PageNo" ColumnName="PageNo" />
+                <ScalarProperty Name="BookContent" ColumnName="BookContent" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LibrayDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.LibrayDownloadDetail">
+              <MappingFragment StoreEntitySet="LibrayDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="BooKId" ColumnName="BooKId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogErrors">
+            <EntityTypeMapping TypeName="ElshaddaiModel.LogError">
+              <MappingFragment StoreEntitySet="LogError">
+                <ScalarProperty Name="LogErrorId" ColumnName="LogErrorId" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="LogDateTime" ColumnName="LogDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoggedInDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.LoggedInDetail">
+              <MappingFragment StoreEntitySet="LoggedInDetails">
+                <ScalarProperty Name="LoggedInId" ColumnName="LoggedInId" />
+                <ScalarProperty Name="LoggedInBy" ColumnName="LoggedInBy" />
+                <ScalarProperty Name="LastLoggedInDateAndTime" ColumnName="LastLoggedInDateAndTime" />
+                <ScalarProperty Name="LoggedInCountPerDay" ColumnName="LoggedInCountPerDay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarianBooks">
+            <EntityTypeMapping TypeName="ElshaddaiModel.MarianBook">
+              <MappingFragment StoreEntitySet="MarianBook">
+                <ScalarProperty Name="MarianBookId" ColumnName="MarianBookId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarianBookDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.MarianBookDownloadDetail">
+              <MappingFragment StoreEntitySet="MarianBookDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="MarianBookId" ColumnName="MarianBookId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarianStudies">
+            <EntityTypeMapping TypeName="ElshaddaiModel.MarianStudy">
+              <MappingFragment StoreEntitySet="MarianStudy">
+                <ScalarProperty Name="MarianStudyId" ColumnName="MarianStudyId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarianStudyDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.MarianStudyDownloadDetail">
+              <MappingFragment StoreEntitySet="MarianStudyDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="MarianStudyId" ColumnName="MarianStudyId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrayerNotes">
+            <EntityTypeMapping TypeName="ElshaddaiModel.PrayerNote">
+              <MappingFragment StoreEntitySet="PrayerNote">
+                <ScalarProperty Name="PrayerNoteId" ColumnName="PrayerNoteId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="PrayerDate" ColumnName="PrayerDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrayerNoteDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.PrayerNoteDownloadDetail">
+              <MappingFragment StoreEntitySet="PrayerNoteDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="PrayerNoteId" ColumnName="PrayerNoteId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrayerRains">
+            <EntityTypeMapping TypeName="ElshaddaiModel.PrayerRain">
+              <MappingFragment StoreEntitySet="PrayerRain">
+                <ScalarProperty Name="PrayerRainId" ColumnName="PrayerRainId" />
+                <ScalarProperty Name="RefPrayerRainId" ColumnName="RefPrayerRainId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Verses" ColumnName="Verses" />
+                <ScalarProperty Name="Prayer" ColumnName="Prayer" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+                <ScalarProperty Name="EditEndDateAndTime" ColumnName="EditEndDateAndTime" />
+                <ScalarProperty Name="PrayerRainFilePath" ColumnName="PrayerRainFilePath" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="IsEditable" ColumnName="IsEditable" />
+                <ScalarProperty Name="IsEmailSent" ColumnName="IsEmailSent" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="ApprovedDateTime" ColumnName="ApprovedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrayerRainDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.PrayerRainDownloadDetail">
+              <MappingFragment StoreEntitySet="PrayerRainDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="PrayerRainId" ColumnName="PrayerRainId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegistrationMasters">
+            <EntityTypeMapping TypeName="ElshaddaiModel.RegistrationMaster">
+              <MappingFragment StoreEntitySet="RegistrationMaster">
+                <ScalarProperty Name="RMID" ColumnName="RMID" />
+                <ScalarProperty Name="BWSID" ColumnName="BWSID" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="ParticipantType" ColumnName="ParticipantType" />
+                <ScalarProperty Name="NeedOfAccommodation" ColumnName="NeedOfAccommodation" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinaiLetters">
+            <EntityTypeMapping TypeName="ElshaddaiModel.SinaiLetter">
+              <MappingFragment StoreEntitySet="SinaiLetter">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinaiLetterDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.SinaiLetterDownloadDetail">
+              <MappingFragment StoreEntitySet="SinaiLetterDownloadDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SinaiLetterId" ColumnName="SinaiLetterId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadedIP" ColumnName="DownloadedIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpiritualArticles">
+            <EntityTypeMapping TypeName="ElshaddaiModel.SpiritualArticle">
+              <MappingFragment StoreEntitySet="SpiritualArticle">
+                <ScalarProperty Name="SpiritualArticleId" ColumnName="SpiritualArticleId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpiritualArticleDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.SpiritualArticleDownloadDetail">
+              <MappingFragment StoreEntitySet="SpiritualArticleDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="SpiritualArticleId" ColumnName="SpiritualArticleId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadeIP" ColumnName="DownloadeIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudyBibles">
+            <EntityTypeMapping TypeName="ElshaddaiModel.StudyBible">
+              <MappingFragment StoreEntitySet="StudyBible">
+                <ScalarProperty Name="StudyBibleId" ColumnName="StudyBibleId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedDateAndTime" ColumnName="CreatedDateAndTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudyBibleDownloadDetails">
+            <EntityTypeMapping TypeName="ElshaddaiModel.StudyBibleDownloadDetail">
+              <MappingFragment StoreEntitySet="StudyBibleDownloadDetails">
+                <ScalarProperty Name="DownloadId" ColumnName="DownloadId" />
+                <ScalarProperty Name="StudyBibleId" ColumnName="StudyBibleId" />
+                <ScalarProperty Name="DownloadedBy" ColumnName="DownloadedBy" />
+                <ScalarProperty Name="DownloadedDateTime" ColumnName="DownloadedDateTime" />
+                <ScalarProperty Name="DownloadedIP" ColumnName="DownloadedIP" />
+                <ScalarProperty Name="DownloadedLocation" ColumnName="DownloadedLocation" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DownloadCount" ColumnName="DownloadCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ElshaddaiModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsNotification" ColumnName="IsNotification" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

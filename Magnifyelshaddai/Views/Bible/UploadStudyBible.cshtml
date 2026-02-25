@@ -1,0 +1,72 @@
+﻿@model Magnifyelshaddai.Models.EDMXModel.StudyBible
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Upload Study Bible - Magnify El Shaddai";
+}
+
+@Html.Partial("_SideMenu")
+<div class="container_display uploadfiles">
+    <h2 class="main-title">Upload Study Bible</h2>
+    <div class="section-title mb60 text-center">
+        @if (ViewBag.Message == "This Document is already uploaded.")
+        {
+            <h3 style="color:red">@ViewBag.Message</h3>
+        }
+        else if (ViewBag.Message == "File uploaded successfully.")
+        {
+            <h3 style="color:green">@ViewBag.Message</h3>
+        }
+        else
+        {
+            <h3 style="color:green">@ViewBag.Message</h3>
+        }
+    </div>
+    @using (Html.BeginForm("UploadStudyBible", "Bible", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="display_body">
+            <div class="row">
+                <div class="form-group mg_elshaddai_possub">
+                    @Html.TextBoxFor(model => model.Title, new { @class = "form-control mg_form_control", @placeholder = "Title" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+                <div class="form-group mg_elshaddai_possub">
+                    @Html.TextBoxFor(model => model.Author, new { @class = "form-control mg_form_control", @placeholder = "Author" })
+                    @Html.ValidationMessageFor(model => model.Author)
+                </div>
+                <div class="form-group mg_elshaddai_possub">
+                    @Html.TextBox("file", "", new { type = "file", id = "FilePath" })
+                    @Html.ValidationMessageFor(model => model.FilePath)
+                </div>
+                <div class="form-group mg_elshaddai_possub btnCenter">
+                    <input class="btn btn-primary" type="submit" value="Upload" id="btnUpload" style="margin-top:20px;" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<style>
+    .display_body .row {
+        width: 70%;
+        margin: auto !important;
+    }
+
+    .container_display input[type="text"], input[type="textarea"] {
+        margin-bottom: 20px !important;
+        width: 100% !important;
+    }
+
+    .container_display .btnCenter {
+        margin: auto !important;
+        width: 25rem;
+    }
+
+    .display_body .btn {
+        font-size: 20px;
+        width: 25rem;
+    }
+</style>

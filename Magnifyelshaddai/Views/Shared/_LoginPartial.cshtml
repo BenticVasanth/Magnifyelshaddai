@@ -1,0 +1,89 @@
+﻿@{
+    if (Session["User"] != null)
+    {        
+        if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Subadmin")
+        {
+            <ul class="nav navbar-nav navbar-right">
+                <li role="separator" class="divider"></li>
+                <li class="nav-item dropdown">
+                    <button class="btn btn-default dropdown-toggle mt-mb-5" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Hi @Session["UserName"] !
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a class="dropdown-item" href="@Url.Action("ChangePassword", "Authentication")">Change Password</a></li>
+                        @*<li role="separator" class="divider"></li>*@
+                        <li><a class="dropdown-item" href="@Url.Action("Logout", "Authentication")">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        }
+        else if (Session["UserType"].ToString() == "Member")
+        {
+
+            <ul class="nav navbar-nav navbar-right">
+                <li role="separator" class="divider"></li>
+                <li class="nav-item dropdown">
+                    <button class="btn btn-default dropdown-toggle mt-mb-5" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Hi @Session["UserName"] !
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a class="dropdown-item" href="@Url.Action("ChangePassword", "Authentication")">Change Password</a></li>
+                        @*<li role="separator" class="divider"></li>*@
+                        <li><a class="dropdown-item" href="@Url.Action("Logout", "Authentication")">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        }        
+        else //For Libraian and User
+        {
+            <ul class="nav navbar-nav navbar-right">
+                <li role="separator" class="divider"></li>
+                <li class="nav-item dropdown">
+                    <button class="btn btn-default dropdown-toggle mt-mb-5" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Hi @Session["UserName"] !
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a class="dropdown-item" href="@Url.Action("ChangePassword", "Authentication")">Change Password</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Logout", "Authentication")">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        }
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Home", "Index", "Authentication")</li>
+            <li><a href="http://localhost:60880/#elsaddai-signin">Sign In</a></li>
+            <li>@Html.ActionLink("Register", "Register", "Authentication")</li>
+        </ul>
+    }
+
+}
+
+<style>
+    #navigation ul.without-login {
+        width: 50%;
+        float: right;
+    }
+
+    #navigation > ul.without-login > li:last-child {
+        width: 45%;
+        padding: 0px;
+        position: relative;
+        top: 10px;
+    }
+
+        #navigation > ul.without-login > li:last-child a {
+            width: 100%;
+            padding: 0;
+        }
+
+            #navigation > ul.without-login > li:last-child a img {
+                width: 100%;
+            }
+</style>
+

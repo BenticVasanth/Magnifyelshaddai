@@ -1,0 +1,42 @@
+﻿@model Magnifyelshaddai.Models.DocumentView
+@using Magnifyelshaddai.Models
+
+@{
+    Layout = null;    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>Employees List</h2>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand">Search</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    @using (Html.BeginForm("Index", "WebGridTest", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                    {
+                        <div class="form-group">
+                            <input type="text" name="search" value="@ViewBag.search" class="form-control" placeholder="search" />
+                        </div>
+                        <button type="submit" value="Search" class="btn btn-success">Search</button>
+                    }
+                </div>
+            </div>
+        </nav>
+        <div>
+            @Html.Partial("_WebGridTest", Model.sabbathDayDocument)
+        </div>
+    </div>
+    <script src="~/Content/jquery-3.1.1.js"></script>
+    <script src="~/Content/bootstrap.min.js"></script>
+</body>
+</html>

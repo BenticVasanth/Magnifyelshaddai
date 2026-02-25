@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../Images/mothermary.png" sizes="16x16" type="image/png">
+    <title></title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../Elshaddai/css/fontawesome_all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../Elshaddai/css/style.css">
+    <link rel="stylesheet" href="../Elshaddai/css/mediaquery.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+    <div class="magnify_elshaddai">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("El-Shaddai", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @*<a class="navbar-brand" href="#">El-Shaddai</a>*@
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse text-uppercase" id="navbar">
+                    @Html.Partial("_LoginPartial")
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="mg_elshaddai_bg">
+        <div class="mg_elshaddai_caption">
+            <div class="mg_english">
+                <p>Behold thy mother! ( John:19:27 )</p>
+            </div>
+            <div class="mg_increase">
+                <p class="text-center">He must increase, but I must decrease. (John 3:30)</p>
+            </div>
+        </div>
+    </div>
+    <div class="mg_elshaddai_about">
+        @RenderBody()
+    </div>
+    <div class="mg_elshaddai_doc text-center">
+        @Html.Action("HomeDocumentsList", "Home")
+    </div>
+    <div class="mg_elshaddai_category">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme mg_elshaddai_list_mgtb">
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="#">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">bible-chapters</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">Mariology</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="@Url.Action("Index", "SabathdayDocument")">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">SABBATH DAY MEDITATION</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="@Url.Action("Index", "SabathdayDocument")">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">DOCUMENTS</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">virgin biblio</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">verses</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">verses</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="mg_elshaddai_list_wrp">
+                                <a href="#" data-toggle="modal" data-target="#myModal">
+                                    <div class="mg_elshaddai_listimg">
+                                        <img src="../Elshaddai/images/bible_chapter.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    <div class="h5 text-uppercase">
+                                        <p class="text-center">verses</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mg_elshaddai_bibledwn">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="h4 mg_weight_700 text-center">
+                        DOWNLOAD HOLY BIBLE - TAMIL and ENGLISH (Application)
+                    </div>
+                    <p class="text-center">Because you have ignored the law of your God, I also will ignore your children.( Hosea 4:6 )</p>
+                    <div class="mg_elshaddai_dbutton">
+                        <button type="button" name="button" class="btn btn-default" onclick="document.getElementById('link').click()">CATHOLIC BIBLE</button>
+                        <a id="link" href="Bible/Setup-Bible-Tamil-English2_1.exe" target="_blank" download hidden></a>
+
+                        <button type="button" name="button" onclick="document.getElementById('link1').click()" class="btn btn-default">KJV BIBLE</button>
+                        <a id="link1" href="Bible/tamilbible_windows.exe" target="_blank" download hidden></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mg_elshaddai_comments_about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10 ">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
+                            <img src="../Elshaddai/images/prayer.jpg" alt="" class="img-responsive mg_elshaddai_prayer">
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="mg-elshaddai_com_sub">
+                                <div class="h3">
+                                    Bible Prayers
+                                </div>
+                                <p>
+                                    Do not be anxious about anything, but in everything, by prayer and petition, with thanksgiving,
+                                    present your requests to God. And the peace of God, which transcends all understanding,
+                                    will guard your hearts and your minds in Christ Jesus" (Philippians 4:6-7).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mg_elshaddai_subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="h2">
+                                Subscribe for Notifications
+                            </div>
+                            <form class="">
+                                <div class="form-group mg_elshaddai_possub">
+                                    <input type="text" class="form-control mg_form_control" placeholder="Email Id">
+                                    <button type="button" name="button" class="btn btn-primary">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mg_elshaddai_footer">
+        <footer id="fh5co-footer" class="fh5co-bg" role="contentinfo">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row row-pb-md">
+                    <div class="col-md-4 fh5co-widget">
+                        <h3>Contact Us.</h3>
+                        <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+                        <p><a class="btn btn-primary" href="Register/Index">Register Now</a></p>
+                    </div>
+                    @*<div class="col-md-8">
+                            <h3>Classes</h3>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <ul class="fh5co-footer-links">
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <ul class="fh5co-footer-links">
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <ul class="fh5co-footer-links">
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                </ul>
+                            </div>
+                        </div>*@
+                </div>
+                <div class="row copyright">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <small class="block">&copy; 2018 | All Rights Reserved.</small>
+
+                            <small class="block">Contact information: <a href="mailto: bibleworkshopteam@magnifyelshaddai.com">bibleworkshopteam@magnifyelshaddai.com</a></small>
+                            <small class="block">Powered by <a href="http://www.magnifyelshaddai.com/">Bible workshop Team</a></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <script src="../Elshaddai/js/script.js"></script>
+    <style>
+        .block {
+            color: #fff;
+        }
+    </style>
+</body>
+</html>

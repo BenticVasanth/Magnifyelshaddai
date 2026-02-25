@@ -1,0 +1,100 @@
+﻿/* Media Query for Advertisement Catholic Img and Madras University Img */
+
+@media (max-width: 992px) {
+    img.img-fluid.backShadow {
+        width: 75%;
+        height: auto;
+        margin: auto;
+    }
+
+    .g-wrapper {
+        margin: 13rem 11rem 3rem 11rem !important;
+    }
+
+    .homepage-prayer {
+        margin-top: 185px !important;
+    }
+
+    .fmg_elshaddai_possub {
+        margin: 0rem 0 5rem 0 !important;
+    }
+
+    #elsaddai-signin {
+        margin-bottom: 10rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .g-wrapper {
+        margin: 9rem 11rem 3rem 11rem !important;
+    }
+
+    .homepage-prayer {
+        margin-top: 125px !important;
+    }
+
+    #elsaddai-signin {
+        margin-bottom: 6rem;
+    }
+}
+
+@media (max-width: 786px) {
+    img.img-fluid.backShadow {
+        width: 90%;
+        height: auto;
+        margin: auto;
+    }
+
+    .g-wrapper {
+        margin: 11rem 7rem 3rem 7rem !important;
+    }
+
+    .homepage-prayer {
+        margin-top: 115px !important;
+    }
+
+    .elsaddai-signin {
+        margin-bottom: 10rem;
+    }
+
+    .fmg_elshaddai_possub div {
+        margin: 2rem 0;
+    }
+
+    .fmg_elshaddai_possub {
+        margin: 0rem 0 2rem 0 !important;
+    }
+}
+
+
+@media (max-width: 690px) {
+    img.img-fluid.backShadow {
+        width: 90%;
+        height: auto;
+        margin: auto;
+    }
+
+    .g-wrapper {
+        margin: 5rem 5rem 0rem 5rem !important;
+    }
+
+    #elsaddai-signin {
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    img.img-fluid.backShadow {
+        width: 90%;
+        height: auto;
+        margin: auto;
+    }
+
+    .g-wrapper {
+        margin: 5rem 3rem 3rem 3rem !important;
+    }
+
+    .fmg_elshaddai_possub {
+        margin: 0rem 0 3rem 0 !important;
+    }
+}

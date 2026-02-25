@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99791008-C1EE-4CBC-8F2E-DC28E079CA29}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Magnifyelshaddai</RootNamespace>
+    <AssemblyName>Magnifyelshaddai</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NReco.PdfGenerator">
+      <HintPath>..\packages\NReco.PdfGenerator.1.1.15\lib\net20\NReco.PdfGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfCreative.Pdf.Graphics">
+      <HintPath>..\packages\PdfGraphics.1.2\lib\net20\PdfCreative.Pdf.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfCreative.Pdf.Writer">
+      <HintPath>..\packages\PdfGraphics.1.2\lib\net20\PdfCreative.Pdf.Writer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Select.HtmlToPdf">
+      <HintPath>C:\Users\Admin\Documents\SelectPdf-HtmlToPdf-v1.2.0\Assemblies\net40\Select.HtmlToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Select.Pdf, Version=25.2.0.0, Culture=neutral, PublicKeyToken=e0ae9f6e27a97018, processorArchitecture=MSIL">
+      <HintPath>..\packages\Select.Pdf.25.2.0\lib\net40\Select.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.30506.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.30506.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BibleController.cs" />
+    <Compile Include="Controllers\BibleWorkshopController.cs" />
+    <Compile Include="Controllers\EBookController.cs" />
+    <Compile Include="Controllers\EvangelicalEventsController.cs" />
+    <Compile Include="Controllers\MariologyController.cs" />
+    <Compile Include="Controllers\PrayerNoteController.cs" />
+    <Compile Include="Controllers\QuickSearchController.cs" />
+    <Compile Include="Controllers\SabbathDayController.cs" />
+    <Compile Include="Controllers\SinaiLetterController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\PrayerRainController.cs" />
+    <Compile Include="Controllers\RegistrationMasterController.cs" />
+    <Compile Include="Controllers\SpiritualArticleController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\VirginBiblioController.cs" />
+    <Compile Include="Controllers\WebGridTestController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BibleCommentaryVM.cs" />
+    <Compile Include="Models\BibleDictionaryVM.cs" />
+    <Compile Include="Models\BiblicalTheologyVM.cs" />
+    <Compile Include="Models\DocumentView.cs" />
+    <Compile Include="Models\DocumentViewModels.cs" />
+    <Compile Include="Models\EBookVM.cs" />
+    <Compile Include="Models\EDMXModel\BibleCommentary.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BibleCommentaryDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BibleDictionary.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BibleDictionaryDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BibleWorkShop.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BiblicalTheology.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BiblicalTheologyDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BookRequest.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\BooksRequest.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\Category.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\ChaptersInfo.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\Comment.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\CommentsAndSuggestion.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\Dailyvers.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\Document.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\DownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\EBooksDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\EBooksIndex.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\ElshaddaiModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElshaddaiModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\ElshaddaiModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\ElshaddaiModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElshaddaiModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\EmailMessage.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\LibraryIndex.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\LibrayBook.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\LibrayDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\LogError.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\LoggedInDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\MarianBook.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\MarianBookDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\MarianStudy.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\MarianStudyDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\PrayerNote.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\PrayerNoteDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\PrayerRain.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\PrayerRainDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\RegistrationMaster.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\SinaiLetter.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\SinaiLetterDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\SpiritualArticle.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\SpiritualArticleDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\StudyBible.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\StudyBibleDownloadDetail.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMXModel\User.cs">
+      <DependentUpon>ElshaddaiModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\LoggedInDetailVM.cs" />
+    <Compile Include="Models\MarianBookVM.cs" />
+    <Compile Include="Models\MarianStudyVM.cs" />
+    <Compile Include="Models\PrayerNoteVM.cs" />
+    <Compile Include="Models\PrayerRainViewModel.cs" />
+    <Compile Include="Models\PrayerRainVM.cs" />
+    <Compile Include="Models\RegistrationViewModel.cs" />
+    <Compile Include="Models\SabbathDayDocumentVM.cs" />
+    <Compile Include="Models\SpiritualArticleVM.cs" />
+    <Compile Include="Models\StudyBibleVM.cs" />
+    <Compile Include="Models\UserViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebGridExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\indexStyle.css" />
+    <Content Include="Content\jquery-3.1.1.min.js" />
+    <Content Include="Content\lightbox\css\lightbox.css" />
+    <Content Include="Content\lightbox\css\lightbox.min.css" />
+    <Content Include="Content\lightbox\images\close.png" />
+    <Content Include="Content\lightbox\images\loading.gif" />
+    <Content Include="Content\lightbox\images\next.png" />
+    <Content Include="Content\lightbox\images\prev.png" />
+    <Content Include="Content\lightbox\js\lightbox-plus-jquery.js" />
+    <Content Include="Content\lightbox\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Content\lightbox\js\lightbox.js" />
+    <Content Include="Content\lightbox\js\lightbox.min.js" />
+    <Content Include="Content\scripts.js" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Documents\SabbathDayMeditation\Image\Mothermary.png" />
+    <Content Include="Elshaddai\css\bootstrap.min.css" />
+    <Content Include="Elshaddai\css\font-awesome.min.css" />
+    <Content Include="Elshaddai\css\sidebar-menu.css" />
+    <Content Include="Elshaddai\css\style.css" />
+    <Content Include="Elshaddai\fonts\fontawesome-webfont.svg" />
+    <Content Include="Elshaddai\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Elshaddai\js\back-to-top.js" />
+    <Content Include="Elshaddai\js\bootstrap.min.js" />
+    <Content Include="Elshaddai\js\jquery.min.js" />
+    <Content Include="Elshaddai\js\jquery.sticky.js" />
+    <Content Include="Elshaddai\js\menumaker.js" />
+    <Content Include="Elshaddai\js\menumaker.min.js" />
+    <Content Include="Elshaddai\js\sidebar-menu.js" />
+    <Content Include="Elshaddai\js\slider-carousel.js" />
+    <Content Include="Elshaddai\js\sticky-header.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Elshaddai\fonts\fontawesome-webfont.eot" />
+    <Content Include="Elshaddai\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Elshaddai\fonts\fontawesome-webfont.woff" />
+    <Content Include="Elshaddai\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Elshaddai\fonts\FontAwesome.otf" />
+    <Content Include="Elshaddai\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Elshaddai\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Elshaddai\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Elshaddai\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\bible_img.jpg" />
+    <Content Include="Images\Evangelical_Events1.png" />
+    <Content Include="Images\Evangelical_Events_bg.png" />
+    <Content Include="Images\img\1\IMG20221218143541.jpg" />
+    <Content Include="Images\img\1\IMG20221218143604.jpg" />
+    <Content Include="Images\img\1\IMG20221218155748.jpg" />
+    <Content Include="Images\img\1\IMG20221218155751.jpg" />
+    <Content Include="Images\img\1\IMG20221218155812.jpg" />
+    <Content Include="Images\img\1\IMG20221218155814.jpg" />
+    <Content Include="Images\img\2\IMG20221030111215.jpg" />
+    <Content Include="Images\img\2\IMG20221030162621.jpg" />
+    <Content Include="Images\img\2\IMG20221030162625.jpg" />
+    <Content Include="Images\img\2\IMG20221218125522.jpg" />
+    <Content Include="Images\img\2\IMG20221218125525.jpg" />
+    <Content Include="Images\img\2\IMG20221218125550.jpg" />
+    <Content Include="Images\img\2\IMG20221218125552.jpg" />
+    <Content Include="Images\img\3\IMG20220925092830.jpg" />
+    <Content Include="Images\img\3\IMG20220925092845.jpg" />
+    <Content Include="Images\img\3\IMG20220925093034.jpg" />
+    <Content Include="Images\img\3\IMG20220925093038.jpg" />
+    <Content Include="Images\img\3\IMG20220925093049.jpg" />
+    <Content Include="Images\img\3\IMG20220925093051.jpg" />
+    <Content Include="Images\img\3\IMG20220925110641.jpg" />
+    <Content Include="Images\img\3\IMG20220925110655.jpg" />
+    <Content Include="Images\img\3\IMG20220925110658.jpg" />
+    <Content Include="Images\img\4\20220403_190416.jpg" />
+    <Content Include="Images\img\4\20220403_190431.jpg" />
+    <Content Include="Images\img\4\20220403_190441.jpg" />
+    <Content Include="Images\img\4\20220403_190447.jpg" />
+    <Content Include="Images\img\4\IMG20220403122248.jpg" />
+    <Content Include="Images\img\4\IMG20220403151226.jpg" />
+    <Content Include="Images\img\4\IMG20220403181104.jpg" />
+    <Content Include="Images\img\4\IMG20220403191320.jpg" />
+    <Content Include="Images\img\4\IMG20220619200953.jpg" />
+    <Content Include="Images\img\4\IMG20220619201419.jpg" />
+    <Content Include="Images\img\4\IMG20220619201421.jpg" />
+    <Content Include="Images\img\4\IMG20220619201423.jpg" />
+    <Content Include="Images\img\css\multiaccordion.jquery.css" />
+    <Content Include="Images\img\css\multiaccordion.jquery.min.css" />
+    <Content Include="Images\Evangelical_Events.png" />
+    <Content Include="Images\img\js\multiaccordion.jquery.js" />
+    <Content Include="Images\img\js\multiaccordion.jquery.min.js" />
+    <Content Include="Images\img\arrow.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logo_elshaddai.png" />
+    <Content Include="Images\magnifyelshaddai_banner.jpg" />
+    <Content Include="Images\OnlineRegistration.gif" />
+    <Content Include="Images\pdf-icon.png" />
+    <Content Include="Images\poster_a4.jpg" />
+    <Content Include="Images\Prayer_Rain_Logo_1.png" />
+    <Content Include="Images\Sabbath_Day_Logo.png" />
+    <Content Include="Images\Sinai_Letters_Logo_1.png" />
+    <Content Include="Images\underdevelopment.gif" />
+    <Content Include="Images\Virgin_Biblio_Logo.png" />
+    <Content Include="Documents\SabbathDayMeditation\D01_shechinah.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\D02_how_to_christian.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\D03_Fundamentals_about_Creator.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\D04_How_to_memorize_and_Mark_in_the_Bible.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\D05_the_human_spirit.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\D06_Bible_in_180_Chapters.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\D07_40_Day_Bible_Survey_Reading_Plan.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\D11_man _on_three_dimensions.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S08_The_Immutability_of_GOD.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S09_The_Foreknowledge_of_God.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S10_The_Goodness_of_God.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S12_Rules_for_Repentance_in_Torah.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S13_Prayer_for_Self_Examination.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S14_philipians.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S15_63_Facts_about_God.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S16_370_kinds_of_sin.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S17_17_works_of_flesh.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S18_YHWHs_Law_of_blessing.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S19_Pride.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S20_The_Knowledge_of_God.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S21_Gods_Sovereignty.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S22_Anger_the_sin.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S23_Prayer_Secret.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S24_Psalm_119.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S25_The_Angles.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S26_The_Doctrine_of_Angels.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S27_Prayer_of_Understanding_Arthur_W_Pink.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S28_symbol_of_the_son_of_god.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S29_the_two major_consequences_of_sin.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S30_taxonomies_of_sin.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S31_The_PROTEVANGELION.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S32_The_GOSPEL_of_the_BIRTH_OF_MARY.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S33_Declaration_Of_Guiltiness_For_Mouth_Elements.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S34_Daughter_of_Zion.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S35_True Discipleship.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S36_Rules for greater Missionary of GOD.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S37_Cleave_unto_GOD.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S38_Six_stages_of_spiritual_life.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S39_GOD%27S_PASSING_OVER.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S40_Goodness_of_G_D.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S41_Malign_is_a Sin.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S42_Worshipping_The_way_of_God_by_Watchman_Nee.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S43_Attributes_of_Living_Cloud.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\S44_The_secret_meaning_of_Menorah.pdf" />
+    <Content Include="Documents\Bible\New_Testament\1_Corinthians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\1_John.pdf" />
+    <Content Include="Documents\Bible\New_Testament\1_Peter.pdf" />
+    <Content Include="Documents\Bible\New_Testament\1_Thessalonians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\1_Timothy.pdf" />
+    <Content Include="Documents\Bible\New_Testament\2_Corinthians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\2_John.pdf" />
+    <Content Include="Documents\Bible\New_Testament\2_Peter.pdf" />
+    <Content Include="Documents\Bible\New_Testament\2_Thessalonians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\2_Timothy.pdf" />
+    <Content Include="Documents\Bible\New_Testament\3_John.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Acts.pdf" />
+    <Content Include="Documents\Bible\New_Testament\apostle.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Colossians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Ebireyar.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Ebiseyar.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Ephesians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Galatians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Hebrews.pdf" />
+    <Content Include="Documents\Bible\New_Testament\James.pdf" />
+    <Content Include="Documents\Bible\New_Testament\JOHN.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Kalathiyar.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Kolasayar.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Korindhiyar_1.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Korindhiyar_2 copy.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Korindhiyar_2.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Luke.pdf" />
+    <Content Include="Documents\Bible\New_Testament\mark.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Mathew.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Matthew.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Phelimon.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Philemon.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Philip.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Philippians.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Revelation.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Revelation_trim.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Romans.pdf" />
+    <Content Include="Documents\Bible\New_Testament\TITUS.pdf" />
+    <Content Include="Documents\Bible\New_Testament\Yakobu.pdf" />
+    <Content Include="Documents\Bible\New_Testament\YOVAAN_1_2_3.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\1Nalagamam.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\1_Chronicles.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\1_Kings.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\1_samuel.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\2Nala.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\2_Chronicles.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\2_kings.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\2_Samuel.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Aabagook.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\aadhi.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\aagai.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Amos.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Book_of_wisdom.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Daniel.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\deuteronomy.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\deutronomy.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Ecclesiastes.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Eclesiasticus_or_Sirach.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Esra.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Essiah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Esther.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Exodus.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Ezekiel.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Ezra.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Genesis.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Habakkuk.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Haggai.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Hosea.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Isaiah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Jeramiah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Jeremiah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Job.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Joel.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Jonah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\joshua.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Judges.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Lamentations.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Leviticus.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Malachi.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Malkiya.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Meikah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Micah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Nahoom.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Nahum.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Nehemiah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Nehemiya.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Numbers.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Obadiah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Opathiya.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Osiya.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Proverbs.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Psalms.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Pulambal.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Ruth.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Seppaniya.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Song_Of_solomon.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Yaththirikamam.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Zackeriah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Zechariah.pdf" />
+    <Content Include="Documents\Bible\Old_Testament\Zephaniah.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\54_Construction_of_the_Bible.pdf" />
+    <Content Include="Documents\SabbathDayMeditation\55_Hebrew_Greek_Numerical_Values.pdf" />
+    <Content Include="Documents\BIBLEWORKSHOP\BIBLE_WORKSHOP_1_June_2018.zip" />
+    <Content Include="Documents\BIBLEWORKSHOP\Bible_Workshop_2_Trichy_Nov_2018.zip" />
+    <Content Include="Documents\BIBLEWORKSHOP\Bible_Workshop_3_Elagiri_1_February_2019.zip" />
+    <Content Include="Library\1.pdf" />
+    <Content Include="Library\10.pdf" />
+    <Content Include="Library\100.pdf" />
+    <Content Include="Library\101.pdf" />
+    <Content Include="Library\102.pdf" />
+    <Content Include="Library\103.pdf" />
+    <Content Include="Library\104.pdf" />
+    <Content Include="Library\105.pdf" />
+    <Content Include="Library\106.pdf" />
+    <Content Include="Library\107.pdf" />
+    <Content Include="Library\108.pdf" />
+    <Content Include="Library\109.pdf" />
+    <Content Include="Library\11.pdf" />
+    <Content Include="Library\110.pdf" />
+    <Content Include="Library\111.pdf" />
+    <Content Include="Library\112.pdf" />
+    <Content Include="Library\113.pdf" />
+    <Content Include="Library\114.pdf" />
+    <Content Include="Library\115.pdf" />
+    <Content Include="Library\116.pdf" />
+    <Content Include="Library\117.pdf" />
+    <Content Include="Library\118.pdf" />
+    <Content Include="Library\119.pdf" />
+    <Content Include="Library\12.pdf" />
+    <Content Include="Library\120.pdf" />
+    <Content Include="Library\121.pdf" />
+    <Content Include="Library\122.pdf" />
+    <Content Include="Library\123.pdf" />
+    <Content Include="Library\124.pdf" />
+    <Content Include="Library\125.pdf" />
+    <Content Include="Library\126.pdf" />
+    <Content Include="Library\127.pdf" />
+    <Content Include="Library\128.pdf" />
+    <Content Include="Library\129.pdf" />
+    <Content Include="Library\13.pdf" />
+    <Content Include="Library\130.pdf" />
+    <Content Include="Library\131.pdf" />
+    <Content Include="Library\132.pdf" />
+    <Content Include="Library\133.pdf" />
+    <Content Include="Library\134.pdf" />
+    <Content Include="Library\135.pdf" />
+    <Content Include="Library\136.pdf" />
+    <Content Include="Library\137.pdf" />
+    <Content Include="Library\138.pdf" />
+    <Content Include="Library\139.pdf" />
+    <Content Include="Library\14.pdf" />
+    <Content Include="Library\140.pdf" />
+    <Content Include="Library\141.pdf" />
+    <Content Include="Library\142.pdf" />
+    <Content Include="Library\143.pdf" />
+    <Content Include="Library\144.pdf" />
+    <Content Include="Library\145.pdf" />
+    <Content Include="Library\146.pdf" />
+    <Content Include="Library\147.pdf" />
+    <Content Include="Library\148.pdf" />
+    <Content Include="Library\149.pdf" />
+    <Content Include="Library\15.pdf" />
+    <Content Include="Library\150.pdf" />
+    <Content Include="Library\151.pdf" />
+    <Content Include="Library\152.pdf" />
+    <Content Include="Library\153.pdf" />
+    <Content Include="Library\154.pdf" />
+    <Content Include="Library\155.pdf" />
+    <Content Include="Library\156.pdf" />
+    <Content Include="Library\157.pdf" />
+    <Content Include="Library\158.pdf" />
+    <Content Include="Library\159.pdf" />
+    <Content Include="Library\16.pdf" />
+    <Content Include="Library\160.pdf" />
+    <Content Include="Library\161.pdf" />
+    <Content Include="Library\162.pdf" />
+    <Content Include="Library\163.pdf" />
+    <Content Include="Library\164.pdf" />
+    <Content Include="Library\165.pdf" />
+    <Content Include="Library\166.pdf" />
+    <Content Include="Library\167.pdf" />
+    <Content Include="Library\168.pdf" />
+    <Content Include="Library\169.pdf" />
+    <Content Include="Library\17.pdf" />
+    <Content Include="Library\170.pdf" />
+    <Content Include="Library\171.pdf" />
+    <Content Include="Library\172.pdf" />
+    <Content Include="Library\173.pdf" />
+    <Content Include="Library\174.pdf" />
+    <Content Include="Library\175.pdf" />
+    <Content Include="Library\176.pdf" />
+    <Content Include="Library\177.pdf" />
+    <Content Include="Library\178.pdf" />
+    <Content Include="Library\179.pdf" />
+    <Content Include="Library\18.pdf" />
+    <Content Include="Library\180.pdf" />
+    <Content Include="Library\181.pdf" />
+    <Content Include="Library\182.pdf" />
+    <Content Include="Library\183.pdf" />
+    <Content Include="Library\184.pdf" />
+    <Content Include="Library\185.pdf" />
+    <Content Include="Library\186.pdf" />
+    <Content Include="Library\187.pdf" />
+    <Content Include="Library\188.pdf" />
+    <Content Include="Library\189.pdf" />
+    <Content Include="Library\19.pdf" />
+    <Content Include="Library\190.pdf" />
+    <Content Include="Library\2.pdf" />
+    <Content Include="Library\20.pdf" />
+    <Content Include="Library\21.pdf" />
+    <Content Include="Library\22.pdf" />
+    <Content Include="Library\23.pdf" />
+    <Content Include="Library\24.pdf" />
+    <Content Include="Library\244.pdf" />
+    <Content Include="Library\248.pdf" />
+    <Content Include="Library\25.pdf" />
+    <Content Include="Library\26.pdf" />
+    <Content Include="Library\27.pdf" />
+    <Content Include="Library\277.pdf" />
+    <Content Include="Library\278.pdf" />
+    <Content Include="Library\279.pdf" />
+    <Content Include="Library\28.pdf" />
+    <Content Include="Library\280.pdf" />
+    <Content Include="Library\281.pdf" />
+    <Content Include="Library\282.pdf" />
+    <Content Include="Library\283.pdf" />
+    <Content Include="Library\284.pdf" />
+    <Content Include="Library\285.pdf" />
+    <Content Include="Library\286.pdf" />
+    <Content Include="Library\287.pdf" />
+    <Content Include="Library\288.pdf" />
+    <Content Include="Library\289.pdf" />
+    <Content Include="Library\29.pdf" />
+    <Content Include="Library\290.pdf" />
+    <Content Include="Library\291.pdf" />
+    <Content Include="Library\292.pdf" />
+    <Content Include="Library\293.pdf" />
+    <Content Include="Library\294.pdf" />
+    <Content Include="Library\295.pdf" />
+    <Content Include="Library\296.pdf" />
+    <Content Include="Library\297.pdf" />
+    <Content Include="Library\298.pdf" />
+    <Content Include="Library\299.pdf" />
+    <Content Include="Library\3.pdf" />
+    <Content Include="Library\30.pdf" />
+    <Content Include="Library\304.pdf" />
+    <Content Include="Library\305.pdf" />
+    <Content Include="Library\306.pdf" />
+    <Content Include="Library\307.pdf" />
+    <Content Include="Library\308.pdf" />
+    <Content Include="Library\309.pdf" />
+    <Content Include="Library\31.pdf" />
+    <Content Include="Library\310.pdf" />
+    <Content Include="Library\311.pdf" />
+    <Content Include="Library\312.pdf" />
+    <Content Include="Library\313.pdf" />
+    <Content Include="Library\314.pdf" />
+    <Content Include="Library\315.pdf" />
+    <Content Include="Library\316.pdf" />
+    <Content Include="Library\319.pdf" />
+    <Content Include="Library\32.pdf" />
+    <Content Include="Library\320.pdf" />
+    <Content Include="Library\322.pdf" />
+    <Content Include="Library\323.pdf" />
+    <Content Include="Library\324.pdf" />
+    <Content Include="Library\325.pdf" />
+    <Content Include="Library\326.pdf" />
+    <Content Include="Library\327.pdf" />
+    <Content Include="Library\328.pdf" />
+    <Content Include="Library\329.pdf" />
+    <Content Include="Library\33.pdf" />
+    <Content Include="Library\330.pdf" />
+    <Content Include="Library\331.pdf" />
+    <Content Include="Library\332.pdf" />
+    <Content Include="Library\333.pdf" />
+    <Content Include="Library\334.pdf" />
+    <Content Include="Library\335.pdf" />
+    <Content Include="Library\336.pdf" />
+    <Content Include="Library\337.pdf" />
+    <Content Include="Library\338.pdf" />
+    <Content Include="Library\339.pdf" />
+    <Content Include="Library\34.pdf" />
+    <Content Include="Library\340.pdf" />
+    <Content Include="Library\341.pdf" />
+    <Content Include="Library\342.pdf" />
+    <Content Include="Library\343.pdf" />
+    <Content Include="Library\344.pdf" />
+    <Content Include="Library\345.pdf" />
+    <Content Include="Library\346.pdf" />
+    <Content Include="Library\347.pdf" />
+    <Content Include="Library\348.pdf" />
+    <Content Include="Library\349.pdf" />
+    <Content Include="Library\35.pdf" />
+    <Content Include="Library\350.pdf" />
+    <Content Include="Library\351.pdf" />
+    <Content Include="Library\352.pdf" />
+    <Content Include="Library\353.pdf" />
+    <Content Include="Library\354.pdf" />
+    <Content Include="Library\355.pdf" />
+    <Content Include="Library\356.pdf" />
+    <Content Include="Library\357.pdf" />
+    <Content Include="Library\358.pdf" />
+    <Content Include="Library\359.pdf" />
+    <Content Include="Library\36.pdf" />
+    <Content Include="Library\360.pdf" />
+    <Content Include="Library\361.pdf" />
+    <Content Include="Library\362.pdf" />
+    <Content Include="Library\363.pdf" />
+    <Content Include="Library\364.pdf" />
+    <Content Include="Library\365.pdf" />
+    <Content Include="Library\366.pdf" />
+    <Content Include="Library\367.pdf" />
+    <Content Include="Library\368.pdf" />
+    <Content Include="Library\369.pdf" />
+    <Content Include="Library\37.pdf" />
+    <Content Include="Library\370.pdf" />
+    <Content Include="Library\371.pdf" />
+    <Content Include="Library\372.pdf" />
+    <Content Include="Library\373.pdf" />
+    <Content Include="Library\374.pdf" />
+    <Content Include="Library\375.pdf" />
+    <Content Include="Library\376.pdf" />
+    <Content Include="Library\377.pdf" />
+    <Content Include="Library\378.pdf" />
+    <Content Include="Library\379.pdf" />
+    <Content Include="Library\38.pdf" />
+    <Content Include="Library\380.pdf" />
+    <Content Include="Library\381.pdf" />
+    <Content Include="Library\382.pdf" />
+    <Content Include="Library\383.pdf" />
+    <Content Include="Library\384.pdf" />
+    <Content Include="Library\385.pdf" />
+    <Content Include="Library\386.pdf" />
+    <Content Include="Library\387.pdf" />
+    <Content Include="Library\388.pdf" />
+    <Content Include="Library\389.pdf" />
+    <Content Include="Library\39.pdf" />
+    <Content Include="Library\390.pdf" />
+    <Content Include="Library\391.pdf" />
+    <Content Include="Library\392.pdf" />
+    <Content Include="Library\393.pdf" />
+    <Content Include="Library\394.pdf" />
+    <Content Include="Library\395.pdf" />
+    <Content Include="Library\396.pdf" />
+    <Content Include="Library\397.pdf" />
+    <Content Include="Library\398.pdf" />
+    <Content Include="Library\399.pdf" />
+    <Content Include="Library\4.pdf" />
+    <Content Include="Library\40.pdf" />
+    <Content Include="Library\400.pdf" />
+    <Content Include="Library\401.pdf" />
+    <Content Include="Library\402.pdf" />
+    <Content Include="Library\403.pdf" />
+    <Content Include="Library\404.pdf" />
+    <Content Include="Library\405.pdf" />
+    <Content Include="Library\406.pdf" />
+    <Content Include="Library\407.pdf" />
+    <Content Include="Library\408.pdf" />
+    <Content Include="Library\409.pdf" />
+    <Content Include="Library\41.pdf" />
+    <Content Include="Library\410.pdf" />
+    <Content Include="Library\411.pdf" />
+    <Content Include="Library\412.pdf" />
+    <Content Include="Library\413.pdf" />
+    <Content Include="Library\414.pdf" />
+    <Content Include="Library\415.pdf" />
+    <Content Include="Library\416.pdf" />
+    <Content Include="Library\417.pdf" />
+    <Content Include="Library\418.pdf" />
+    <Content Include="Library\419.pdf" />
+    <Content Include="Library\42.pdf" />
+    <Content Include="Library\420.pdf" />
+    <Content Include="Library\421.pdf" />
+    <Content Include="Library\422.pdf" />
+    <Content Include="Library\423.pdf" />
+    <Content Include="Library\424.pdf" />
+    <Content Include="Library\425.pdf" />
+    <Content Include="Library\426.pdf" />
+    <Content Include="Library\427.pdf" />
+    <Content Include="Library\428.pdf" />
+    <Content Include="Library\429.pdf" />
+    <Content Include="Library\43.pdf" />
+    <Content Include="Library\430.pdf" />
+    <Content Include="Library\431.pdf" />
+    <Content Include="Library\432.pdf" />
+    <Content Include="Library\433.pdf" />
+    <Content Include="Library\434.pdf" />
+    <Content Include="Library\435.pdf" />
+    <Content Include="Library\436.pdf" />
+    <Content Include="Library\437.pdf" />
+    <Content Include="Library\438.pdf" />
+    <Content Include="Library\439.pdf" />
+    <Content Include="Library\44.pdf" />
+    <Content Include="Library\440.pdf" />
+    <Content Include="Library\441.pdf" />
+    <Content Include="Library\442.pdf" />
+    <Content Include="Library\443.pdf" />
+    <Content Include="Library\444.pdf" />
+    <Content Include="Library\445.pdf" />
+    <Content Include="Library\446.pdf" />
+    <Content Include="Library\447.pdf" />
+    <Content Include="Library\448.pdf" />
+    <Content Include="Library\449.pdf" />
+    <Content Include="Library\45.pdf" />
+    <Content Include="Library\450.pdf" />
+    <Content Include="Library\451.pdf" />
+    <Content Include="Library\452.pdf" />
+    <Content Include="Library\453.pdf" />
+    <Content Include="Library\454.pdf" />
+    <Content Include="Library\455.pdf" />
+    <Content Include="Library\456.pdf" />
+    <Content Include="Library\457.pdf" />
+    <Content Include="Library\458.pdf" />
+    <Content Include="Library\459.pdf" />
+    <Content Include="Library\46.pdf" />
+    <Content Include="Library\460.pdf" />
+    <Content Include="Library\461.pdf" />
+    <Content Include="Library\462.pdf" />
+    <Content Include="Library\463.pdf" />
+    <Content Include="Library\464.pdf" />
+    <Content Include="Library\465.pdf" />
+    <Content Include="Library\466.pdf" />
+    <Content Include="Library\467.pdf" />
+    <Content Include="Library\468.pdf" />
+    <Content Include="Library\469.pdf" />
+    <Content Include="Library\47.pdf" />
+    <Content Include="Library\470.pdf" />
+    <Content Include="Library\471.pdf" />
+    <Content Include="Library\472.pdf" />
+    <Content Include="Library\473.pdf" />
+    <Content Include="Library\474.pdf" />
+    <Content Include="Library\475.pdf" />
+    <Content Include="Library\476.pdf" />
+    <Content Include="Library\477.pdf" />
+    <Content Include="Library\478.pdf" />
+    <Content Include="Library\479.pdf" />
+    <Content Include="Library\48.pdf" />
+    <Content Include="Library\480.pdf" />
+    <Content Include="Library\481.pdf" />
+    <Content Include="Library\482.pdf" />
+    <Content Include="Library\483.pdf" />
+    <Content Include="Library\484.pdf" />
+    <Content Include="Library\485.pdf" />
+    <Content Include="Library\486.pdf" />
+    <Content Include="Library\487.pdf" />
+    <Content Include="Library\488.pdf" />
+    <Content Include="Library\489.pdf" />
+    <Content Include="Library\49.pdf" />
+    <Content Include="Library\490.pdf" />
+    <Content Include="Library\491.pdf" />
+    <Content Include="Library\492.pdf" />
+    <Content Include="Library\493.pdf" />
+    <Content Include="Library\494.pdf" />
+    <Content Include="Library\495.pdf" />
+    <Content Include="Library\496.pdf" />
+    <Content Include="Library\497.pdf" />
+    <Content Include="Library\498.pdf" />
+    <Content Include="Library\499.pdf" />
+    <Content Include="Library\5.pdf" />
+    <Content Include="Library\50.pdf" />
+    <Content Include="Library\500.pdf" />
+    <Content Include="Library\501.pdf" />
+    <Content Include="Library\502.pdf" />
+    <Content Include="Library\503.pdf" />
+    <Content Include="Library\504.pdf" />
+    <Content Include="Library\505.pdf" />
+    <Content Include="Library\506.pdf" />
+    <Content Include="Library\507.pdf" />
+    <Content Include="Library\508.pdf" />
+    <Content Include="Library\509.pdf" />
+    <Content Include="Library\51.pdf" />
+    <Content Include="Library\510.pdf" />
+    <Content Include="Library\511.pdf" />
+    <Content Include="Library\512.pdf" />
+    <Content Include="Library\513.pdf" />
+    <Content Include="Library\514.pdf" />
+    <Content Include="Library\515.pdf" />
+    <Content Include="Library\516.pdf" />
+    <Content Include="Library\517.pdf" />
+    <Content Include="Library\518.pdf" />
+    <Content Include="Library\519.pdf" />
+    <Content Include="Library\52.pdf" />
+    <Content Include="Library\520.pdf" />
+    <Content Include="Library\521.pdf" />
+    <Content Include="Library\522.pdf" />
+    <Content Include="Library\523.pdf" />
+    <Content Include="Library\524.pdf" />
+    <Content Include="Library\525.pdf" />
+    <Content Include="Library\526.pdf" />
+    <Content Include="Library\527.pdf" />
+    <Content Include="Library\528.pdf" />
+    <Content Include="Library\53.pdf" />
+    <Content Include="Library\530.pdf" />
+    <Content Include="Library\531.pdf" />
+    <Content Include="Library\532.pdf" />
+    <Content Include="Library\533.pdf" />
+    <Content Include="Library\534.pdf" />
+    <Content Include="Library\535.pdf" />
+    <Content Include="Library\536.pdf" />
+    <Content Include="Library\537.pdf" />
+    <Content Include="Library\538.pdf" />
+    <Content Include="Library\539.pdf" />
+    <Content Include="Library\54.pdf" />
+    <Content Include="Library\540.pdf" />
+    <Content Include="Library\541.pdf" />
+    <Content Include="Library\542.pdf" />
+    <Content Include="Library\543.pdf" />
+    <Content Include="Library\544.pdf" />
+    <Content Include="Library\545.pdf" />
+    <Content Include="Library\546.pdf" />
+    <Content Include="Library\547.pdf" />
+    <Content Include="Library\548.pdf" />
+    <Content Include="Library\549.pdf" />
+    <Content Include="Library\55.pdf" />
+    <Content Include="Library\550.pdf" />
+    <Content Include="Library\551.pdf" />
+    <Content Include="Library\552.pdf" />
+    <Content Include="Library\553.pdf" />
+    <Content Include="Library\554.pdf" />
+    <Content Include="Library\555.pdf" />
+    <Content Include="Library\556.pdf" />
+    <Content Include="Library\557.pdf" />
+    <Content Include="Library\558.pdf" />
+    <Content Include="Library\559.pdf" />
+    <Content Include="Library\56.pdf" />
+    <Content Include="Library\560.pdf" />
+    <Content Include="Library\561.pdf" />
+    <Content Include="Library\562.pdf" />
+    <Content Include="Library\563.pdf" />
+    <Content Include="Library\564.pdf" />
+    <Content Include="Library\565.pdf" />
+    <Content Include="Library\566.pdf" />
+    <Content Include="Library\567.pdf" />
+    <Content Include="Library\568.pdf" />
+    <Content Include="Library\569.pdf" />
+    <Content Include="Library\57.pdf" />
+    <Content Include="Library\570.pdf" />
+    <Content Include="Library\571.pdf" />
+    <Content Include="Library\572.pdf" />
+    <Content Include="Library\573.pdf" />
+    <Content Include="Library\574.pdf" />
+    <Content Include="Library\575.pdf" />
+    <Content Include="Library\576.pdf" />
+    <Content Include="Library\577.pdf" />
+    <Content Include="Library\578.pdf" />
+    <Content Include="Library\579.pdf" />
+    <Content Include="Library\58.pdf" />
+    <Content Include="Library\580.pdf" />
+    <Content Include="Library\581.pdf" />
+    <Content Include="Library\582.pdf" />
+    <Content Include="Library\583.pdf" />
+    <Content Include="Library\584.pdf" />
+    <Content Include="Library\585.pdf" />
+    <Content Include="Library\586.pdf" />
+    <Content Include="Library\587.pdf" />
+    <Content Include="Library\588.pdf" />
+    <Content Include="Library\589.pdf" />
+    <Content Include="Library\59.pdf" />
+    <Content Include="Library\590.pdf" />
+    <Content Include="Library\591.pdf" />
+    <Content Include="Library\592.pdf" />
+    <Content Include="Library\593.pdf" />
+    <Content Include="Library\594.pdf" />
+    <Content Include="Library\595.pdf" />
+    <Content Include="Library\596.pdf" />
+    <Content Include="Library\597.pdf" />
+    <Content Include="Library\598.pdf" />
+    <Content Include="Library\599.pdf" />
+    <Content Include="Library\6.pdf" />
+    <Content Include="Library\60.pdf" />
+    <Content Include="Library\600.pdf" />
+    <Content Include="Library\601.pdf" />
+    <Content Include="Library\602.pdf" />
+    <Content Include="Library\603.pdf" />
+    <Content Include="Library\604.pdf" />
+    <Content Include="Library\605.pdf" />
+    <Content Include="Library\606.pdf" />
+    <Content Include="Library\607.pdf" />
+    <Content Include="Library\608.pdf" />
+    <Content Include="Library\609.pdf" />
+    <Content Include="Library\61.pdf" />
+    <Content Include="Library\610.pdf" />
+    <Content Include="Library\611.pdf" />
+    <Content Include="Library\612.pdf" />
+    <Content Include="Library\613.pdf" />
+    <Content Include="Library\614.pdf" />
+    <Content Include="Library\615.pdf" />
+    <Content Include="Library\616.pdf" />
+    <Content Include="Library\617.pdf" />
+    <Content Include="Library\618.pdf" />
+    <Content Include="Library\619.pdf" />
+    <Content Include="Library\62.pdf" />
+    <Content Include="Library\620.pdf" />
+    <Content Include="Library\621.pdf" />
+    <Content Include="Library\622.pdf" />
+    <Content Include="Library\623.pdf" />
+    <Content Include="Library\624.pdf" />
+    <Content Include="Library\625.pdf" />
+    <Content Include="Library\626.pdf" />
+    <Content Include="Library\627.pdf" />
+    <Content Include="Library\628.pdf" />
+    <Content Include="Library\629.pdf" />
+    <Content Include="Library\63.pdf" />
+    <Content Include="Library\630.pdf" />
+    <Content Include="Library\631.pdf" />
+    <Content Include="Library\632.pdf" />
+    <Content Include="Library\633.pdf" />
+    <Content Include="Library\634.pdf" />
+    <Content Include="Library\635.pdf" />
+    <Content Include="Library\636.pdf" />
+    <Content Include="Library\637.pdf" />
+    <Content Include="Library\638.pdf" />
+    <Content Include="Library\639.pdf" />
+    <Content Include="Library\64.pdf" />
+    <Content Include="Library\640.pdf" />
+    <Content Include="Library\641.pdf" />
+    <Content Include="Library\642.pdf" />
+    <Content Include="Library\643.pdf" />
+    <Content Include="Library\644.pdf" />
+    <Content Include="Library\645.pdf" />
+    <Content Include="Library\646.pdf" />
+    <Content Include="Library\647.pdf" />
+    <Content Include="Library\648.pdf" />
+    <Content Include="Library\649.pdf" />
+    <Content Include="Library\65.pdf" />
+    <Content Include="Library\650.pdf" />
+    <Content Include="Library\651.pdf" />
+    <Content Include="Library\652.pdf" />
+    <Content Include="Library\653.pdf" />
+    <Content Include="Library\654.pdf" />
+    <Content Include="Library\655.pdf" />
+    <Content Include="Library\656.pdf" />
+    <Content Include="Library\657.pdf" />
+    <Content Include="Library\658.pdf" />
+    <Content Include="Library\659.pdf" />
+    <Content Include="Library\66.pdf" />
+    <Content Include="Library\660.pdf" />
+    <Content Include="Library\661.pdf" />
+    <Content Include="Library\662.pdf" />
+    <Content Include="Library\67.pdf" />
+    <Content Include="Library\68.pdf" />
+    <Content Include="Library\69.pdf" />
+    <Content Include="Library\7.pdf" />
+    <Content Include="Library\70.pdf" />
+    <Content Include="Library\71.pdf" />
+    <Content Include="Library\72.pdf" />
+    <Content Include="Library\73.pdf" />
+    <Content Include="Library\74.pdf" />
+    <Content Include="Library\75.pdf" />
+    <Content Include="Library\76.pdf" />
+    <Content Include="Library\77.pdf" />
+    <Content Include="Library\78.pdf" />
+    <Content Include="Library\79.pdf" />
+    <Content Include="Library\8.pdf" />
+    <Content Include="Library\80.pdf" />
+    <Content Include="Library\81.pdf" />
+    <Content Include="Library\82.pdf" />
+    <Content Include="Library\83.pdf" />
+    <Content Include="Library\84.pdf" />
+    <Content Include="Library\85.pdf" />
+    <Content Include="Library\86.pdf" />
+    <Content Include="Library\87.pdf" />
+    <Content Include="Library\88.pdf" />
+    <Content Include="Library\89.pdf" />
+    <Content Include="Library\9.pdf" />
+    <Content Include="Library\90.pdf" />
+    <Content Include="Library\91.pdf" />
+    <Content Include="Library\92.pdf" />
+    <Content Include="Library\93.pdf" />
+    <Content Include="Library\94.pdf" />
+    <Content Include="Library\95.pdf" />
+    <Content Include="Library\96.pdf" />
+    <Content Include="Library\97.pdf" />
+    <Content Include="Library\98.pdf" />
+    <Content Include="Library\99.pdf" />
+    <Content Include="Images\img\css\multiaccordion.jquery.less" />
+    <Content Include="Content\lightbox\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Content\lightbox\js\lightbox.min.map" />
+    <EntityDeploy Include="Models\EDMXModel\ElshaddaiModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ElshaddaiModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EDMXModel\ElshaddaiModel.edmx.diagram">
+      <DependentUpon>ElshaddaiModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\MagnifyElshaddai.pubxml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\mothermary.png" />
+    <Content Include="Models\EDMXModel\ElshaddaiModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ElshaddaiModel.edmx</DependentUpon>
+      <LastGenOutput>ElshaddaiModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EDMXModel\ElshaddaiModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ElshaddaiModel.edmx</DependentUpon>
+      <LastGenOutput>ElshaddaiModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\config.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.media.js" />
+    <Content Include="Scripts\jquery.metadata.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\menumaker.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="Views\Authentication\index.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Authentication\ForgotPassword.cshtml" />
+    <Content Include="Views\Authentication\_UrlView.cshtml" />
+    <Content Include="Views\Authentication\Register.cshtml" />
+    <Content Include="Views\Documents\Admin.cshtml" />
+    <Content Include="Views\RegistrationMaster\Index.cshtml" />
+    <Content Include="Views\Bible\_Bible.cshtml" />
+    <Content Include="Views\Authentication\ChangePassword.cshtml" />
+    <Content Include="Views\Authentication\_OnlineRegistration.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Authentication\RegistrationInfo.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Authentication\UserInfo.cshtml" />
+    <Content Include="Views\Authentication\_UserRegistration.cshtml" />
+    <Content Include="Views\VirginBiblio\UploadVirginBiblioBook.cshtml" />
+    <Content Include="Views\VirginBiblio\VirginBiblio.cshtml" />
+    <Content Include="Views\VirginBiblio\_VirginBiblio.cshtml" />
+    <Content Include="Views\Shared\_VirginBiblioLayout.cshtml" />
+    <Content Include="Views\EBook\UploadEBook.cshtml" />
+    <Content Include="Views\PrayerRain\Index.cshtml" />
+    <Content Include="Views\PrayerRain\Details.cshtml" />
+    <Content Include="Views\PrayerRain\Create.cshtml" />
+    <Content Include="Views\PrayerRain\Delete.cshtml" />
+    <Content Include="Views\PrayerRain\Edit.cshtml" />
+    <Content Include="Views\SinaiLetter\Index.cshtml" />
+    <Content Include="Views\SpiritualArticle\UploadSpiritualArticle.cshtml" />
+    <Content Include="Views\Mariology\UploadMarianBook.cshtml" />
+    <Content Include="Views\Mariology\UploadMarianStudy.cshtml" />
+    <Content Include="Views\SabbathDay\Index.cshtml" />
+    <Content Include="Views\Shared\_SideMenu.cshtml" />
+    <Content Include="Views\Bible\Index.cshtml" />
+    <Content Include="Views\EBook\EBook.cshtml" />
+    <Content Include="Views\SpiritualArticle\Index.cshtml" />
+    <Content Include="Views\PrayerNote\Index.cshtml" />
+    <Content Include="Views\WebGridTest\Index.cshtml" />
+    <Content Include="Views\WebGridTest\_WebGridTest.cshtml" />
+    <Content Include="Views\Mariology\MarianBook.cshtml" />
+    <Content Include="Views\Mariology\MarianStudy.cshtml" />
+    <Content Include="Views\PrayerRain\PrayerRain.cshtml" />
+    <Content Include="Views\BibleWorkshop\Index.cshtml" />
+    <Content Include="Views\BibleWorkshop\FastingPrayerDocuments.cshtml" />
+    <Content Include="Views\VirginBiblio\Index.cshtml" />
+    <Content Include="Views\Documents\_DocumentIndex.cshtml" />
+    <Content Include="Views\SabbathDay\UploadSabbathDayDocument.cshtml" />
+    <Content Include="Views\PrayerNote\UploadPrayerNote.cshtml" />
+    <Content Include="Views\SinaiLetter\UploadSinaiLetter.cshtml" />
+    <Content Include="Views\Bible\StudyBible.cshtml" />
+    <Content Include="Views\Bible\BibleCommentary.cshtml" />
+    <Content Include="Views\Bible\UploadStudyBible.cshtml" />
+    <Content Include="Views\Bible\UploadBibleCommentary.cshtml" />
+    <Content Include="Views\Bible\BiblicalTheology.cshtml" />
+    <Content Include="Views\Bible\UploadBiblicalTheology.cshtml" />
+    <Content Include="Views\Bible\BibleDictionary.cshtml" />
+    <Content Include="Views\Bible\UploadBibleDictionary.cshtml" />
+    <Content Include="Views\SabbathDay\Dashboard.cshtml" />
+    <Content Include="Views\SabbathDay\LoggedInDetails.cshtml" />
+    <Content Include="Views\PrayerRain\UploadPrayerRain.cshtml" />
+    <Content Include="Views\QuickSearch\BookRequest.cshtml" />
+    <Content Include="Views\QuickSearch\Index.cshtml" />
+    <Content Include="Views\QuickSearch\CommentAndSuggestion.cshtml" />
+    <Content Include="Views\BibleWorkshop\BibleAndChristianDoctrine.cshtml" />
+    <Content Include="Views\EvangelicalEvents\Index.cshtml" />
+    <Content Include="Views\EvangelicalEvents\Copy of Index.cshtml" />
+    <Content Include="Views\EvangelicalEvents\Copy %282%29 of Index.cshtml" />
+    <Content Include="Views\EvangelicalEvents\Index1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Documents\DocumentImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60962</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,157 @@
+﻿@model IEnumerable<Magnifyelshaddai.Models.EBookVM>
+
+@{
+    ViewBag.Title = "E-Book - Magnify El Shaddai";
+    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
+    grid.Bind(source: Model, rowCount: ViewBag.TotalRows, autoSortAndPage: false);
+}
+
+@Html.Partial("_SideMenu")
+
+<div class="container_display">
+    <h2 class="main-title">E-Books</h2>
+
+    <div class="navbar-collapse">
+        @using (Html.BeginForm("EBook", "EBook", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+        {
+            <div class="form-group">
+                <input type="text" name="search" value="@ViewBag.search" class="form-control" placeholder="search" />
+            </div>
+            <button type="submit" value="Search" class="btn">Search</button>
+        }
+
+        @if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Subadmin")
+        {
+            <a href="@Url.Action("UploadEBook", "EBook")">
+                <span class="btn addSabbath">Add new</span>
+            </a>
+        }
+        
+        <input type="hidden" value="@Session["UserType"]" id="hdnUserType" />
+
+        <div class="display_body">
+            @*@Html.Partial("_EBook", Model.eBooksIndex)*@
+            <div>
+                @grid.GetHtml(
+                tableStyle: "table table-bordered",
+                htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
+                columns: grid.Columns(
+                        //grid.Column(null, null, format: @<text><img src="~/Images/plus.png" /><div style="display:none"></div></text>),
+
+                           grid.Column(null, null, format: (item) =>
+                          {
+                              if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Subadmin")
+                                  return Html.Raw(string.Format("<text><img src=\"{0}\"><div style='display:none'></div></text>", Url.Content("~/Images/plus.png")));
+                              else
+                                  return Html.Raw(string.Format(""));
+                          }),
+                                            grid.Column(columnName: "eBook.totalDownloadedCount", header: "D.Count"),
+                                            grid.Column(columnName: "eBook.Title", header: "Book Name"),
+                                            grid.Column(columnName: "eBook.Author", header: "Author"),
+                                            grid.Column(columnName: "eBook.CreatedDateTime", header: "Date", format: (item) => string.Format("{0:dd-MMM-yyyy}", item.eBook.CreatedDateTime)),
+                                    grid.Column("", header: "Downloads", style: "sno", format: @<text>
+                                                @Html.ActionLink(" ", "DownloadEBook", "EBook", new { id = item.eBook.BooKId }, new { target = "_blank", style = "background: url('/Images/pdf-icon.png') no-repeat;display:block;height: 25px;width: 25px;vertical-align:middle;margin: 0px 0px 0px 30px;background-size: 100% 100%;" })
+                                    </text>),
+
+                                                                                     grid.Column(format: (item) =>
+                                                                                     {
+                                                                                         WebGrid subGrid = new WebGrid(source: item.lstEBookDownloadDetails, canSort: false, canPage: false);
+                                                                                         return subGrid.GetHtml(
+                                                                                             htmlAttributes: new { @class = "ChildGrid" },
+                                                                                             columns: subGrid.Columns(
+                                                                                             subGrid.Column(columnName: "DownloadedBy", header: "Downloaded By")
+                                                                                             ));
+                                                                                     })
+                                                                                     ))
+                <div class="row">
+                    <div class="col-sm-6">
+                        @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .Grid {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+        .Grid th {
+            background-color: #B8DBFD;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .Grid img {
+            cursor: pointer;
+        }
+
+    .ChildGrid {
+        width: 100%;
+    }
+
+        .ChildGrid th {
+            background-color: #3076ce;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .ChildGrid tbody tr:nth-child(even) {
+            background-color: rgb(15 120 220 / 30%) !important;
+        }
+
+        .ChildGrid tbody tr td, th {
+            padding: 5px 10px;
+        }
+
+    table tfoot {
+        display: none;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        var hdnUserType = $('#hdnUserType').val();
+        if (hdnUserType != "Admin" && hdnUserType != "Subadmin") {
+            $("table tr th:nth-child(1), table tr td:nth-child(1)").css("display", "none");
+            $("table tr th:nth-child(2), table tr td:nth-child(2)").css("display", "none");
+        }
+
+        //Loop through all Child Grids.
+        $("#WebGrid .ChildGrid").each(function () {
+            //Copy the Child Grid to DIV.
+            var childGrid = $(this).clone();
+            $(this).closest("TR").find("TD").eq(0).find("DIV").append(childGrid);
+
+            //Remove the Last Column from the Row.
+            $(this).parent().remove();
+        });
+
+        //Remove Last Column from Header Row.
+        $("#WebGrid TH:last-child").eq(0).remove();
+    });
+    //Assign Click event to Plus Image.
+    $("body").on("click", "img[src*='plus.png']", function () {
+        $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
+        $(this).attr("src", "/images/minus.png");
+    });
+    //Assign Click event to Minus Image.
+    $("body").on("click", "img[src*='minus.png']", function () {
+        $(this).attr("src", "/images/plus.png");
+        $(this).closest("tr").next().remove();
+    });
+</script>

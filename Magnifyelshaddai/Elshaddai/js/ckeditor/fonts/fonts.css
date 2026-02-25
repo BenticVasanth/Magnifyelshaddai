@@ -1,0 +1,5 @@
+@font-face {
+   font-family: "akshar";
+   src: url(akshar.ttf); /* IE */
+   src: local("akshar"), url("akshar.ttf") format("truetype"); /*non-IE*/
+}

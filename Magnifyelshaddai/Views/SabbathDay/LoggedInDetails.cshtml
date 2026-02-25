@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Magnifyelshaddai.Models.LoggedInDetailVM>
+
+@{
+    ViewBag.Title = "Logged In Details - Magnify El Shaddai";
+    var grid = new WebGrid(canPage: true, rowsPerPage: 10);
+    grid.Bind(source: Model, rowCount: ViewBag.TotalRows, autoSortAndPage: false);
+}
+
+@Html.Partial("_SideMenu")
+
+<div class="container_display">
+    <div class="navbar-collapse">
+        <h2 class="main-title">Logged In Details</h2>
+
+        <div class="display_body">
+            <div class="table-responsive ">
+                @grid.GetHtml(
+                tableStyle: "table table-bordered",
+                htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
+                columns: grid.Columns(
+                        grid.Column(null, null, format: @<text><img src="~/Images/plus.png" /><div style="display:none"></div></text>),
+                                                       grid.Column(columnName: "loggedInDetail.LastLoggedInDateAndTime", header: "Logged In Date", format: (item) => string.Format("{0:dd-MMM-yyyy}", item.loggedInDetail.LastLoggedInDateAndTime)),
+                                                       grid.Column(columnName: "loggedInDetail.totalNoOfUsersLoggedInPerDay", header: "Total number of users Logged In"),
+
+                                                       grid.Column(format: (item) =>
+                                                       {
+                                                           WebGrid subGrid = new WebGrid(source: item.lstLoggedInDetails, canSort: false, canPage: false);
+                                                           return subGrid.GetHtml(
+                                                               htmlAttributes: new { @class = "ChildGrid" },
+                                                               columns: subGrid.Columns(
+                                                               subGrid.Column(columnName: "LoggedInBy", header: "Logged In By"),
+                                                               subGrid.Column(columnName: "LastLoggedInDateAndTime", header: "Last Logged In Date and Time", format: (date) => string.Format("{0:dd-MMM-yyyy hh:mm tt}", date.LastLoggedInDateAndTime)),
+                                                               subGrid.Column(columnName: "LoggedIncountPerDay", header: "Logged In Count Per Day")
+                                                               ));
+                                                       })
+                                                       ))
+                <div class="row">
+                    <div class="col-sm-6">
+                        @grid.PagerList(mode: WebGridPagerModes.All, paginationStyle: "pagination pagination-small pagination-right")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    body {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+
+    .Grid {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        background-color: #fff;
+    }
+
+        .Grid th {
+            background-color: #B8DBFD;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .Grid th, .Grid td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .Grid img {
+            cursor: pointer;
+        }
+
+    .ChildGrid {
+        width: 100%;
+    }
+
+        .ChildGrid th {
+            background-color: #3076ce;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .ChildGrid tbody tr:nth-child(even) {
+            background-color: rgb(15 120 220 / 30%) !important;
+        }
+
+        .ChildGrid tbody tr td, th {
+            padding: 5px 10px;
+        }
+
+    table tfoot {
+        display: none;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+
+        //Loop through all Child Grids.
+        $("#WebGrid .ChildGrid").each(function () {
+            //Copy the Child Grid to DIV.
+            var childGrid = $(this).clone();
+            $(this).closest("TR").find("TD").eq(0).find("DIV").append(childGrid);
+
+            //Remove the Last Column from the Row.
+            $(this).parent().remove();
+        });
+
+        //Remove Last Column from Header Row.
+        $("#WebGrid TH:last-child").eq(0).remove();
+    });
+    //Assign Click event to Plus Image.
+    $("body").on("click", "img[src*='plus.png']", function () {
+        $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
+        $(this).attr("src", "/images/minus.png");
+    });
+    //Assign Click event to Minus Image.
+    $("body").on("click", "img[src*='minus.png']", function () {
+        $(this).attr("src", "/images/plus.png");
+        $(this).closest("tr").next().remove();
+    });
+</script>
+

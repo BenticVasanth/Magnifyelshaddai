@@ -1,0 +1,55 @@
+﻿@model Magnifyelshaddai.Models.PrayerRainViewModel
+
+@{
+    ViewBag.Title = "Create Prayer";
+}
+
+<div class="prayer-rain">
+    <img src="~/Images/prayer_rain_logo.png" class="prayer-rain-img" />
+    <h2 class="page-title top-center"> Create Prayer </h2>
+
+@using (Html.BeginForm())
+{
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+    <div class="prayer-rain-div label">
+        @Html.Label("Title", "Prayer Title")
+    </div>
+    <div class="prayer-rain-div">
+        @Html.TextAreaFor(model => model.Title, new { name = "titleHTML", id = "titleEditor", @rows = 5, @cols = 5 })
+        <span style="color:red;display:none;" id="errorMessageTitle">Title is required</span>
+        @Html.ValidationMessageFor(model => model.Title)
+    </div>
+
+    <div class="prayer-rain-div label">
+        @Html.Label("Verses", "Prayer Verses")
+    </div>
+    <div class="prayer-rain-div">
+        @Html.TextAreaFor(model => model.Verses, new { name = "versesHTML", id = "versesEditor", @rows = 5, @cols = 5 })
+        <span style="color:red;display:none;" id="errorMessageVerses">Verses is required</span>
+        @Html.ValidationMessageFor(model => model.Verses)
+    </div>
+
+    <div class="prayer-rain-div label">
+        @Html.Label("Prayer", "Prayer")
+    </div>
+    <div class="prayer-rain-div">
+        @Html.TextAreaFor(model => model.Prayer, new { name = "prayerHTML", id = "prayerEditor", @rows = 5, @cols = 5 })
+        <span style="color:red;display:none;" id="errorMessagePrayer">Prayer is required</span>
+        @Html.ValidationMessageFor(model => model.Prayer)
+    </div>
+    <div class="prayer-rain-div button button-center">
+        <input type="submit" value="Create Prayer" class="prayer-rain-button btn-primary" onclick="return validatePrayerRain()" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "prayer-rain-button btn-primary" })
+    </div>
+}
+
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

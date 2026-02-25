@@ -1,0 +1,97 @@
+﻿@model Magnifyelshaddai.Controllers.AuthenticationController.RegistrationMasterView
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+@Html.Partial("_SideMenu")
+<div class="container_display">
+
+    <div class="row">
+        @*<div class="searchStyle">
+            @using (@Html.BeginForm())
+            {
+                <div class="input-group custom-search-form" id="search" style="float:left;">
+                    <input type="text" id="txtfilter" name="txtfilter" style="margin:10px;" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn"></span>
+                </div>
+            }
+        </div>*@
+        <div class="row">
+            <div class="col-md-8" style="text-align:right">
+                <span style="font-size: 24px; text-transform: uppercase; font-weight: bold; color: #9d2384; margin-top: 15px; display: inline-block;text-align:center;">6<sup style="text-transform: none;">th</sup> Bible Workshop Participants Details</span>
+            </div>
+            <div class="col-md-4" style="text-align:right">
+                <span style="display: inline-block;margin-top: 15px;font-size: 18px;text-transform: capitalize;font-weight: bold;color: #ab1f72;"> Registration Count: <span style="text-align:center;background-color: #9e2384;padding: 3px;border-radius: 3px;color: #ffffff;">@ViewBag.RegistrationCount</span> </span>
+            </div>
+        </div>
+
+        <hr/>
+        <div class="table-responsive" style="width: 99%;margin: auto;">
+            <div id="test" class="online-registration">
+                @Html.Partial("_OnlineRegistration", Model.registrationMaster)
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#txtfilter").keyup(function (e) {
+
+                //alert('demo');
+                $("#tblData").hide('fast');
+                $('#test').show('fast');
+                var data = $(this).val();
+
+                var url = "/Documents/DocumentIndex/";
+                var txtfilter = $("#txtfilter").val();
+
+
+                if ($("#txtfilter").val().length >= 0 || $("#txtfilter").val() != "") {
+                    $.ajax({
+                        type: 'POST',
+                        dataType: "html",
+                        url: url,
+                        data: { txtfilter: txtfilter },
+
+                        success: function (evt) {
+                            //alert('inside success');
+                            $('#Supplier-grid').hide();
+                            $('#test').html(evt);
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus + ' and ' + errorThrown);
+                        }
+                    });
+                }
+                else {
+
+                    $("#tblData").show('fast');
+                    $('#Supplier-grid').show();
+                }
+            });
+        });
+
+
+       
+    </script>
+
+}
+
+<style>
+    .online-registration table thead tr th {
+        text-align: center;
+        color: #fff;
+        background-color: #ab2f82;
+    }
+
+    .online-registration table thead tr th a {
+        color: #fff;
+    }
+
+    .table-striped>tbody>tr:nth-of-type(odd) {
+        background-color: #ab2f820d;
+    }
+</style>

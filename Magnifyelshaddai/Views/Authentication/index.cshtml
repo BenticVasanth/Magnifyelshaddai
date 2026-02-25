@@ -1,0 +1,461 @@
+﻿@model Magnifyelshaddai.Models.LoginViewModels
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.title = "Home";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="~/Content/indexStyle.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="img-cont">
+    <img src="~/Images/magnifyelshaddai_banner.jpg" />
+    <div class="h1">An understanding room for the words of Living G_D</div>
+    <div class="con">
+        <p>
+            You search the Scriptures,
+            for in them you think you
+            have eternal life; and
+            these are they which
+            testify of Me.
+            <span>(John 5:39)</span>
+        </p>
+        <p>
+            For assuredly, I say to you,
+            till heaven and earth pass away,
+            one jot(YOD) or one tittle will by
+            no means pass from the law
+            till all is fulfilled.
+            <span>(Mathew 5:18)</span>
+        </p>
+        <p>
+            I will worship toward Your holy temple,
+            And praise Your name
+            For Your lovingkindness and Your truth;
+            For You have magnified Your word above all Your name.
+            <span>(Psalms 138:2)</span>
+        </p>
+        @*<p>
+                வேதவாக்கியங்களை ஆராய்ந்துபாருங்கள்;
+                அவைகளால் உங்களுக்கு நித்தியஜீவன்
+                உண்டென்று எண்ணுகிறீர்களே,
+                என்னைக்குறித்துச் சாட்சிகொடுக்கிறவைகளும் அவைகளே <span>(யோவான் 5:39)</span>
+            </p>
+            <p>
+                வானமும் பூமியும் ஒழிந்துபோனாலும்,
+                நியாயப்பிரமாணத்திலுள்ளதெல்லாம் நிறைவேறுமளவும்,
+                அதில் ஒரு சிறு எழுத்தாகிலும், ஒரு எழுத்தின்
+                உறுப்பாகிலும் ஒழிந்து போகாது என்று
+                மெய்யாகவே உங்களுக்குச் சொல்லுகிறேன்.<span>(மத்தேயு 5:18)</span>
+            </p>
+            <p>
+                உமது பரிசுத்த ஆலயத்திற்கு நேராக நான்
+                பணிந்து உமது கிருபையினிமித்தமும் உமது
+                உண்மையினிமித்தமும் உமது நாமத்தைத்
+                துதிப்பேன்; உமது சகல பிரஸ்தாபத்தைப்
+                பார்க்கிலும் உமது வார்த்தையை நீர்
+                மகிமைப்படுத்தியிருக்கிறீர்.<span>(சங்கீதம் 138:2)</span>
+            </p>*@
+        <span>-	Jesus Christ</span>
+
+    </div>
+</div>
+<div style="padding: 0px 2.5rem;">
+    <div class="row">
+        @*<div class="col-md-12">
+                <a href="javascript:void(0)" onclick="termsandcondtions()"><img src="~/Images/OnlineRegistration.gif" class="img-responsive d-blc" style="display: inline-block; text-align: center; width: 35%; margin: 20px 0px 0px 200px; border: 5px solid #1e1c9e;"></a>
+                <p class="mpr">
+                    <b><a class="dwnPageLink btn btn-info" href="../Documents/Matthew_The_Divine_Nature_Of_Jesus.pdf" target="_blank">Bible Workshop Schedule</a></b>
+                </p>
+                <hr />
+            </div>*@
+
+        <div class="wrapper" title="6th Bible Workshop Online Registration Click Here" onclick="termsandcondtions()">
+            <h1>6<span class="supTxt">th</span> Bible Workshop</h1>
+            <br>
+            <h3 style="margin-top: 0px;">Online Registration Click Here</h3>
+        </div>
+
+        <div class="col-md-12" id="elsaddai-signin">
+            <p class="mpr">
+                <b>Note: Please register to access all the documents. If you are already registered, please Sign In.</b>
+            </p>
+        </div>
+
+        <div class="col-md-12 elsaddai_signin">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="center-img">
+                    <a href="https://www.catholictamil.com/" class="text-center" target="_blank">
+                        <img class="img-fluid backShadow" src="~/Images/catholicTamilWebsiteAdvertisement.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="g-wrapper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="elshadai_signup_wrapper">
+
+                                @using (Html.BeginForm("Index", "Authentication", FormMethod.Post, new { @id = "LoginFormId" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true)
+                                    <div class="form-group mg_elshaddai_possub">
+                                        <h3 style="color: red">@ViewBag.ErrorMessage</h3>
+                                    </div>
+
+                                    <div class="form-group mg_elshaddai_possub">
+                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control mg_form_control", @placeholder = "Email", @Value = "" })
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                    </div>
+                                    <div class="form-group mg_elshaddai_possub">
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control mg_form_control", @placeholder = "Password", @Value = "" })
+                                        @Html.ValidationMessageFor(model => model.Password)
+                                    </div>
+                                    <div class="mg_elshaddai_create">
+                                        <button type="submit" name="button" class="btn btn-primary col-md-12 mtp10px">Sign In</button>
+                                    </div>
+                                }
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                @Html.Partial("_UrlView")
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="center-img">
+                    <a href="https://www.unom.ac.in/index.php?route=department/department/deptpage&deptid=19" class="text-center" target="_blank">
+                        <img class="img-fluid backShadow" src="~/Images/madrasUniversity.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row homepage-prayer">
+    <div class="col-md-4" style="padding: 70px 15px;">
+        <div class="center-img">
+            <img class="img-fluid" src="~/Images/BWT_Logo_Color_png.png" style="max-width: 75%; height: auto;" />
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="h2">PRAYER</div>
+        The law of the Lord is <span>perfect</span>, converting the soul;<br />
+        The testimony of the Lord is <span>sure</span>, making wise the simple;<br />
+        The statutes of the Lord are <span>right</span>, rejoicing the heart;<br />
+        The commandment of the Lord is <span>pure</span>, enlightening the eyes;<br />
+        The fear of the Lord is <span>clean</span>, enduring forever;<br />
+        The judgments of the Lord are true and righteous altogether.<br />
+        More to be desired are they than gold, Yea, than much fine gold;<br />
+        Sweeter also than honey and the honeycomb.<br />
+        Moreover by them your servant is warned, and in keeping them there is great reward.<br />
+        <b>Psalms 19:7-11</b>
+    </div>
+    <div class="col-md-4" style="padding: 70px 15px;">
+        <div class="center-img">
+            <img class="img-fluid" src="~/Images/Tamil_BibleWorkshopTeam_Logo_png.png" style="max-width: 75%; height: auto;" />
+        </div>
+    </div>
+</div>
+
+@*<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="margin-left: 0px; width: 100%;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Registration Instructions</h4>
+            </div>
+            <div class="modal-body registarion-instrct" style="text-align: justify">
+
+                <p style="color: blue;"><b>Instructions:</b></p>
+                <p>1. <b>Colossians Bible Workshop - 2024</b> is an <b>One Day Event</b> that is open only for brothers.</p>
+                <p>2. The Registration fee for <b>common people is Rs. 200/-</b> and <b>Rs. 100/- for students</b>( students should carry their college ID card as proof). Registration fee includes Workshop Kit and food.</p>
+                <p>3.Bible Workshop Team requests you to register your names in the below link <b><a class="hyperLink" href="http://magnifyelshaddai.com/">http://magnifyelshaddai.com/</a></b>. This will helps us to facilitate in preparing food and kit.</p>
+                <p>4. Please bring your own <b>Bible</b> and <b>Notebook</b>. You are also encouraged to bring your mobiles and laptops. There will be a session on how to explore many online Bible tools and related applications.</p>
+                <p>5. If you need accommodation, please contact us @@ Bro. Albert- 9444306330, Bro. Benatic-7373843646. Payment for accommodation must be made separately.</p>
+                <p>6. Brothers who are not affordable to pay registration fees can reach out to Bro. Albert for assistance.</p>
+                <br />
+                <p style="color: red;"><b>Date: </b>08-06-2024</p>
+                <p style="color: red;"><b>Venue: </b>Arungkodai Illam, Bharathiyar Salai, Sangillyandapuram, Tiruchirappalli, Tamil Nadu - 620001.</p>
+                <p style="color: blue;"><b>Bus Stop:  RC School.</b></p>
+            </div>
+            <div class="modal-footer" style="text-align: center; display: inline-block; width: 100%;">
+                <button type="button" class="btn btn-primary" onclick="Login()">Proceed to Registration</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>*@
+
+@*<div id="bibleCourse" class="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <!--<div class="modal-header text-center">
+                <h2 class="modal-title text-uppercase" id="exampleModalLongTitle1">University of Madras</h2>
+                <h4 class="modal-title" id="exampleModalLongTitle">Department of Christian Studies</h4>
+                
+            </div>-->
+            <div class="modal-body banner">
+                <img class="img-fluid backShadow" src="~/Images/Marian_Retreat.jpg" />
+                <button type="button" class="close" onclick="close()" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <!-- <div class="row align-middle">
+                    <div class="w-25">
+                        <img class="img-fluid" src="~/Images/bibleImg.jpg" style="max-width: 100%; height:200px;" />
+                    </div>
+                    <div class="w-50 text-center">
+                        <p>Diploma Programme in <br> <span class="text-uppercase font-weight-bold" style="font-size:22px; color:blue; font-family:Georgia">Bible and Christian Doctrines</span> <br> <span style="font-size: 16px; color: #000;">(Self-Supportive and Part-time)</span></p>
+                        <span style="color: red; font-size:14px;">Registration Closing Date is 16-07-2022</span>
+                    </div>
+                    <div class="w-25">
+                        <img class="img-fluid" src="~/Images/Madras_University_Seal.png" style="max-width: 100%; height:175px;" />
+                    </div>
+                </div>-->
+            </div>
+            <!--<div class="modal-footer">
+                <button type="button" style="float: left !important; font-weight: 600; width: 200px; white-space: normal;" class="btn btn-info"><a href="../Documents/Prospectus_Registration Procedure.pdf" target="_blank" style="text-decoration: none; color: #ffffff;">Prospectus</a></button>
+                <button type="button" style="float: right !important; font-weight: 600;" class="btn btn-success"><a href="https://egovernance.unom.ac.in/cbCS2223/Index" target="_blank" style="text-decoration: none; color: #ffffff;">Registration</a></button>
+            </div>-->
+        </div>
+    </div>
+</div>*@
+
+@*<div id="myModalPoster" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin: auto; width: 90%;">
+            <div class="modal-body" style="padding: 0">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img class="img-fluid" src="~/Images/Colossians_Banner.jpg" style="max-width: 100%; height: 80%;" />
+            </div>
+            <div class="modal-footer" style="text-align: center; display: inline-block; width: 100%;">
+                <button type="button" class="btn btn-primary" onclick="termsandcondtions()">Proceed to Registration</button>*
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+@*<div id="myModalPoster" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-left: 1px; width: 100%;">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <img class="img-fluid" src="~/Images/Colossians_Banner.jpg" style="max-width: 100%; height: auto;" />
+        </div>
+    </div>
+</div>*@
+
+<style>
+    .img-cont img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 80vh;
+    }
+
+    .elsaddai_signin .center-img {
+        align-items: center;
+        display: flex;
+        height: 300px;
+    }
+
+    .img-cont {
+        position: relative;
+    }
+
+        .img-cont .h1 {
+            position: absolute;
+            top: 10%;
+            left: 35%;
+            transform: translate(-20%, -50%);
+            font-weight: 500;
+            color: #000;
+        }
+
+        .img-cont .con {
+            position: absolute;
+            top: 50%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            font-weight: 500;
+            color: #000;
+        }
+
+    .homepage-prayer {
+        width: 100%;
+        text-align: center;
+        margin-top: 70px;
+        background: #ededed;
+        padding: 60px 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+        .homepage-prayer b {
+            font-weight: 900;
+        }
+
+    .g-wrapper {
+        border: 1px solid #c8c0c0;
+        padding: 15px;
+        margin-top: 30px;
+        border-radius: 15px;
+    }
+
+    .mpr {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .con p {
+        margin: 0 0 0 0px;
+    }
+
+    .modal-header {
+        background-color: #4e0249;
+        color: #ffffff;
+    }
+
+    .modal-body {
+        padding: 2rem 3rem;
+    }
+
+        .modal-body p {
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+    .btn {
+        padding: 5px 10px !important;
+    }
+
+    .close {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        padding: 2px 6px !important;
+        background-color: #fff !important;
+        opacity: 1;
+        border-radius: 15px;
+    }
+
+    .modal-content {
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .modal-body.registarion-instrct {
+        padding: 15px;
+    }
+
+    .backShadow {
+        box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px;
+        border-radius: 5px;
+    }
+
+    img.img-fluid.backShadow {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .modal-body.banner {
+        padding: 0px !important;
+    }
+
+        .modal-body.banner img.img-fluid.backShadow {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+        }
+
+    a {
+        text-decoration: none;
+        color: #9ca0b1;
+    }
+
+    .wrapper {
+        text-align: center;
+        cursor: pointer;
+        width: fit-content;
+        margin: 1rem auto 0;
+    }
+
+        .wrapper h1, .wrapper h3 {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-family: "Comic Sans MS, Comic Sans", cursive;
+            background: linear-gradient(90deg, rgba(6,150,250,1) 0%, rgba(9,9,121,1) 30%, rgba(9,9,121,1) 70%, rgba(6,150,250,1) 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 1.5s linear infinite;
+            display: inline-block;
+        }
+
+            .wrapper h1 span {
+                vertical-align: top;
+                font-weight: 400;
+                font-size: 0.5em;
+            }
+
+    @@keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    .hyperLink {
+        color: #000000;
+    }
+
+        .hyperLink:hover, .hyperLink:focus {
+            text-decoration: none;
+            color: red;
+        }
+</style>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        //For Bible course poster
+        //$(window).on('load', function () {
+        //    $('#bibleCourse').modal('show');
+        //});
+
+        //For Matthew Bible workshop poster
+        //$(window).on('load', function () {
+        //    $('#myModalPoster').modal('show');
+        //});
+
+        //For terms and conditions
+        //function termsandcondtions() {
+        //    $('#myModal').modal('show');
+        //    $('#myModalPoster').modal('hide');
+        //}
+
+        //$('#myModal').on('shown.bs.modal', function (e) {
+        //    $('body').addClass('modal-open');
+        //})
+
+        //$('#myModal').on('hidden.bs.modal', function (e) {
+        //    $('body').removeClass('modal-open');
+        //})
+
+        //function Login() {
+        //    window.location.href = "../RegistrationMaster/Index";
+        //}
+    </script>
+}

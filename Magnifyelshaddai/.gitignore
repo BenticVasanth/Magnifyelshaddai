@@ -1,0 +1,34 @@
+﻿# Visual Studio
+.vs/
+*.suo
+*.user
+*.cache
+
+# Build
+bin/
+obj/
+
+# NuGet
+packages/
+
+# Database
+App_Data/*.mdf
+App_Data/*.ldf
+App_Data/*.bak
+
+# Logs
+*.log
+
+# Zip files
+*.rar
+*.zip
+*.7z
+
+# DLLs
+*.dll
+*.exe
+
+# Documents
+Documents/
+EBooks/
+Library/

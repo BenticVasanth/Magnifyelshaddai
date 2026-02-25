@@ -1,0 +1,24 @@
+-----------Exception Details on  13-Apr-23 12:12:20 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 13-Apr-23 12:12:20 AM
+
+Error Line No : ine 244
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. c4-20020aa781c4000000b0062d859a33d1sm11970586pfn.84 - gsmtp
+
+ Error Page Url: http://localhost:60880/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

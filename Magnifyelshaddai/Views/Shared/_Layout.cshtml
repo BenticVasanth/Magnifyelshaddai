@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="tamil">
+    <link rel="icon" href="~/Images/mothermary.png" sizes="16x16" type="image/png">
+    <title>@ViewBag.Title - Magnify Elshaddai</title>
+
+    <!-- Bootstrap -->
+    @*<link href="~/Elshaddai/css/bootstrap.min.css" rel="stylesheet" />*@
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> latest*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7cMontserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Font Awesome -->
+    @*<link href="~/Elshaddai/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Elshaddai/css/fontawesome_all.min.css"> *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Style -->
+    <link href="~/Elshaddai/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Elshaddai/css/sidebar-menu.css">
+    <script src="~/Elshaddai/js/ckeditor/ckeditor.js"></script>
+
+    <style>
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body class="@ViewBag.Title" oncontextmenu="return false">
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+                    <a href="@Url.Action("Dashboard", "SabbathDay")"><img src="~/Images/logo_elshaddai.png" width="200" height="50" /></a>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+                    <div class="navigation">
+                        <div id="navigation">
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+                    <a href="@Url.Action("Dashboard", "SabbathDay")"><img src="~/Images/BWT_Logo_Color.jpg" width="200" height="72" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <div class="footer">
+        <!-- footer-->
+        <div class="container">
+            <div class="footer-block" style="color: #fff;">
+                <p>We are the People of G_D of Israel. Our Lord Almighty provides us everything through WORD, for thousands of years ago, he transmitted his Holy Spirit and salvation through the Bible. From the printed books, each new medium democratized knowledge about the G_D and brought more people into the kingdom of G_D. We are the generation charged with the technology to share these invaluable texts from print to digital to explore G_D and to integrate our souls with him for the greater glory of G_D.</p>
+                <p>It is an open platform to learn and understand biblical text in a comprehensive manner. We are assembling a free-living library of biblical, Jewish texts and their interconnections. With these digital texts, we can create new interactive interfaces for Web, tablet, and mobile, allowing more people to engage with the textual treasures of the word of G_D.</p>
+
+                <div class="tiny-footer">
+                    <!-- tiny footer block -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="copyright-content">
+                                Designed & Maintained by Bible Workshop Team <strong>&#169;</strong> 2021. All rights reserved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.tiny footer block -->
+            </div>
+            <!-- /.footer block -->
+        </div>
+    </div>
+
+    <!-- /.footer-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    @*<script src="/Elshaddai/js/jquery.min.js"></script>*@
+    @*<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script> latest*@
+    <script src="~/Content/jquery-3.1.1.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    @*<script src="/Elshaddai/js/bootstrap.min.js"></script> latest*@
+    <script src="~/Content/bootstrap.min.js"></script>
+    <script src="/Elshaddai/js/sidebar-menu.js"></script>
+    <script src="/Elshaddai/js/menumaker.js"></script>
+
+    @*<script language=JavaScript>
+
+            var message = "function disabled";
+
+            function rtclickcheck(keyp) {
+                if (navigator.appName == "Netscape" && keyp.which == 3) { return false; }
+
+                if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { return false; }
+            }
+
+            document.onmousedown = rtclickcheck;
+
+        </script>*@
+
+    <script>
+        CKEDITOR.replace('titleEditor', {
+            customConfig: '/Scripts/config.js'
+        });
+
+        CKEDITOR.replace('versesEditor', {
+            customConfig: '/Scripts/config.js'
+        });
+
+        CKEDITOR.replace('prayerEditor', {
+            customConfig: '/Scripts/config.js'
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+
+            if (window.location.indexOf('localhost') > -1) { alert("your url contains the name franky"); }
+        });
+    </script>
+
+
+
+    <script>
+        function validatePrayerRain() {
+            var title = CKEDITOR.instances['titleEditor'].getData();
+            var verses = CKEDITOR.instances['versesEditor'].getData();
+            var prayer = CKEDITOR.instances['prayerEditor'].getData();
+
+            if (title != "" && verses != "" && prayer != "") {
+                return true;
+            }
+
+            if (title == "") {
+                $("#errorMessageTitle").css('display', 'block');
+                return false;
+            }
+            else
+                $("#errorMessageTitle").css('display', 'none');
+
+            if (verses == "") {
+                $("#errorMessageVerses").css('display', 'block');
+                return false;
+            }
+            else
+                $("#errorMessageVerses").css('display', 'none');
+
+            if (prayer == "") {
+                $("#errorMessagePrayer").css('display', 'block');
+                return false;
+            }
+            else
+                $("#errorMessagePrayer").css('display', 'none');
+        }
+
+        var UpdateDatabaseFrequently = function () {
+            $.ajax({
+                url: "@Url.Action("UpdateDatabaseFrequently", "PrayerRain")",
+                type: 'POST',
+                async: false
+                //success: function (data) {
+                //    if (data.result == "Success") {
+                //        alert('Success');
+                //    }
+                //    else {
+                //        alert('Failure');
+                //    }
+
+                //}
+            });
+        };
+
+        var interval = 1000 * 60 * 1; // where X is your every X minutes
+        setInterval(UpdateDatabaseFrequently, interval);
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

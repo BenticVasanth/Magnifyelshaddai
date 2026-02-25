@@ -1,0 +1,63 @@
+﻿@model Magnifyelshaddai.Models.EDMXModel.CommentsAndSuggestion
+@{
+    ViewBag.Title = "Feedback or Suggestions - Magnify El Shaddai";
+}
+
+@Html.Partial("_SideMenu")
+<div class="container_display uploadfiles">
+    <h2 class="main-title">Feedback or Suggestion</h2>
+    @using (Html.BeginForm("CommentAndSuggestion", "QuickSearch", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="display_body">
+            <div class="row">
+                <div class="form-group mg_elshaddai_possub">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control mg_form_control", @placeholder = "Name" })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="form-group mg_elshaddai_possub">
+                    @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control mg_form_control", @placeholder = "Mobile No" })
+                    @Html.ValidationMessageFor(model => model.MobileNo)
+                </div>
+                <div class="form-group mg_elshaddai_possub">
+                    @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control mg_form_control", @placeholder = "Email Address" })
+                    @Html.ValidationMessageFor(model => model.EmailAddress)
+                </div>
+                <div class="form-group mg_elshaddai_possub">
+                    @Html.TextAreaFor(model => model.CommentsAndSuggestions, new { @class = "form-control mg_form_control", @placeholder = "Comments and Suggestions" })
+                    @Html.ValidationMessageFor(model => model.CommentsAndSuggestions)
+                </div>
+                <div class="form-group mg_elshaddai_possub btnCenter">
+                    <input class="btn btn-primary" type="submit" value="Submit" id="btnSubmit" style="margin-top:20px;" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .display_body .row {
+        width: 70%;
+        margin: auto !important;
+    }
+    .container_display input[type="text"], input[type="textarea"] {
+        margin-bottom: 20px !important;
+        width: 100% !important;
+    }
+    textarea.form-control {
+        height: 12rem;
+    }
+    .container_display .btnCenter {
+        margin: auto !important;
+        width: 25rem;
+    }
+    .display_body .btn {
+        font-size: 20px;
+        width: 25rem;
+    }
+</style>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/bootstrap")
