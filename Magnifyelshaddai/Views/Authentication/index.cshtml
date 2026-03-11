@@ -72,8 +72,8 @@
                 <hr />
             </div>*@
 
-        <div class="wrapper" title="6th Bible Workshop Online Registration Click Here" onclick="termsandcondtions()">
-            <h1>6<span class="supTxt">th</span> Bible Workshop</h1>
+        <div class="wrapper" title="7th Bible Workshop Online Registration Click Here" onclick="googleFormLink()">
+            <h1>7<span class="supTxt">th</span> Bible Workshop</h1>
             <br>
             <h3 style="margin-top: 0px;">Online Registration Click Here</h3>
         </div>
@@ -162,7 +162,56 @@
     </div>
 </div>
 
-@*<div id="myModal" class="modal fade" role="dialog">
+@*<div id="bibleCourse" class="modal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!--<div class="modal-header text-center">
+                    <h2 class="modal-title text-uppercase" id="exampleModalLongTitle1">University of Madras</h2>
+                    <h4 class="modal-title" id="exampleModalLongTitle">Department of Christian Studies</h4>
+
+                </div>-->
+                <div class="modal-body banner">
+                    <img class="img-fluid backShadow" src="~/Images/Marian_Retreat.jpg" />
+                    <button type="button" class="close" onclick="close()" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- <div class="row align-middle">
+                        <div class="w-25">
+                            <img class="img-fluid" src="~/Images/bibleImg.jpg" style="max-width: 100%; height:200px;" />
+                        </div>
+                        <div class="w-50 text-center">
+                            <p>Diploma Programme in <br> <span class="text-uppercase font-weight-bold" style="font-size:22px; color:blue; font-family:Georgia">Bible and Christian Doctrines</span> <br> <span style="font-size: 16px; color: #000;">(Self-Supportive and Part-time)</span></p>
+                            <span style="color: red; font-size:14px;">Registration Closing Date is 16-07-2022</span>
+                        </div>
+                        <div class="w-25">
+                            <img class="img-fluid" src="~/Images/Madras_University_Seal.png" style="max-width: 100%; height:175px;" />
+                        </div>
+                    </div>-->
+                </div>
+                <!--<div class="modal-footer">
+                    <button type="button" style="float: left !important; font-weight: 600; width: 200px; white-space: normal;" class="btn btn-info"><a href="../Documents/Prospectus_Registration Procedure.pdf" target="_blank" style="text-decoration: none; color: #ffffff;">Prospectus</a></button>
+                    <button type="button" style="float: right !important; font-weight: 600;" class="btn btn-success"><a href="https://egovernance.unom.ac.in/cbCS2223/Index" target="_blank" style="text-decoration: none; color: #ffffff;">Registration</a></button>
+                </div>-->
+            </div>
+        </div>
+    </div>*@
+
+<div id="philippians-poster" class="modal fade" data-backdrop="static" data-keyboard="false" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin: auto; width: 80%;">
+            <div class="modal-body" style="padding: 0">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <img class="img-fluid" src="~/Images/bible-workshop-posters/Philippians-Workshop-Poster.jpg" style="max-width: 100%; height: 80%;" />
+            </div>
+            <div class="modal-footer" style="text-align: center; display: inline-block; width: 100%;">
+                <button type="button" class="btn btn-primary" onclick="googleFormLink()">Proceed to Registration</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div id="registration-instructions-english" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content" style="margin-left: 0px; width: 100%;">
             <div class="modal-header">
@@ -170,7 +219,6 @@
                 <h4 class="modal-title">Registration Instructions</h4>
             </div>
             <div class="modal-body registarion-instrct" style="text-align: justify">
-
                 <p style="color: blue;"><b>Instructions:</b></p>
                 <p>1. <b>Colossians Bible Workshop - 2024</b> is an <b>One Day Event</b> that is open only for brothers.</p>
                 <p>2. The Registration fee for <b>common people is Rs. 200/-</b> and <b>Rs. 100/- for students</b>( students should carry their college ID card as proof). Registration fee includes Workshop Kit and food.</p>
@@ -188,67 +236,17 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-
     </div>
-</div>*@
+</div>
 
-@*<div id="bibleCourse" class="modal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <!--<div class="modal-header text-center">
-                <h2 class="modal-title text-uppercase" id="exampleModalLongTitle1">University of Madras</h2>
-                <h4 class="modal-title" id="exampleModalLongTitle">Department of Christian Studies</h4>
-                
-            </div>-->
-            <div class="modal-body banner">
-                <img class="img-fluid backShadow" src="~/Images/Marian_Retreat.jpg" />
-                <button type="button" class="close" onclick="close()" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <!-- <div class="row align-middle">
-                    <div class="w-25">
-                        <img class="img-fluid" src="~/Images/bibleImg.jpg" style="max-width: 100%; height:200px;" />
-                    </div>
-                    <div class="w-50 text-center">
-                        <p>Diploma Programme in <br> <span class="text-uppercase font-weight-bold" style="font-size:22px; color:blue; font-family:Georgia">Bible and Christian Doctrines</span> <br> <span style="font-size: 16px; color: #000;">(Self-Supportive and Part-time)</span></p>
-                        <span style="color: red; font-size:14px;">Registration Closing Date is 16-07-2022</span>
-                    </div>
-                    <div class="w-25">
-                        <img class="img-fluid" src="~/Images/Madras_University_Seal.png" style="max-width: 100%; height:175px;" />
-                    </div>
-                </div>-->
-            </div>
-            <!--<div class="modal-footer">
-                <button type="button" style="float: left !important; font-weight: 600; width: 200px; white-space: normal;" class="btn btn-info"><a href="../Documents/Prospectus_Registration Procedure.pdf" target="_blank" style="text-decoration: none; color: #ffffff;">Prospectus</a></button>
-                <button type="button" style="float: right !important; font-weight: 600;" class="btn btn-success"><a href="https://egovernance.unom.ac.in/cbCS2223/Index" target="_blank" style="text-decoration: none; color: #ffffff;">Registration</a></button>
-            </div>-->
-        </div>
-    </div>
-</div>*@
-
-@*<div id="myModalPoster" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content" style="margin: auto; width: 90%;">
-            <div class="modal-body" style="padding: 0">
+@*<div id="philippians-poster" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="margin-left: 1px; width: 100%;">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <img class="img-fluid" src="~/Images/Colossians_Banner.jpg" style="max-width: 100%; height: 80%;" />
-            </div>
-            <div class="modal-footer" style="text-align: center; display: inline-block; width: 100%;">
-                <button type="button" class="btn btn-primary" onclick="termsandcondtions()">Proceed to Registration</button>*
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <img class="img-fluid" src="~/Images/Colossians_Banner.jpg" style="max-width: 100%; height: auto;" />
             </div>
         </div>
-    </div>
-</div>*@
-
-@*<div id="myModalPoster" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content" style="margin-left: 1px; width: 100%;">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <img class="img-fluid" src="~/Images/Colossians_Banner.jpg" style="max-width: 100%; height: auto;" />
-        </div>
-    </div>
-</div>*@
+    </div>*@
 
 <style>
     .img-cont img {
@@ -435,27 +433,30 @@
         //    $('#bibleCourse').modal('show');
         //});
 
-        //For Matthew Bible workshop poster
-        //$(window).on('load', function () {
-        //    $('#myModalPoster').modal('show');
-        //});
+        //For Philippians Bible Workshop Poster
+        $(window).on('load', function () {
+            $('#philippians-poster').modal('show');
+        });
 
-        //For terms and conditions
+        function googleFormLink() {
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSd1FfmqxLKUBSGdPbCz5LnKxcOwq30Njzjiw6_feIiSKdSKMA/viewform", "_blank");
+        }
+
+        ////For terms and conditions
         //function termsandcondtions() {
-        //    $('#myModal').modal('show');
-        //    $('#myModalPoster').modal('hide');
+        //    $('#philippians-poster').modal('show');
         //}
 
-        //$('#myModal').on('shown.bs.modal', function (e) {
+        //$('#registration-instructions-english').on('shown.bs.modal', function (e) {
         //    $('body').addClass('modal-open');
         //})
 
-        //$('#myModal').on('hidden.bs.modal', function (e) {
+        //$('#registration-instructions-english').on('hidden.bs.modal', function (e) {
         //    $('body').removeClass('modal-open');
         //})
 
-        //function Login() {
-        //    window.location.href = "../RegistrationMaster/Index";
-        //}
+        function Login() {
+            window.location.href = "../RegistrationMaster/Index";
+        }
     </script>
 }

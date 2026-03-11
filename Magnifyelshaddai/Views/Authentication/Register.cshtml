@@ -43,6 +43,8 @@
                                 @Html.CheckBoxFor(model => model.IsNotification, new { @class = "IsNotification", @checked = "checked" }) Click for Email Notification
                             </div>
                             <div class="mg_elshaddai_create">
+                                @* reCAPTCHA v3: token will be placed into this hidden field before submit *@
+                                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
                                 <input type="submit" id="btnRegister" value="Create Account" class="btn btn-primary col-md-12 mtp10px" />
                             </div>
                         </div>
@@ -55,4 +57,47 @@
 @section Scripts
 {
     @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://www.google.com/recaptcha/api.js?render=@System.Configuration.ConfigurationManager.AppSettings["RecaptchaSiteKey"]"></script>
+
+    <script>
+        (function () {
+
+            var siteKey = '@System.Configuration.ConfigurationManager.AppSettings["RecaptchaSiteKey"]';
+            var form = document.getElementById('registerFormId');
+            var isSubmitting = false;
+
+            if (!form || !siteKey) return;
+
+            form.addEventListener('submit', function (e) {
+
+                if (isSubmitting) return;
+
+                e.preventDefault();
+
+                var submitBtn = form.querySelector('button[type="submit"]');
+                if (submitBtn) submitBtn.disabled = true;
+
+                grecaptcha.ready(function () {
+
+                    grecaptcha.execute(siteKey, { action: 'register' })
+                        .then(function (token) {
+
+                            document.getElementById('g-recaptcha-response').value = token;
+
+                            isSubmitting = true;
+                            form.submit();
+                        })
+                        .catch(function () {
+
+                            if (submitBtn) submitBtn.disabled = false;
+                            alert("reCAPTCHA verification failed. Please try again.");
+
+                        });
+
+                });
+
+            });
+
+        })();
+     </script>
 }

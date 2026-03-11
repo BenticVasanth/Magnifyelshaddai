@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Configuration;
+using System.Collections.Specialized;
+using System.Text;
 
 namespace Magnifyelshaddai.Controllers
 {
@@ -113,6 +116,13 @@ namespace Magnifyelshaddai.Controllers
         {
             try
             {
+                // Validate reCAPTCHA v3 token
+                var recaptchaToken = Request.Form["g-recaptcha-response"];
+                if (!ValidateRecaptcha(recaptchaToken))
+                {
+                    ViewBag.ErrorMessage = "reCAPTCHA validation failed. Please try again.";
+                    return View(user);
+                }
                 if (ModelState.IsValid && user.Name != "" && user.Name != null && user.Mobile != "" && user.Mobile != null && user.Email != "" && user.Email != null)
                 {
                     string ipAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
@@ -178,6 +188,68 @@ namespace Magnifyelshaddai.Controllers
             return View(user);
         }
 
+        private bool ValidateRecaptcha(string token)
+        {
+            try
+            {
+                var secret = ConfigurationManager.AppSettings["RecaptchaSecretKey"];
+                if (string.IsNullOrEmpty(secret) || string.IsNullOrEmpty(token))
+                    return false;
+
+                var userIp = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                if (string.IsNullOrEmpty(userIp))
+                    userIp = Request.UserHostAddress;
+
+                using (var client = new WebClient())
+                {
+                    var data = new NameValueCollection
+                    {
+                        ["secret"] = secret,
+                        ["response"] = token,
+                        ["remoteip"] = userIp
+                    };
+
+                    var response = client.UploadValues(
+                        "https://www.google.com/recaptcha/api/siteverify",
+                        "POST",
+                        data);
+
+                    var responseString = Encoding.UTF8.GetString(response);
+
+                    dynamic jsonData = System.Web.Helpers.Json.Decode(responseString);
+
+                    if (jsonData == null || jsonData.success != true)
+                        return false;
+
+                    // ✅ Action check
+                    if (jsonData.action == null || jsonData.action.ToString() != "register")
+                        return false;
+
+                    // ✅ Hostname check
+                    if (jsonData.hostname == null ||
+                        jsonData.hostname.ToString() != Request.Url.Host)
+                        return false;
+
+                    // ✅ Score check (use decimal literal to match decimal type)
+                    decimal score = jsonData.score != null
+                        ? Convert.ToDecimal(jsonData.score)
+                        : 0m;
+
+                    if (score < 0.7m)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Low reCAPTCHA score: " + score);
+                        return false;
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("reCAPTCHA Exception: " + ex.Message);
+                return false;
+            }
+        }
 
         public static string GetIpAddress()  //Get IP Address
         {
