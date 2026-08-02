@@ -204,9 +204,9 @@ namespace Magnifyelshaddai.Controllers
                 {
                     var data = new NameValueCollection
                     {
-                        ["secret"] = secret,
-                        ["response"] = token,
-                        ["remoteip"] = userIp
+                        { "secret", secret },
+                        { "response", token },
+                        { "remoteip", userIp }
                     };
 
                     var response = client.UploadValues(

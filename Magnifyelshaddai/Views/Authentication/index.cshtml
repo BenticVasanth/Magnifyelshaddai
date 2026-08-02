@@ -72,10 +72,16 @@
                 <hr />
             </div>*@
 
-        <div class="wrapper" title="7th Bible Workshop Online Registration Click Here" onclick="googleFormLink()">
-            <h1>7<span class="supTxt">th</span> Bible Workshop</h1>
+        @*<div class="wrapper" title="8th Bible Workshop Online Registration Click Here" onclick="googleFormLink()">
+            <h1>8<span class="supTxt">th</span> Bible Workshop</h1>
             <br>
             <h3 style="margin-top: 0px;">Online Registration Click Here</h3>
+        </div>*@
+
+        <div class="wrapper" title="8th Bible Workshop Online Registration Click Here">
+            <h1>8<span class="supTxt">th</span> Bible Workshop</h1>
+            <br>
+            <h3 style="margin-top: 0px;">Online Registration Will Open Soon!</h3>
         </div>
 
         <div class="col-md-12" id="elsaddai-signin">
@@ -196,17 +202,22 @@
         </div>
     </div>*@
 
-<div id="philippians-poster" class="modal fade" data-backdrop="static" data-keyboard="false" role="dialog">
+<div id="Sirach-poster" class="modal fade" data-backdrop="static" data-keyboard="false" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content" style="margin: auto; width: 80%;">
             <div class="modal-body" style="padding: 0">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <img class="img-fluid" src="~/Images/bible-workshop-posters/Philippians-Workshop-Poster.jpg" style="max-width: 100%; height: 80%;" />
+                <img class="img-fluid" src="~/Images/bible-workshop-posters/Sirach_8th_Bible_Workshop.webp" style="max-width: 100%; height: 80%;" />
             </div>
-            <div class="modal-footer" style="text-align: center; display: inline-block; width: 100%;">
+                <div class="registration-status">
+                    <span class="status-icon">✨</span>
+                    Online Registration Will Open Soon!
+                    <span class="status-icon">✨</span>
+                </div>
+            @*<div class="modal-footer" style="text-align: center; display: inline-block; width: 100%;">
                 <button type="button" class="btn btn-primary" onclick="googleFormLink()">Proceed to Registration</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>
@@ -239,7 +250,7 @@
     </div>
 </div>
 
-@*<div id="philippians-poster" class="modal fade" role="dialog">
+@*<div id="Sirach-poster" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content" style="margin-left: 1px; width: 100%;">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -379,7 +390,7 @@
 
     .wrapper {
         text-align: center;
-        cursor: pointer;
+        /*cursor: pointer;*/
         width: fit-content;
         margin: 1rem auto 0;
     }
@@ -422,6 +433,20 @@
             text-decoration: none;
             color: red;
         }
+
+    .registration-status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 20px;
+        background: #fff8e8;
+        color: #8b5e00;
+        font-size: 18px;
+        font-weight: 700;
+        border-top: 3px solid #d4af37;
+        letter-spacing: .5px;
+    }
 </style>
 
 @section Scripts {
@@ -433,18 +458,18 @@
         //    $('#bibleCourse').modal('show');
         //});
 
-        //For Philippians Bible Workshop Poster
+        //For Sirach Bible Workshop Poster
         $(window).on('load', function () {
-            $('#philippians-poster').modal('show');
+            $('#Sirach-poster').modal('show');
         });
 
-        function googleFormLink() {
-            window.open("https://docs.google.com/forms/d/e/1FAIpQLSd1FfmqxLKUBSGdPbCz5LnKxcOwq30Njzjiw6_feIiSKdSKMA/viewform", "_blank");
-        }
+        //function googleFormLink() {
+        //    window.open("https://docs.google.com/forms/d/e/1FAIpQLSd1FfmqxLKUBSGdPbCz5LnKxcOwq30Njzjiw6_feIiSKdSKMA/viewform", "_blank");
+        //}
 
         ////For terms and conditions
         //function termsandcondtions() {
-        //    $('#philippians-poster').modal('show');
+        //    $('#Sirach-poster').modal('show');
         //}
 
         //$('#registration-instructions-english').on('shown.bs.modal', function (e) {
