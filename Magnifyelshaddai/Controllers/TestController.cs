@@ -54,18 +54,6 @@ namespace Magnifyelshaddai.Controllers
 
                 string fromEmail = EmailDB.EmailID;
 
-                string toEmail = "benatic98@gmail.com";
-
-                string subject = "Magnify Elshaddai - Test Mail";
-
-                string body =
-                    "<p>Praise the LORD Brother,</p>" +
-                    "<p>This is a test email from Magnify Elshaddai.</p>" +
-                    "<p>If you received this email, SMTP is working correctly.</p>" +
-                    "<br/>" +
-                    "<p><b>In Christ,</b><br/>" +
-                    "<b>Magnify Elshaddai Team</b></p>";
-
                 // ============================================================
                 // SMTP
                 // ============================================================

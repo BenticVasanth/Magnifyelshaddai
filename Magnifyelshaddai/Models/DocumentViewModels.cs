@@ -17,6 +17,8 @@ namespace Magnifyelshaddai.Models
         public int? CategoryId { get; set; }
         [Required(ErrorMessage = "The Title field is required")]
         public string Title { get; set; }
+        [Required(ErrorMessage = "The Description field is required")]
+        public string Description { get; set; }
         public DateTime PrayerDate { get; set; }
         [Required(ErrorMessage = "The File Path field is required")]
         public string FilePath { get; set; }

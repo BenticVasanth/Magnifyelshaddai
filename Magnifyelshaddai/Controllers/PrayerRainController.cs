@@ -21,7 +21,6 @@ using System.Text;
 using SelectPdf;
 using System.Text.RegularExpressions;
 using System.Net.Mime;
-using System.IO;
 using context = System.Web.HttpContext;
 
 
@@ -31,12 +30,12 @@ namespace Magnifyelshaddai.Controllers
     {
         private ElshaddaiDBContext db = new ElshaddaiDBContext();
         private static TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
-        private static String ErrorlineNo, Errormsg, extype, exurl, hostIp, ErrorLocation, HostAdd;
+        private static String ErrorlineNo, Errormsg, extype, exurl, hostIp, ErrorLocation;
 
         public static void SendErrorToText(Exception ex)
         {
             var line = Environment.NewLine + Environment.NewLine;
-
+            hostIp = System.Web.HttpContext.Current != null ? System.Web.HttpContext.Current.Request.UserHostAddress : null;
             ErrorlineNo = ex.StackTrace.Substring(ex.StackTrace.Length - 7, 7);
             Errormsg = ex.GetType().Name.ToString();
             extype = ex.GetType().ToString();

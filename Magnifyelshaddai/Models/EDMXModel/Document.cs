@@ -32,7 +32,7 @@ namespace Magnifyelshaddai.Models.EDMXModel
         public Nullable<bool> Status { get; set; }
         public string ImagesPath { get; set; }
         public string Description { get; set; }
-    
+        public Nullable<System.DateTime> updatedAt { get; set; }    
         public virtual Category Category { get; set; }
         public virtual ICollection<DownloadDetail> DownloadDetails { get; set; }
     }
