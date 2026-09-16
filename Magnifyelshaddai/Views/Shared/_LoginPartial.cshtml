@@ -1,6 +1,6 @@
 ﻿@{
     if (Session["User"] != null)
-    {        
+    {
         if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Subadmin")
         {
             <ul class="nav navbar-nav navbar-right">
@@ -35,7 +35,7 @@
                     </ul>
                 </li>
             </ul>
-        }        
+        }
         else //For Libraian and User
         {
             <ul class="nav navbar-nav navbar-right">
@@ -57,7 +57,7 @@
     {
         <ul class="nav navbar-nav navbar-right">
             <li>@Html.ActionLink("Home", "Index", "Authentication")</li>
-            <li><a href="https://www.magnifyelshaddai.com/#elsaddai-signin">Sign In</a></li>
+            <li><a href="/#elsaddai-signin">Sign In</a></li>
             <li>@Html.ActionLink("Register", "Register", "Authentication")</li>
         </ul>
     }
