@@ -20,6 +20,7 @@ namespace Magnifyelshaddai.Models.EDMXModel
         }
     
         public int BooKId { get; set; }
+        public int totalDownloadedCount { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string FilePath { get; set; }
@@ -28,7 +29,6 @@ namespace Magnifyelshaddai.Models.EDMXModel
         public string Language { get; set; }
         public Nullable<bool> ContentStatus { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
-        public int totalDownloadedCount { get; set; }
     
         public virtual ICollection<EBooksDownloadDetail> EBooksDownloadDetails { get; set; }
     }

@@ -15,6 +15,9 @@ namespace Magnifyelshaddai.Models.EDMXModel
     public partial class PrayerRain
     {
         public int PrayerRainId { get; set; }
+        public int totalDownloadedCount { get; set; }
+        public string PrayerRainUploadedBy { get; set; }
+        public string PrayerRainCreatedBy { get; set; }
         public string RefPrayerRainId { get; set; }
         public string Title { get; set; }
         public string Verses { get; set; }
@@ -31,8 +34,5 @@ namespace Magnifyelshaddai.Models.EDMXModel
         public Nullable<int> ApprovedBy { get; set; }
         public Nullable<int> UploadedBy { get; set; }
         public Nullable<System.DateTime> ApprovedDateTime { get; set; }
-        public string PrayerRainCreatedBy { get; set; }
-        public string PrayerRainUploadedBy { get; set; }
-        public int totalDownloadedCount { get; set; }
     }
 }

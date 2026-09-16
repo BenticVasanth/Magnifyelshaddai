@@ -12,10 +12,7 @@ namespace Magnifyelshaddai.Models
     public class UserViewModels
     {
         public int UserId { get; set; }
-        [Required(ErrorMessage = "Name is required.")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Mobile number is required.")]
-        [StringLength(10, MinimumLength = 10, ErrorMessage = "Mobile number must be exactly 10 digits.")]
         public string Mobile { get; set; }
         //[RegularExpression("^[^@\s]+@[^@\s]+(\.[^@\s]+)+$", ErrorMessage = "Invalid Email Address")]
         [Required(ErrorMessage = "Email is required")]

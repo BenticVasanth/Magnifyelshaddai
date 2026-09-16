@@ -15,9 +15,9 @@ namespace Magnifyelshaddai.Models.EDMXModel
     public partial class LoggedInDetail
     {
         public int LoggedInId { get; set; }
+        public int totalNoOfUsersLoggedInPerDay{get;set;}
         public string LoggedInBy { get; set; }
         public Nullable<System.DateTime> LastLoggedInDateAndTime { get; set; }
         public Nullable<int> LoggedInCountPerDay { get; set; }
-        public int totalNoOfUsersLoggedInPerDay { get; set; }
     }
 }

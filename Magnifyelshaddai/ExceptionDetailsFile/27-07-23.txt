@@ -1,0 +1,72 @@
+-----------Exception Details on  7/27/2023 9:58:43 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/27/2023 9:58:43 PM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/27/2023 10:06:43 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/27/2023 10:06:43 PM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/27/2023 10:58:21 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/27/2023 10:58:21 PM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

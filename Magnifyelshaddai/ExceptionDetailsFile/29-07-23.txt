@@ -1,0 +1,192 @@
+-----------Exception Details on  7/29/2023 1:23:26 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:23:26 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/29/2023 1:27:23 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:27:23 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/29/2023 1:29:40 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:29:40 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/29/2023 1:31:57 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:31:57 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/29/2023 1:35:18 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:35:18 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/29/2023 1:37:19 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:37:19 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/29/2023 1:39:09 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:39:09 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  7/29/2023 1:40:51 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 7/29/2023 1:40:51 AM
+
+Error Line No : g test)
+
+Error Message: SmtpException
+
+Exception Type: System.Net.Mail.SmtpException
+
+Error Location : Failure sending mail.
+
+ Error Page Url: http://www.magnifyelshaddai.com/Documents/Admin
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

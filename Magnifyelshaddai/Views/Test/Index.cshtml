@@ -1,90 +1,60 @@
-﻿@{
-    ViewBag.Title = "Test Mail";
+﻿
+@{
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta charset="utf-8" />
 
-    <title>Test Mail</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 40px;
-        }
-
-        .mail-container {
-            width: 400px;
-            margin: 50px auto;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .mail-container h2 {
-            margin-bottom: 25px;
-        }
-
-        .send-button {
-            background: #0b5394;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .send-button:hover {
-            background: #073763;
-        }
-
-        .message {
-            margin-top: 20px;
-            padding: 12px;
-            border-radius: 5px;
-        }
-
-        .success {
-            background: #d9ead3;
-            color: #274e13;
-        }
-
-        .error {
-            background: #f4cccc;
-            color: #990000;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="mail-container">
-
-        <h2>Test Mail</h2>
-
-        @using (Html.BeginForm("SendTestMail", "Test", FormMethod.Post))
-        {
-            <button type="submit" class="send-button">
-                Send Test Mail
-            </button>
-        }
-
-        @if (ViewBag.Message != null)
-        {
-            <div class="message @(ViewBag.Success == true ? "success" : "error")">
-                @Html.Raw(ViewBag.Message)
+<div class="container">
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+            <div class="section-title mb60 text-center">
+                <!-- section title start-->
+                <h1>testimonials</h1>
+                <h5 class="small-title">What Happy Client Say</h5>
             </div>
-        }
-
+            <!-- /.section title start-->
+        </div>
     </div>
-
-</body>
-</html>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="testimonial-block">
+                <!-- testimonial block -->
+                <div class="testimonial-content">
+                    <p class="testimonial-text">“Free Beauty Website Templates that help me a lot to build easy and fast my hair shop website in 2 days”</p>
+                </div>
+                <div class="testimonial-info">
+                    <h4 class="testimonial-name">Reba Truong</h4>
+                    <span class="testimonial-meta">34 Year</span> <span class="testimonial-meta">Customer</span>
+                </div>
+            </div>
+            <!--/. testimonial block -->
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="testimonial-block">
+                <!-- testimonial block -->
+                <div class="testimonial-content">
+                    <p class="testimonial-text">“Free bootstrap responsive website templates 2017 its best ever i found for my hair salon”</p>
+                </div>
+                <div class="testimonial-info">
+                    <h4 class="testimonial-name">Thomas Warren</h4>
+                    <span class="testimonial-meta">34 Year</span> <span class="testimonial-meta ">Customer</span>
+                </div>
+            </div>
+            <!--/. testimonial block -->
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="testimonial-block">
+                <!-- testimonial block -->
+                <div class="testimonial-content">
+                    <p class="testimonial-text">“Best Free HTML CSS Website Templates for salon and hair cutting business. All features are clean designed”</p>
+                </div>
+                <div class="testimonial-info">
+                    <h4 class="testimonial-name">Carie Willis</h4>
+                    <span class="testimonial-meta">34 Year</span> <span class="testimonial-meta">Customer</span>
+                </div>
+            </div>
+            <!--/. testimonial block -->
+        </div>
+    </div>
+</div>

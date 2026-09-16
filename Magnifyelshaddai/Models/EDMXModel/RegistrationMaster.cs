@@ -16,16 +16,13 @@ namespace Magnifyelshaddai.Models.EDMXModel
     {
         public int RMID { get; set; }
         public Nullable<int> BWSID { get; set; }
-        public string EmailId { get; set; }
         public string Name { get; set; }
-        public string Gender { get; set; }
-        public Nullable<int> Age { get; set; }
-        public string Address { get; set; }
+        public string EmailId { get; set; }
         public string MobileNo { get; set; }
-        public Nullable<int> Qualification { get; set; }
-        public string ParticipantType { get; set; }
-        public Nullable<bool> NeedOfAccommodation { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
+        public string Place { get; set; }
+        public Nullable<bool> AccommodationStatus { get; set; }
+        public string AccommodationType { get; set; }
+        public string ParticipationType { get; set; }
     
         public virtual BibleWorkShop BibleWorkShop { get; set; }
     }

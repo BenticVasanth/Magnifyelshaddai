@@ -1,11 +1,11 @@
 ﻿@model Magnifyelshaddai.Models.EDMXModel.CommentsAndSuggestion
 @{
-    ViewBag.Title = "Feedback or Suggestions - Magnify El Shaddai";
+    ViewBag.Title = "Comments and Suggestions - Magnify El Shaddai";
 }
 
 @Html.Partial("_SideMenu")
 <div class="container_display uploadfiles">
-    <h2 class="main-title">Feedback or Suggestion</h2>
+    <h2 class="main-title">Comment or Suggestion</h2>
     @using (Html.BeginForm("CommentAndSuggestion", "QuickSearch", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()

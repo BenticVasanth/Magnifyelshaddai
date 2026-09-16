@@ -20,6 +20,7 @@ namespace Magnifyelshaddai.Models.EDMXModel
         }
     
         public int IntId { get; set; }
+        public int totalDownloadedCount { get; set; }
         public string DocumentID { get; set; }
         public Nullable<int> CategoryId { get; set; }
         public string Title { get; set; }
@@ -31,8 +32,6 @@ namespace Magnifyelshaddai.Models.EDMXModel
         public Nullable<bool> Status { get; set; }
         public string ImagesPath { get; set; }
         public string Description { get; set; }
-        public Nullable<System.DateTime> updatedAt { get; set; }
-        public int totalDownloadedCount { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual ICollection<DownloadDetail> DownloadDetails { get; set; }

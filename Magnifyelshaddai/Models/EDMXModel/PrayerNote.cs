@@ -15,12 +15,12 @@ namespace Magnifyelshaddai.Models.EDMXModel
     public partial class PrayerNote
     {
         public int PrayerNoteId { get; set; }
+        public int totalDownloadedCount { get; set; }
         public string Title { get; set; }
         public string FilePath { get; set; }
         public Nullable<System.DateTime> PrayerDate { get; set; }
         public string CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
         public Nullable<bool> IsActive { get; set; }
-        public int totalDownloadedCount { get; set; }
     }
 }

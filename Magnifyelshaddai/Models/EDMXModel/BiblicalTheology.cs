@@ -15,11 +15,11 @@ namespace Magnifyelshaddai.Models.EDMXModel
     public partial class BiblicalTheology
     {
         public int BiblicalTheologyId { get; set; }
+        public int totalDownloadedCount { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string FilePath { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<System.DateTime> CreatedDateAndTime { get; set; }
-        public int totalDownloadedCount { get; set; }
     }
 }

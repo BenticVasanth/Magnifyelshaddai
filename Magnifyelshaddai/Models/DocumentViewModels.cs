@@ -17,8 +17,6 @@ namespace Magnifyelshaddai.Models
         public int? CategoryId { get; set; }
         [Required(ErrorMessage = "The Title field is required")]
         public string Title { get; set; }
-        [Required(ErrorMessage = "The Description field is required")]
-        public string Description { get; set; }
         public DateTime PrayerDate { get; set; }
         [Required(ErrorMessage = "The File Path field is required")]
         public string FilePath { get; set; }
@@ -36,5 +34,13 @@ namespace Magnifyelshaddai.Models
         [Required]
         public HttpPostedFileBase DocUpload { get; set; }
         public HttpPostedFileBase ImageUpload { get; set; }
+
+
+        public virtual List<DocumentViewModels> DocumentViewModels1 { get; set; }
+
+        public DocumentViewModels()
+        {
+            this.DocumentViewModels1 = new List<DocumentViewModels>();
+        }
     }
 }

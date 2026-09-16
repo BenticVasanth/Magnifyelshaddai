@@ -5,6 +5,7 @@
 
 @Html.Partial("_SideMenu")
 <div class="container_display uploadfiles">
+    @ViewData["data"]<br />
     <h2 class="main-title">Books Request</h2>
     @using (Html.BeginForm("BookRequest", "QuickSearch", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {

@@ -269,7 +269,6 @@
           <Property Name="Status" Type="bit" />
           <Property Name="ImagesPath" Type="varchar(max)" />
           <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="updatedAt" Type="datetime" />
         </EntityType>
         <EntityType Name="DownloadDetails">
           <Key>
@@ -487,16 +486,13 @@
           </Key>
           <Property Name="RMID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="BWSID" Type="int" />
-          <Property Name="EmailId" Type="varchar" MaxLength="200" />
           <Property Name="Name" Type="varchar" MaxLength="200" />
-          <Property Name="Gender" Type="varchar" MaxLength="50" />
-          <Property Name="Age" Type="int" />
-          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="EmailId" Type="varchar" MaxLength="200" />
           <Property Name="MobileNo" Type="varchar" MaxLength="15" />
-          <Property Name="Qualification" Type="int" />
-          <Property Name="ParticipantType" Type="varchar" MaxLength="100" />
-          <Property Name="NeedOfAccommodation" Type="bit" />
-          <Property Name="CreatedDateTime" Type="datetime" />
+          <Property Name="Place" Type="varchar" MaxLength="500" />
+          <Property Name="AccommodationStatus" Type="bit" />
+          <Property Name="AccommodationType" Type="varchar" MaxLength="100" />
+          <Property Name="ParticipationType" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="SinaiLetter">
           <Key>
@@ -968,7 +964,6 @@
           <Property Name="Status" Type="Boolean" />
           <Property Name="ImagesPath" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="updatedAt" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Category" Relationship="ElshaddaiModel.FK_Documents_Category" FromRole="Documents" ToRole="Category" />
           <NavigationProperty Name="DownloadDetails" Relationship="ElshaddaiModel.FK_DownloadDetails_Documents" FromRole="Documents" ToRole="DownloadDetails" />
         </EntityType>
@@ -1196,16 +1191,13 @@
           </Key>
           <Property Name="RMID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="BWSID" Type="Int32" />
-          <Property Name="EmailId" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <Property Name="Name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
-          <Property Name="Gender" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="Address" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="EmailId" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <Property Name="MobileNo" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
-          <Property Name="Qualification" Type="Int32" />
-          <Property Name="ParticipantType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="NeedOfAccommodation" Type="Boolean" />
-          <Property Name="CreatedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Place" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="AccommodationStatus" Type="Boolean" />
+          <Property Name="AccommodationType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ParticipationType" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="BibleWorkShop" Relationship="ElshaddaiModel.FK_RegistrationMaster_BibleWorkShop" FromRole="RegistrationMaster" ToRole="BibleWorkShop" />
         </EntityType>
         <EntityType Name="SinaiLetter">
@@ -1609,7 +1601,6 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ImagesPath" ColumnName="ImagesPath" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1845,16 +1836,13 @@
               <MappingFragment StoreEntitySet="RegistrationMaster">
                 <ScalarProperty Name="RMID" ColumnName="RMID" />
                 <ScalarProperty Name="BWSID" ColumnName="BWSID" />
-                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
                 <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
-                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-                <ScalarProperty Name="ParticipantType" ColumnName="ParticipantType" />
-                <ScalarProperty Name="NeedOfAccommodation" ColumnName="NeedOfAccommodation" />
-                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="AccommodationStatus" ColumnName="AccommodationStatus" />
+                <ScalarProperty Name="AccommodationType" ColumnName="AccommodationType" />
+                <ScalarProperty Name="ParticipationType" ColumnName="ParticipationType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
