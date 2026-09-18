@@ -77,6 +77,7 @@ namespace Magnifyelshaddai.Controllers
                     {
                         message.From = new MailAddress(EmailDB.EmailID);
                         message.To.Add("benatic98@gmail.com");
+                        //message.CC.Add("bibleworkshopteam@magnifyelshaddai.com");
                         message.Subject = "Magnify Elshaddai - Test Mail";
 
                         message.Body =

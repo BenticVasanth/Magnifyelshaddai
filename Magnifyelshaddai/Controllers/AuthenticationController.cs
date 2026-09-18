@@ -116,73 +116,383 @@ namespace Magnifyelshaddai.Controllers
         {
             try
             {
-                // Validate reCAPTCHA v3 token
-                var recaptchaToken = Request.Form["g-recaptcha-response"];
-                if (!ValidateRecaptcha(recaptchaToken))
+                // ============================================================
+                // VALIDATE reCAPTCHA v3 TOKEN
+                // ============================================================
+
+                // Skip reCAPTCHA validation on localhost
+                if (!Request.IsLocal)
                 {
-                    ViewBag.ErrorMessage = "reCAPTCHA validation failed. Please try again.";
-                    return View(user);
+                    var recaptchaToken = Request.Form["g-recaptcha-response"];
+
+                    if (!ValidateRecaptcha(recaptchaToken))
+                    {
+                        ViewBag.ErrorMessage =
+                            "reCAPTCHA validation failed. Please try again.";
+
+                        return View(user);
+                    }
                 }
-                if (ModelState.IsValid && user.Name != "" && user.Name != null && user.Mobile != "" && user.Mobile != null && user.Email != "" && user.Email != null)
+
+                // ============================================================
+                // VALIDATE USER DETAILS
+                // ============================================================
+
+                if (ModelState.IsValid &&
+                    !string.IsNullOrWhiteSpace(user.Name) &&
+                    !string.IsNullOrWhiteSpace(user.Mobile) &&
+                    !string.IsNullOrWhiteSpace(user.Email))
                 {
                     string ipAddress = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
                     if (string.IsNullOrEmpty(ipAddress))
                     {
                         ipAddress = Request.ServerVariables["REMOTE_ADDR"];
                     }
 
-                    if (db.Users.Where(x => x.Email == user.Email).Count() == 0)
+                    // ========================================================
+                    // CHECK EMAIL ALREADY REGISTERED
+                    // ========================================================
+
+                    if (db.Users.Any(x => x.Email == user.Email))
                     {
+                        ViewBag.ErrorMessage =
+                            "This email address is already registered. So please go to Login!.";
 
-                        Random r = new Random();
+                        return View(user);
+                    }
 
-                        int num = r.Next();
+                    // ========================================================
+                    // GET EMAIL CONFIGURATION
+                    // ========================================================
 
-                        var objuser = new User();
-                        objuser.Name = user.Name.Trim();
-                        objuser.Mobile = user.Mobile.Trim();
-                        objuser.Email = user.Email.Trim();
-                        objuser.Password = num + "@Jesus";
-                        objuser.UserIP = ipAddress;
-                        objuser.Location = ipAddress;
-                        objuser.UserType = "User";
-                        objuser.CreatedDateTime = DateTime.Now;
-                        objuser.IsActive = true;
-                        objuser.IsNotification = user.IsNotification;
-                        db.Users.Add(objuser);
-                        db.SaveChanges();
+                    var EmailDB = db.EmailMessages.FirstOrDefault();
 
-                        var primaryUserId = objuser.UserId;
+                    if (EmailDB == null)
+                    {
+                        ViewBag.ErrorMessage =
+                            "Email configuration not found in database.";
 
-                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                        var userUrl = "https://magnifyelshaddai.com/mailtest.php?action=mail&type=userlogin&id=" + primaryUserId;
+                        return View(user);
+                    }
 
-                        var userHttpRequest = (HttpWebRequest)WebRequest.Create(userUrl);
+                    if (string.IsNullOrWhiteSpace(EmailDB.EmailID))
+                    {
+                        ViewBag.ErrorMessage =
+                            "Email ID is empty in database.";
 
-                        userHttpRequest.Accept = "application/json";
+                        return View(user);
+                    }
 
+                    if (string.IsNullOrWhiteSpace(EmailDB.EmailPassword))
+                    {
+                        ViewBag.ErrorMessage =
+                            "Email password is empty in database.";
 
-                        var userHttpResponse = (HttpWebResponse)userHttpRequest.GetResponse();
-                        using (var streamReader = new StreamReader(userHttpResponse.GetResponseStream()))
+                        return View(user);
+                    }
+
+                    // ========================================================
+                    // GENERATE PASSWORD
+                    // ========================================================
+
+                    Random r = new Random();
+
+                    int num = r.Next();
+
+                    string generatedPassword = num + "@Jesus";
+
+                    // ========================================================
+                    // CREATE USER
+                    // ========================================================
+
+                    var objuser = new User();
+
+                    objuser.Name = user.Name.Trim();
+                    objuser.Mobile = user.Mobile.Trim();
+                    objuser.Email = user.Email.Trim();
+                    objuser.Password = generatedPassword;
+                    objuser.UserIP = ipAddress;
+                    objuser.Location = ipAddress;
+                    objuser.UserType = "User";
+                    objuser.CreatedDateTime = DateTime.Now;
+                    objuser.IsActive = true;
+                    objuser.IsNotification = user.IsNotification;
+
+                    db.Users.Add(objuser);
+                    db.SaveChanges();
+
+                    // ========================================================
+                    // SEND EMAIL USING SMTP
+                    // ========================================================
+
+                    ServicePointManager.SecurityProtocol =
+                        SecurityProtocolType.Tls12;
+
+                    string fromEmail = EmailDB.EmailID;
+                    string toEmail = objuser.Email;
+
+                    string subject =
+                        "Magnify Elshaddai - Confirmation for Registration";
+
+                    string body =
+                        "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" " +
+                        "style=\"background:#f4f2f7;margin:0;padding:12px 8px;\">" +
+
+                            "<tr>" +
+                                "<td align=\"center\">" +
+
+                                    // Main Container
+                                    "<table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" " +
+                                    "style=\"max-width:600px;background:#ffffff;border-radius:8px;" +
+                                    "overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);\">" +
+
+                                        // Header
+                                        "<tr>" +
+                                            "<td align=\"center\" " +
+                                            "style=\"background:linear-gradient(138deg,#5a3dbd,#7a1fa2,#a42977);" +
+                                            "padding:15px 20px;color:#ffffff;\">" +
+
+                                                "<div style=\"font-size:21px;font-weight:bold;letter-spacing:0.5px;\">" +
+                                                    "MAGNIFY EL-SHADDAI" +
+                                                "</div>" +
+
+                                                "<div style=\"font-size:14px;margin-top:2px;\">" +
+                                                    "விவிலிய பட்டறை குழு" +
+                                                "</div>" +
+
+                                            "</td>" +
+                                        "</tr>" +
+
+                                        // Content
+                                        "<tr>" +
+                                            "<td style=\"padding:18px 24px;color:#333333;font-size:15px;line-height:1.5;\">" +
+
+                                                "<p style=\"margin:0 0 8px;\">" +
+                                                    "<b>கிறிஸ்து இயேசுவுக்குள் பிரியமான " +
+                                                    objuser.Name +
+                                                    " அவர்களுக்கு,</b>" +
+                                                "</p>" +
+
+                                                "<p style=\"font-size:15px;margin:0 0 10px;color:#7a1fa2;" +
+                                                "text-align:center;font-style:italic;line-height:1.5;\">" +
+                                                    "நம் தந்தையாம் கடவுளிடமிருந்தும், ஆண்டவராம் இயேசு " +
+                                                    "கிறிஸ்துவிடமிருந்தும் அருளும் அமைதியும் உரித்தாகுக!" +
+                                                "</p>" +
+
+                                                "<p style=\"margin:0 0 8px;text-align:justify;\">" +
+                                                    "<b>MAGNIFY EL-SHADDAI</b> இணையதளத்தில் " +
+                                                    "பதிவு செய்ததற்கு நன்றி. " +
+                                                    "உங்கள் கணக்கு வெற்றிகரமாக பதிவுசெய்யப்பட்டது." +
+                                                "</p>" +
+
+                                                // Account Details
+                                                "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" " +
+                                                "style=\"background:#faf7fc;border:1px solid #e6dced;" +
+                                                "border-radius:6px;margin:12px 0;\">" +
+
+                                                    "<tr>" +
+                                                        "<td style=\"padding:10px 14px;\">" +
+
+                                                            "<div style=\"color:#7a1fa2;font-size:16px;" +
+                                                            "font-weight:bold;margin-bottom:6px;\">" +
+                                                                "உங்கள் கணக்கு விவரங்கள்" +
+                                                            "</div>" +
+
+                                                            "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">" +
+
+                                                                "<tr>" +
+                                                                    "<td style=\"padding:3px 0;color:#666666;" +
+                                                                    "width:110px;font-size:15px;\">" +
+                                                                        "<b>மின்னஞ்சல் :  </b>" +
+                                                                    "</td>" +
+
+                                                                    "<td style=\"padding:3px 0;color:#333333;font-size:15px;\">" +
+                                                                        objuser.Email +
+                                                                    "</td>" +
+                                                                "</tr>" +
+
+                                                                "<tr>" +
+                                                                    "<td style=\"padding:3px 0;color:#666666;font-size:15px;\">" +
+                                                                        "<b>கடவுச்சொல் :  </b>" +
+                                                                    "</td>" +
+
+                                                                    "<td style=\"padding:3px 0;color:#333333;font-size:15px;\">" +
+                                                                        generatedPassword +
+                                                                    "</td>" +
+                                                                "</tr>" +
+
+                                                            "</table>" +
+
+                                                        "</td>" +
+                                                    "</tr>" +
+
+                                                "</table>" +
+
+                                                "<p style=\"margin:0 0 10px;color:#555555;text-align:justify;\">" +
+                                                    "உங்கள் கணக்கு விவரங்களை பாதுகாப்பாக வைத்துக்கொள்ளவும். " +
+                                                    "உங்கள் கடவுச்சொல்லை மற்றவர்களுடன் பகிர வேண்டாம்." +
+                                                "</p>" +
+
+                                                // Login Button
+                                                "<div style=\"text-align:center;margin:12px 0;\">" +
+
+                                                    "<a href=\"https://www.magnifyelshaddai.com/#elsaddai-signin\" " +
+                                                    "style=\"display:inline-block;" +
+                                                    "background:#7a1fa2;" +
+                                                    "color:#ffffff;" +
+                                                    "text-decoration:none;" +
+                                                    "padding:8px 22px;" +
+                                                    "border-radius:5px;" +
+                                                    "font-size:15px;" +
+                                                    "font-weight:bold;\">" +
+
+                                                        "Website Login" +
+
+                                                    "</a>" +
+
+                                                "</div>" +
+
+                                                // Bible Verse
+                                                "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" " +
+                                                "style=\"background:#fdf8ff;border-left:4px solid #7a1fa2;" +
+                                                "margin:12px 0;\">" +
+
+                                                    "<tr>" +
+                                                        "<td style=\"padding:9px 14px;text-align:center;\">" +
+
+                                                            "<div style=\"font-size:14px;color:#7a1fa2;" +
+                                                            "font-weight:bold;margin-bottom:4px;\">" +
+                                                                "லூக்கா 1:46–47" +
+                                                            "</div>" +
+
+                                                            "<div style=\"font-size:15px;color:#555555;" +
+                                                            "font-style:italic;line-height:1.5;\">" +
+
+                                                                "“என் ஆத்துமா கர்த்தரை மகிமைப்படுத்துகிறது.<br>" +
+                                                                "என் ஆவி என் இரட்சகராகிய தேவனில் களிகூருகிறது.”" +
+
+                                                            "</div>" +
+
+                                                        "</td>" +
+                                                    "</tr>" +
+
+                                                "</table>" +
+
+                                                "<p style=\"margin:10px 0 0;color:#555555;text-align:justify;\">" +
+                                                    "எங்களுடன் இணைந்ததற்கு மகிழ்ச்சி. " +
+                                                    "உங்கள் ஆன்மீகப் பயணத்தில் வேதவார்த்தையின் மூலம் " +
+                                                    "தொடர்ந்து வளர வாழ்த்துகிறோம்." +
+                                                "</p>" +
+
+                                                "<p style=\"margin:10px 0 0;font-size:15px;\">" +
+                                                    "ஜெபங்களுடனும் நன்றியுடனும்,<br>" +
+                                                    "<span style=\"color:#777777;font-size:14px;\">" +
+                                                        "விவிலிய பட்டறை குழு" +
+                                                    "</span>" +
+                                                "</p>" +
+
+                                                "<p style=\"text-align:center;margin:8px 0 0;" +
+                                                "color:#7a1fa2;font-weight:bold;font-size:15px;\">" +
+                                                    "இயேசுவுக்கே புகழ்! &nbsp; மரியே வாழ்க!" +
+                                                "</p>" +
+
+                                            "</td>" +
+                                        "</tr>" +
+
+                                        // Footer
+                                        "<tr>" +
+                                            "<td align=\"center\" " +
+                                            "style=\"background:#faf9fb;border-top:1px solid #eee8f1;" +
+                                            "padding:10px 20px;font-size:12px;color:#777777;\">" +
+
+                                                "<div style=\"margin-bottom:2px;\">" +
+                                                    "© 2026 MAGNIFY EL-SHADDAI" +
+                                                "</div>" +
+
+                                                "<a href=\"https://magnifyelshaddai.com/\" " +
+                                                "style=\"color:#7a1fa2;text-decoration:none;\">" +
+                                                    "www.magnifyelshaddai.com" +
+                                                "</a>" +
+
+                                            "</td>" +
+                                        "</tr>" +
+
+                                    "</table>" +
+
+                                "</td>" +
+                            "</tr>" +
+
+                        "</table>";
+
+                    using (SmtpClient smtpClient = new SmtpClient())
+                    {
+                        smtpClient.Host = "smtp.gmail.com";
+                        smtpClient.Port = 587;
+                        smtpClient.EnableSsl = true;
+                        smtpClient.UseDefaultCredentials = false;
+
+                        smtpClient.Credentials = new NetworkCredential(
+                            EmailDB.EmailID,
+                            EmailDB.EmailPassword
+                        );
+
+                        using (MailMessage message = new MailMessage())
                         {
-                            var result = streamReader.ReadToEnd();
+                            message.From = new MailAddress(fromEmail);
+
+                            // TO
+                            message.To.Add(toEmail);
+
+                            // CC
+                            message.CC.Add(
+                                "bibleworkshopteam@magnifyelshaddai.com"
+                            );
+
+                            message.Subject = subject;
+                            message.Body = body;
+                            message.IsBodyHtml = true;
+
+                            smtpClient.Send(message);
                         }
-
-                        Console.WriteLine(userHttpResponse.StatusCode);
-
-                        ViewBag.ErrorMessage = "Your Password has sent to your Email Id!.";
-                    }
-                    else
-                    {
-                        ViewBag.ErrorMessage = "This email address is already registered.So please go to Login!.";
                     }
 
+                    // ========================================================
+                    // SUCCESS
+                    // ========================================================
+
+                    ViewBag.Message = "Registration successful! Your password has been sent to your email.";
+
+                    ViewBag.Success = true;
                 }
+            }
+            catch (SmtpException ex)
+            {
+                System.Diagnostics.Debug.WriteLine(
+                    "SMTP Error: " + ex.ToString()
+                );
+
+                ViewBag.ErrorMessage =
+                    "Problem while sending email. Please check your email configuration.";
+
+                ViewBag.ErrorMessage1 = ex;
             }
             catch (Exception ex)
             {
-                ViewBag.ErrorMessage = "Problem while sending email, Please check details.";
+                System.Diagnostics.Debug.WriteLine(
+                    "Registration Error: " + ex.ToString()
+                );
+
+                ViewBag.ErrorMessage =
+                    "Problem while registration. Please check details.";
+
                 ViewBag.ErrorMessage1 = ex;
+            }
+
+            if (ViewBag.Success == true)
+            {
+                ModelState.Clear();
+                return View(new UserViewModels());
             }
 
             return View(user);

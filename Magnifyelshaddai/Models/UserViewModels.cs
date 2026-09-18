@@ -12,10 +12,16 @@ namespace Magnifyelshaddai.Models
     public class UserViewModels
     {
         public int UserId { get; set; }
+        [Required(ErrorMessage = "Name is required.")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters.")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Name can contain only letters and spaces.")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Mobile number is required.")]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "Mobile number must be exactly 10 digits.")]
+        [RegularExpression(@"^[0-9]{10}$", ErrorMessage = "Please enter a valid 10-digit mobile number.")]
         public string Mobile { get; set; }
         //[RegularExpression("^[^@\s]+@[^@\s]+(\.[^@\s]+)+$", ErrorMessage = "Invalid Email Address")]
-        [Required(ErrorMessage = "Email is required")]
+        [Required(ErrorMessage = "Email is required.")]
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
         //[Required(ErrorMessage = "Password is required")]
